@@ -1,0 +1,16 @@
+export {
+  obtenerCarrito,
+  guardarCarrito,
+  agregarAlCarrito,
+  eliminarDelCarrito,
+  cambiarCantidadCarrito,
+  vaciarCarrito,
+  guardarCupon,
+  resumenCarrito,
+  obtenerPedidos,
+  guardarPedidos,
+  crearPedido,
+  buscarPedido,
+  normalizarProducto,
+  PRODUCTOS_DEMO,
+} from './shopCore';

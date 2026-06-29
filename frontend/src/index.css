@@ -1,0 +1,798 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ── MODO OSCURO (default) ── */
+:root{
+  --bg:#08080f;--bg2:#0e0e1a;--bg3:#13131f;--bg4:#1a1a2e;--bg5:#1f1f35;
+  --border:#1f2035;--border2:#2d2d4e;
+  --purple:#7c3aed;--purple2:#6d28d9;--purple3:#4c1d95;
+  --purple-light:#a78bfa;--purple-dim:rgba(124,58,237,0.12);--purple-glow:rgba(124,58,237,0.3);
+  --green:#10b981;--blue:#3b82f6;--yellow:#f59e0b;--red:#ef4444;--orange:#f97316;
+  --text:#ffffff;--text2:#e5e7eb;--muted:#6b7280;--muted2:#9ca3af;
+  --radius:12px;--radius2:8px;--radius3:16px;
+  --input-bg:#1a1a2e;--card-bg:#0e0e1a;
+}
+
+/* ── MODO CLARO ── */
+html.light-mode{
+  --bg:#f6f7ff;--bg2:#ffffff;--bg3:#ffffff;--bg4:#eef0ff;--bg5:#e8ebff;
+  --border:#d8dcf2;--border2:#c7cbea;
+  --purple:#7c3aed;--purple2:#6d28d9;--purple3:#4c1d95;
+  --purple-light:#7c3aed;--purple-dim:rgba(124,58,237,0.09);--purple-glow:rgba(124,58,237,0.18);
+  --green:#059669;--blue:#2563eb;--yellow:#d97706;--red:#dc2626;--orange:#ea580c;
+  --text:#0f172a;--text2:#334155;--muted:#64748b;--muted2:#475569;
+  --input-bg:#eef0ff;--card-bg:#ffffff;
+}
+
+/* transición suave de tema */
+html,body,aside,header,main,section,.pg-card,.pg-modal{
+  transition:background .28s,border-color .28s,color .28s !important;
+}
+
+html,body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+
+/* scrollbar */
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--purple3);border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:var(--purple)}
+
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font-family:'Inter',sans-serif;cursor:pointer}
+
+/* ── CARDS ── */
+.pg-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius)}
+.pg-card-hover{transition:all 0.2s;cursor:pointer}
+.pg-card-hover:hover{border-color:var(--purple);transform:translateY(-2px);box-shadow:0 8px 24px var(--purple-glow)}
+
+/* ── BUTTONS ── */
+.pg-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--purple);color:white;border:none;border-radius:var(--radius2);padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.15s;font-family:'Inter',sans-serif;letter-spacing:0.01em}
+.pg-btn:hover{background:var(--purple2);transform:translateY(-1px);box-shadow:0 4px 12px var(--purple-glow)}
+.pg-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+.pg-btn-sm{padding:7px 14px;font-size:12px}
+.pg-btn-lg{padding:14px 28px;font-size:16px;font-weight:700}
+.pg-btn-outline{background:transparent;color:var(--muted2);border:1px solid var(--border2);border-radius:var(--radius2);padding:10px 20px;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.15s;font-family:'Inter',sans-serif}
+.pg-btn-outline:hover{border-color:var(--purple);color:var(--purple-light);background:var(--purple-dim)}
+.pg-btn-ghost{background:transparent;color:var(--muted2);border:none;border-radius:var(--radius2);padding:8px 12px;font-size:13px;cursor:pointer;transition:all 0.15s;font-family:'Inter',sans-serif}
+.pg-btn-ghost:hover{background:var(--bg4);color:var(--text)}
+.pg-btn-danger{background:#ef444422;color:#ef4444;border:1px solid #ef444433;border-radius:var(--radius2);padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s;font-family:'Inter',sans-serif}
+.pg-btn-danger:hover{background:#ef4444;color:white}
+.pg-btn-success{background:#10b98122;color:#10b981;border:1px solid #10b98133;border-radius:var(--radius2);padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s;font-family:'Inter',sans-serif}
+.pg-btn-success:hover{background:#10b981;color:white}
+
+/* ── INPUTS ── */
+.pg-input{background:var(--input-bg);border:1px solid var(--border2);border-radius:var(--radius2);padding:11px 14px;color:var(--text);font-size:14px;width:100%;outline:none;transition:border .15s}
+.pg-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-dim)}
+.pg-input::placeholder{color:var(--muted)}
+.pg-select{background:var(--input-bg);border:1px solid var(--border2);border-radius:var(--radius2);padding:10px 14px;color:var(--text);font-size:14px;outline:none;cursor:pointer}
+.pg-select:focus{border-color:var(--purple)}
+.pg-label{color:var(--muted2);font-size:13px;font-weight:500;display:block;margin-bottom:7px}
+
+/* ── TABLE ── */
+.pg-table{width:100%;border-collapse:collapse}
+.pg-table th{color:var(--muted);font-size:11px;font-weight:600;padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap}
+.pg-table td{padding:13px 14px;border-bottom:1px solid var(--border);font-size:13px;color:var(--text2)}
+.pg-table tbody tr:last-child td{border-bottom:none}
+.pg-table tbody tr:hover td{background:var(--bg4)}
+
+/* ── BADGES ── */
+.pg-badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-green{background:#10b98122;color:#10b981}
+.badge-blue{background:#3b82f622;color:#3b82f6}
+.badge-yellow{background:#f59e0b22;color:#f59e0b}
+.badge-red{background:#ef444422;color:#ef4444}
+.badge-purple{background:#7c3aed22;color:#a78bfa}
+.badge-gray{background:#6b728022;color:#9ca3af}
+
+/* ── SIDEBAR LINK ── */
+.pg-nav-link{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--radius2);color:var(--muted2);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.15s;margin-bottom:2px;text-decoration:none}
+.pg-nav-link:hover{background:var(--bg4);color:var(--text)}
+.pg-nav-link.active{background:var(--purple);color:white;font-weight:600}
+.pg-nav-link.active:hover{background:var(--purple2)}
+
+/* ── STAT CARD ── */
+.pg-stat{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden}
+.pg-stat::before{content:'';position:absolute;top:0;right:0;width:100px;height:100px;background:var(--purple-dim);border-radius:50%;transform:translate(30px,-30px)}
+
+/* ── FORM GROUP ── */
+.pg-form-group{margin-bottom:20px}
+
+/* ── MODAL ── */
+.pg-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.pg-modal{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius3);padding:28px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto}
+.pg-modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.pg-modal-title{font-size:18px;font-weight:700;color:var(--text)}
+.pg-modal-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:20px;padding:4px;border-radius:6px;transition:all 0.15s}
+.pg-modal-close:hover{background:var(--bg4);color:var(--text)}
+
+/* ── SEARCH ── */
+.pg-search{display:flex;align-items:center;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--radius2);padding:9px 14px;gap:10px;flex:1}
+.pg-search input{background:transparent;border:none;color:var(--text);outline:none;font-size:13px;width:100%}
+.pg-search input::placeholder{color:var(--muted)}
+.pg-search-icon{color:var(--muted);font-size:15px;flex-shrink:0}
+
+/* ── HELPERS ── */
+.pg-gradient-purple{background:linear-gradient(135deg,var(--purple3),var(--purple))}
+.pg-glow-purple{box-shadow:0 4px 20px var(--purple-glow)}
+.pg-divider{height:1px;background:var(--border);margin:16px 0}
+
+/* ── LIGHT MODE: tabla + inputs override ── */
+html.light-mode .pg-table td{color:var(--text2)}
+html.light-mode .pg-table th{color:var(--muted)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .pg-hide-mobile{display:none!important}
+  .pg-main{margin-left:0!important}
+  .pg-sidebar{transform:translateX(-100%)!important}
+}
+
+/* ── Animación de click/hover para botones de la tienda pública
+   (producto, carrito, checkout). Clase nueva: no afecta nada existente. ── */
+.pg-anim-btn{transition:transform .15s ease, box-shadow .15s ease, filter .15s ease, opacity .15s ease}
+.pg-anim-btn:hover:not(:disabled){filter:brightness(1.06);transform:translateY(-2px)}
+.pg-anim-btn:active:not(:disabled){transform:scale(.95);filter:brightness(.97)}
+
+/* ── Icono de papelera personalizado para modales de eliminar (SweetAlert2) ── */
+.pg-trash-icon{border-color:transparent!important;background:rgba(239,68,68,.12)!important}
+.pg-trash-icon .swal2-icon-content{font-size:42px!important}
+
+
+/* ==========================================================
+   FIX FINAL RAUL - responsive PC/Móvil + espacio inferior
+   Evita que la barra de Windows / móvil tape botones y contenido.
+   ========================================================== */
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+
+.pg-app-root,
+.pg-public-root {
+  min-height: 100dvh !important;
+}
+
+.pg-app-content,
+.pg-public-main > div,
+.cpe-page,
+.detalle-public-page {
+  padding-bottom: calc(115px + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+.pg-app-sidebar,
+.pg-public-scroll {
+  padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px)) !important;
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed transparent;
+}
+
+/* El menú completo debe poder bajar: no dejar el cupón/logout pegado debajo */
+.pg-app-sidebar {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+.pg-app-sidebar .pg-sidebar-nav-scroll {
+  flex: 0 0 auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+/* Compacto para laptops/PC con poca altura: se ve más contenido sin agrandarse */
+@media (min-width: 901px) and (max-height: 820px) {
+  .pg-app-sidebar { width: 208px !important; }
+  .pg-app-main { margin-left: 208px !important; }
+  .pg-app-topbar { height: 52px !important; min-height: 52px !important; padding: 0 18px !important; }
+  .pg-app-content { padding: 18px !important; padding-bottom: 115px !important; }
+
+  .pg-public-scroll { width: 192px !important; }
+  .pg-public-main { margin-left: 192px !important; }
+  .pg-public-header { height: 56px !important; min-height: 56px !important; padding: 0 18px !important; }
+  .pg-public-main > div { padding-bottom: 115px !important; }
+}
+
+/* En móvil no usar sidebar fija: debe fluir y permitir scroll normal */
+@media (max-width: 900px) {
+  .pg-app-root,
+  .pg-public-root {
+    display: block !important;
+    min-height: auto !important;
+  }
+  .pg-app-sidebar,
+  .pg-public-scroll {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    bottom: auto !important;
+    padding-bottom: 10px !important;
+    overflow: visible !important;
+  }
+  .pg-app-main,
+  .pg-public-main {
+    margin-left: 0 !important;
+    min-height: auto !important;
+  }
+  .pg-app-content,
+  .pg-public-main > div,
+  .cpe-page,
+  .detalle-public-page {
+    padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* Grillas responsive generales de la tienda */
+@media (max-width: 1100px) {
+  .pub-product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 820px) {
+  .pub-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 520px) {
+  .pub-product-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ==========================================================
+   FIX V4 RAUL - quitar botón visible de salir de cuenta + flechas
+   ========================================================== */
+html {
+  overflow-y: auto !important;
+  scrollbar-gutter: stable both-edges;
+}
+body {
+  overflow-y: auto !important;
+}
+::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+::-webkit-scrollbar-track {
+  background: rgba(124, 58, 237, .06) !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #7c3aed !important;
+  border-radius: 999px !important;
+  border: 2px solid rgba(255,255,255,.35) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9 !important;
+}
+.pg-scroll-controls {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2147482000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: auto;
+}
+.pg-scroll-controls button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(124, 58, 237, .28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .92);
+  color: #7c3aed;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 10px 25px rgba(15,23,42,.16);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
+}
+.pg-scroll-controls button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(124,58,237,.22);
+}
+.pg-scroll-controls button:disabled {
+  opacity: .38;
+  cursor: default;
+}
+html:not(.light-mode) .pg-scroll-controls button {
+  background: rgba(14,14,26,.92);
+  color: #c4b5fd;
+  border-color: rgba(196,181,253,.28);
+}
+.pg-app-content,
+.pg-public-main > div,
+.cpe-page,
+.detalle-public-page {
+  padding-bottom: calc(140px + env(safe-area-inset-bottom, 0px)) !important;
+}
+@media (max-width: 900px) {
+  .pg-scroll-controls {
+    right: 10px;
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+    top: auto;
+    transform: none;
+  }
+  .pg-scroll-controls button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ==========================================================
+   FIX V5 RAUL - móvil real, sin logout visible y flechas al lado
+   ========================================================== */
+html, body, #root {
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden !important;
+}
+body {
+  overflow-y: auto !important;
+  touch-action: pan-y;
+}
+
+/* Flechas visibles al costado derecho en PC y celular */
+.pg-scroll-controls {
+  position: fixed !important;
+  right: 10px !important;
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  z-index: 2147482500 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  pointer-events: auto !important;
+}
+.pg-scroll-controls button {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(124,58,237,.30) !important;
+  background: rgba(255,255,255,.96) !important;
+  color: #7c3aed !important;
+  box-shadow: 0 12px 28px rgba(15,23,42,.18) !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  backdrop-filter: blur(8px) !important;
+}
+.pg-scroll-controls button:disabled { opacity: .45 !important; }
+
+/* FIX V6: botón de cerrar sesión solo se oculta en sidebar, no en cabecera */
+
+@media (max-width: 900px) {
+  .pg-app-root,
+  .pg-public-root {
+    display: block !important;
+    min-height: 100dvh !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .pg-app-sidebar,
+  .pg-public-scroll {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    z-index: 700 !important;
+    display: block !important;
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--border, var(--pg-border)) !important;
+  }
+
+  .pg-app-sidebar > a,
+  .pg-public-scroll > button {
+    padding: 10px 14px 6px !important;
+  }
+
+  .pg-sidebar-profile,
+  .pg-sidebar-promo,
+  .pg-sidebar-support,
+  .pg-public-scroll > div:last-child {
+    display: none !important;
+  }
+
+  .pg-app-sidebar nav.pg-sidebar-nav-scroll,
+  .pg-public-scroll nav {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 6px 10px 10px !important;
+    scroll-snap-type: x proximity !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .pg-app-sidebar nav.pg-sidebar-nav-scroll > div {
+    display: flex !important;
+    gap: 6px !important;
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+  }
+
+  .pg-app-sidebar nav a,
+  .pg-public-scroll nav button {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+    margin: 0 !important;
+    padding: 9px 13px !important;
+    border-radius: 9px !important;
+    font-size: 13px !important;
+    scroll-snap-align: start !important;
+  }
+
+  .pg-app-main,
+  .pg-public-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .pg-app-topbar,
+  .pg-public-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 650 !important;
+    height: auto !important;
+    min-height: 56px !important;
+    padding: 8px 12px !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+  }
+
+  .pg-app-topbar h2 {
+    width: auto !important;
+    flex: 1 1 auto !important;
+    min-width: 95px !important;
+    font-size: 16px !important;
+  }
+
+  .pg-app-search,
+  .pg-public-header-search {
+    order: 3 !important;
+    flex: 1 0 100% !important;
+    max-width: none !important;
+    width: 100% !important;
+    height: 40px !important;
+  }
+
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    width: auto !important;
+    margin-left: auto !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .pg-public-header-actions > span { display: none !important; }
+  .pg-app-profile-chip { min-width: 42px !important; max-width: 150px !important; }
+
+  .pg-app-content,
+  .pg-public-main > div,
+  .cpe-page,
+  .detalle-public-page {
+    padding: 16px 12px calc(140px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .pg-app-topbar,
+  .pg-public-header {
+    padding: 8px 10px !important;
+  }
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    gap: 5px !important;
+  }
+  .pg-topbar-icon-btn,
+  .pg-public-theme-btn {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+  }
+  .pg-app-profile-chip > div:nth-child(2),
+  .pg-app-profile-chip > span {
+    display: none !important;
+  }
+  .pg-app-profile-chip {
+    padding: 5px !important;
+    width: 38px !important;
+    justify-content: center !important;
+  }
+  .pg-public-account-btn,
+  .pg-public-login-btn,
+  .pg-public-cart-btn {
+    min-height: 38px !important;
+    padding: 7px 9px !important;
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .pg-app-content,
+  .pg-public-main > div,
+  .cpe-page,
+  .detalle-public-page {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .pg-scroll-controls {
+    right: 6px !important;
+  }
+  .pg-scroll-controls button {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+
+/* ==========================================================
+   FIX V6 RAUL - restaurar cerrar sesión en cabecera y quitar flechas flotantes
+   ========================================================== */
+.pg-scroll-controls {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* El botón rojo debe verse en la cabecera, pero NO en el menú lateral */
+.pg-app-topbar .pg-logout-action-btn,
+.pg-public-header .pg-logout-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+}
+.pg-app-sidebar .pg-sidebar-logout,
+.pg-public-scroll .pg-public-logout,
+.pg-sidebar-logout-zone {
+  display: none !important;
+}
+
+/* Scrollbar visible, sin botones flotantes encima del contenido */
+html, body, #root {
+  overflow-x: hidden !important;
+}
+html, body {
+  overflow-y: auto !important;
+}
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #7c3aed rgba(124,58,237,.10);
+}
+::-webkit-scrollbar {
+  width: 13px !important;
+  height: 13px !important;
+}
+::-webkit-scrollbar-track {
+  background: rgba(124,58,237,.10) !important;
+  border-radius: 999px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,#7c3aed,#9333ea) !important;
+  border-radius: 999px !important;
+  border: 3px solid rgba(255,255,255,.45) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9 !important;
+}
+
+@media (max-width: 900px) {
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    gap: 6px !important;
+    flex-wrap: nowrap !important;
+  }
+  .pg-app-topbar .pg-logout-action-btn,
+  .pg-public-header .pg-logout-action-btn {
+    min-width: 42px !important;
+    width: 42px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    border-radius: 9px !important;
+  }
+  .pg-app-topbar .pg-logout-text,
+  .pg-public-header .pg-logout-text {
+    display: none !important;
+  }
+  .pg-app-content,
+  .pg-public-main > div,
+  .cpe-page,
+  .detalle-public-page {
+    padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .pg-app-topbar .pg-logout-action-btn,
+  .pg-public-header .pg-logout-action-btn {
+    min-height: 36px !important;
+  }
+}
+
+
+/* ==========================================================
+   FIX V8 - barra derecha limpia + botón salir en su sitio
+   Quita el carril negro/grueso del borde derecho y deja el
+   scroll nativo, delgado y limpio en PC y móvil.
+   ========================================================== */
+html {
+  scrollbar-gutter: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+body, #root {
+  overflow-x: hidden !important;
+}
+
+/* Sin flechas flotantes personalizadas: solo scrollbar del navegador */
+.pg-scroll-controls {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Scrollbar general más fino y sin franja negra al lado derecho */
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: #7c3aed #f6f7ff !important;
+}
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+::-webkit-scrollbar-track {
+  background: #f6f7ff !important;
+  border-radius: 0 !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #7c3aed !important;
+  border-radius: 999px !important;
+  border: 2px solid #f6f7ff !important;
+  background-clip: padding-box !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9 !important;
+}
+html:not(.light-mode) ::-webkit-scrollbar-track {
+  background: #111827 !important;
+}
+html:not(.light-mode) ::-webkit-scrollbar-thumb {
+  border-color: #111827 !important;
+}
+
+/* El botón cerrar sesión debe quedarse arriba, antes del botón de tema */
+.pg-app-topbar .pg-app-logout-action-btn {
+  order: -1 !important;
+  display: inline-flex !important;
+}
+
+/* En pantallas pequeñas el botón se mantiene como icono, sin romper cabecera */
+@media (max-width: 900px) {
+  .pg-app-topbar .pg-app-logout-action-btn {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 38px !important;
+    padding: 0 !important;
+  }
+  .pg-app-topbar .pg-app-logout-action-btn .pg-logout-text {
+    display: none !important;
+  }
+}
+
+/* ==========================================================
+   FIX V9 RAUL - scrollbar derecho visible y limpio
+   Objetivo: que la raya/barra de scroll se vea en el costado
+   derecho sin franja negra y sin botones flotantes.
+   ========================================================== */
+html,
+body,
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+html {
+  overflow-y: scroll !important; /* siempre muestra la raya del scroll */
+  scrollbar-gutter: stable !important;
+  scrollbar-width: auto !important;
+  scrollbar-color: #7c3aed #eef0ff !important;
+  background: #eef0ff !important;
+}
+
+html.light-mode,
+html.light-mode body {
+  background: #f4f6ff !important;
+}
+
+body {
+  overflow-y: visible !important;
+  min-height: 100dvh !important;
+}
+
+/* Borrar por completo las flechas flotantes que estaban mal */
+.pg-scroll-controls,
+.pg-scroll-controls *,
+button.pg-scroll-up,
+button.pg-scroll-down {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Scrollbar del navegador: visible, morado y sin franja negra */
+::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef0ff !important;
+  border-left: 1px solid #d8dcf2 !important;
+  border-radius: 0 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c3aed !important;
+  border-radius: 999px !important;
+  border: 3px solid #eef0ff !important;
+  background-clip: padding-box !important;
+  min-height: 44px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9 !important;
+}
+
+html:not(.light-mode) {
+  scrollbar-color: #a78bfa #111827 !important;
+  background: #111827 !important;
+}
+
+html:not(.light-mode) ::-webkit-scrollbar-track {
+  background: #111827 !important;
+  border-left: 1px solid #1f2937 !important;
+}
+
+html:not(.light-mode) ::-webkit-scrollbar-thumb {
+  background: #a78bfa !important;
+  border-color: #111827 !important;
+}
+
+/* Mantener el botón Cerrar sesión donde corresponde: en la cabecera */
+.pg-app-topbar .pg-app-logout-action-btn,
+.pg-app-topbar .pg-logout-action-btn,
+.pg-public-header .pg-app-logout-action-btn,
+.pg-public-header .pg-logout-action-btn {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Pero no mostrarlo en el menú lateral */
+.pg-app-sidebar .pg-sidebar-logout,
+.pg-public-scroll .pg-public-logout,
+.pg-sidebar-logout-zone {
+  display: none !important;
+}
