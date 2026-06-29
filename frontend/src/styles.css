@@ -1398,10 +1398,6 @@ a.nav-link:active,
   }
 }
 
-/* =========================================================
-   FLECHA PARA MINIMIZAR SIDEBAR PARTGO
-   Usuario + Admin
-   ========================================================= */
 
 .pg-public-scroll,
 .pg-app-sidebar {
@@ -1509,5 +1505,143 @@ a.nav-link:active,
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+  }
+}
+/* =========================================================
+   SIDEBAR COLAPSABLE PARTGO
+   Flecha para minimizar usuario/admin
+   ========================================================= */
+
+.pg-public-root,
+.pg-app-root {
+  display: grid !important;
+  grid-template-columns: 205px minmax(0, 1fr) !important;
+  width: 100% !important;
+}
+
+.pg-public-root.pg-sidebar-is-collapsed,
+.pg-app-root.pg-sidebar-is-collapsed {
+  grid-template-columns: 78px minmax(0, 1fr) !important;
+}
+
+.pg-public-scroll,
+.pg-app-sidebar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 205px !important;
+  min-width: 205px !important;
+  max-width: 205px !important;
+  height: 100vh !important;
+  overflow: visible !important;
+  transition: width 0.25s ease, min-width 0.25s ease, max-width 0.25s ease;
+  z-index: 50 !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized,
+.pg-app-sidebar.pg-sidebar-minimized {
+  width: 78px !important;
+  min-width: 78px !important;
+  max-width: 78px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.pg-public-main,
+.pg-app-main {
+  margin-left: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Flecha lateral */
+.pg-sidebar-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: -17px !important;
+  transform: translateY(-50%) !important;
+  width: 34px !important;
+  height: 72px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #a855f7, #6d28d9) !important;
+  color: #ffffff !important;
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+  z-index: 99999 !important;
+  box-shadow: 0 12px 28px rgba(109, 40, 217, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.pg-sidebar-toggle-btn:hover {
+  filter: brightness(1.12);
+}
+
+/* Ocultar textos al minimizar */
+.pg-public-scroll.pg-sidebar-minimized nav a span:not(:first-child),
+.pg-public-scroll.pg-sidebar-minimized nav button span:not(:first-child),
+.pg-app-sidebar.pg-sidebar-minimized nav a span:not(:first-child),
+.pg-app-sidebar.pg-sidebar-minimized nav button span:not(:first-child) {
+  display: none !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized nav a,
+.pg-public-scroll.pg-sidebar-minimized nav button,
+.pg-app-sidebar.pg-sidebar-minimized nav a,
+.pg-app-sidebar.pg-sidebar-minimized nav button {
+  justify-content: center !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized h1,
+.pg-public-scroll.pg-sidebar-minimized h2,
+.pg-public-scroll.pg-sidebar-minimized p,
+.pg-app-sidebar.pg-sidebar-minimized h1,
+.pg-app-sidebar.pg-sidebar-minimized h2,
+.pg-app-sidebar.pg-sidebar-minimized p,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-promo,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-promo,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-profile,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-profile,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-support,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-support,
+.pg-public-scroll.pg-sidebar-minimized .pg-sect-label,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sect-label {
+  display: none !important;
+}
+
+/* En celular no se fuerza sidebar lateral */
+@media (max-width: 768px) {
+  .pg-public-root,
+  .pg-app-root,
+  .pg-public-root.pg-sidebar-is-collapsed,
+  .pg-app-root.pg-sidebar-is-collapsed {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .pg-public-scroll,
+  .pg-app-sidebar,
+  .pg-public-scroll.pg-sidebar-minimized,
+  .pg-app-sidebar.pg-sidebar-minimized {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .pg-sidebar-toggle-btn {
+    top: 12px !important;
+    right: 12px !important;
+    transform: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    font-size: 22px !important;
   }
 }
