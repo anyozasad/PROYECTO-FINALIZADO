@@ -1127,114 +1127,211 @@ a.nav-link:active,
 }
 /* =========================================================
    PARTGO MOBILE FIX LIMPIO
-   Home + Usuario + Admin responsive correcto
+   Login + Home usuario + Admin tablas
    ========================================================= */
 
 @media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+
   html,
   body,
   #root {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
-    overflow-x: auto !important;
+    overflow-x: hidden !important;
     overflow-y: auto !important;
   }
 
   body {
     margin: 0 !important;
-    background: #070912 !important;
+    background: #060811 !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
-  /* Layout general */
-  .pg-public-root,
-  .pg-app-root {
+  /* =========================
+     LOGIN BONITO CELULAR
+     ========================= */
+
+  .login-shell {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
-    display: block !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 18px 14px !important;
     overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background: #060811 !important;
   }
 
+  .login-panel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 390px !important;
+    margin: 0 auto !important;
+    padding: 26px 18px !important;
+    border-radius: 22px !important;
+    border-right: 0 !important;
+  }
+
+  .login-panel h1 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+  }
+
+  .login-input {
+    height: 48px !important;
+    font-size: 16px !important;
+  }
+
+  .login-primary {
+    min-height: 48px !important;
+    font-size: 15px !important;
+  }
+
+  .login-social {
+    min-height: 46px !important;
+    font-size: 13px !important;
+  }
+
+  .login-hero,
+  .trust-strip {
+    display: none !important;
+  }
+
+  .login-back {
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 9999 !important;
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+  }
+
+  /* =========================
+     HOME / USUARIO
+     Corrige columnas rotas con estilos inline
+     ========================= */
+
+  .pg-public-root,
   .pg-public-main,
+  .pg-app-root,
   .pg-app-main {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
     margin-left: 0 !important;
+    display: block !important;
     overflow-x: hidden !important;
   }
 
-  .pg-public-page,
   .pg-public-main > div,
   .pg-app-content {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
     padding: 12px !important;
-    box-sizing: border-box !important;
     overflow-x: hidden !important;
   }
 
-  /* Menú usuario/admin arriba y deslizable */
+  div[style*="margin: -24px"] {
+    margin: 0 !important;
+    padding-bottom: 80px !important;
+  }
+
+  div[style*="grid-template-columns: 1fr 288px"],
+  div[style*="grid-template-columns: 1fr 288px;"] {
+    display: block !important;
+  }
+
+  div[style*="grid-template-columns: repeat(4, 1fr)"],
+  div[style*="grid-template-columns: repeat(4,1fr)"],
+  div[style*="grid-template-columns: repeat(6, 1fr)"],
+  div[style*="grid-template-columns: repeat(6,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  div[style*="top: 58px"][style*="max-height"],
+  div[style*="calc(100dvh - 150px)"] {
+    position: static !important;
+    top: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border-left: 0 !important;
+    margin-top: 16px !important;
+  }
+
+  .cat-card,
+  .prod-card,
+  .benefit-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .prod-img-wrap {
+    height: 170px !important;
+  }
+
+  .cat-img,
+  .prod-img-wrap img {
+    max-width: 90% !important;
+    object-fit: contain !important;
+  }
+
+  /* Menú usuario arriba deslizable */
   .pg-public-scroll,
   .pg-app-sidebar {
     position: sticky !important;
     top: 0 !important;
     width: 100% !important;
-    min-width: 0 !important;
     max-width: 100% !important;
     height: auto !important;
-    min-height: 0 !important;
     max-height: none !important;
     padding: 8px !important;
-    z-index: 9999 !important;
     display: block !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    border-right: none !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    -webkit-overflow-scrolling: touch !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+    z-index: 9999 !important;
   }
 
   .pg-public-scroll nav,
   .pg-app-sidebar nav {
-    width: 100% !important;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     gap: 8px !important;
-    padding: 4px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
+    padding: 4px !important;
     white-space: nowrap !important;
-    -webkit-overflow-scrolling: touch !important;
   }
 
   .pg-app-sidebar nav > div {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;
     gap: 8px !important;
     min-width: max-content !important;
   }
 
   .pg-public-scroll nav button,
-  .pg-app-sidebar nav a,
-  .pg-public-nav-button,
-  .pg-nav-link {
+  .pg-app-sidebar nav a {
     flex: 0 0 auto !important;
-    min-width: 92px !important;
-    height: 48px !important;
+    min-width: 90px !important;
+    height: 46px !important;
     padding: 8px 12px !important;
     border-radius: 12px !important;
     font-size: 11px !important;
-    line-height: 1.1 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 6px !important;
     white-space: nowrap !important;
   }
 
@@ -1245,25 +1342,21 @@ a.nav-link:active,
     display: none !important;
   }
 
-  /* Header */
+  /* Header usuario/admin */
   .pg-public-header,
   .pg-app-topbar {
-    position: relative !important;
     width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
     height: auto !important;
+    min-height: auto !important;
     padding: 10px !important;
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 8px !important;
-    overflow: hidden !important;
   }
 
   .pg-public-header-search,
   .pg-app-search {
     width: 100% !important;
-    min-width: 0 !important;
     max-width: 100% !important;
     flex: 1 0 100% !important;
   }
@@ -1275,145 +1368,9 @@ a.nav-link:active,
     flex-wrap: nowrap !important;
     gap: 8px !important;
     overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
   }
 
-  .pg-public-header-actions > *,
-  .pg-app-top-actions > * {
-    flex: 0 0 auto !important;
-  }
-
-  /* Home */
-  .store-header,
-  .store-hero,
-  .store-section,
-  .store-features,
-  .store-categories,
-  .store-products {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 14px !important;
-    padding-right: 14px !important;
-    box-sizing: border-box !important;
-  }
-
-  .store-header {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 12px !important;
-  }
-
-  .store-nav {
-    width: 100% !important;
-    justify-content: flex-start !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  .store-nav a,
-  .store-nav button {
-    flex: 0 0 auto !important;
-  }
-
-  .store-hero {
-    min-height: auto !important;
-    padding-top: 22px !important;
-    padding-bottom: 22px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: left !important;
-    gap: 16px !important;
-  }
-
-  .store-hero h1,
-  .store-hero h2 {
-    font-size: 28px !important;
-    line-height: 1.15 !important;
-  }
-
-  .store-hero p {
-    font-size: 14px !important;
-    line-height: 1.45 !important;
-  }
-
-  .store-hero img,
-  .hero-img,
-  .banner-img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 260px !important;
-    object-fit: cover !important;
-    border-radius: 18px !important;
-  }
-
-  .store-features {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  .store-feature {
-    width: 100% !important;
-    padding: 16px !important;
-  }
-
-  /* Productos y categorías */
-  .store-product-grid,
-  .product-grid,
-  .products-grid,
-  .pub-product-grid,
-  .pub-cat-grid {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
-  .store-product-card,
-  .product-card,
-  .producto-card,
-  .pub-cat-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    border-radius: 16px !important;
-    overflow: hidden !important;
-  }
-
-  .store-product-img,
-  .product-image,
-  .producto-img,
-  .pub-cat-img {
-    width: 100% !important;
-    height: 170px !important;
-    object-fit: contain !important;
-  }
-
-  .store-category-list,
-  .category-list,
-  .categorias-lista,
-  .pub-cat-sidebar {
-    width: 100% !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    white-space: nowrap !important;
-    padding: 8px 0 !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  .store-category-list button,
-  .category-list button,
-  .categorias-lista button,
-  .pub-cat-sidebar button {
-    flex: 0 0 auto !important;
-    min-width: max-content !important;
-  }
-
-  /* Admin: tablas con scroll lateral */
+  /* Admin: tablas deslizan lateral */
   .pg-card,
   .admin-card,
   .content-card,
@@ -1421,8 +1378,6 @@ a.nav-link:active,
   .pg-panel {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 14px !important;
-    border-radius: 16px !important;
     overflow-x: auto !important;
   }
 
@@ -1433,7 +1388,6 @@ a.nav-link:active,
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: auto !important;
-    overflow-y: visible !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
@@ -1441,65 +1395,5 @@ a.nav-link:active,
   .pg-table {
     min-width: 760px !important;
     width: max-content !important;
-  }
-
-  /* Formularios */
-  input,
-  select,
-  textarea {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 16px !important;
-  }
-
-  button {
-    max-width: 100% !important;
-  }
-
-  .row,
-  .container,
-  .container-fluid {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  [class*="col-"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-  }
-
-  /* Login */
-  .login-page,
-  .login-shell {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    min-height: 100dvh !important;
-    padding: 16px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    overflow-x: hidden !important;
-  }
-
-  .login-card,
-  .login-panel {
-    width: 100% !important;
-    max-width: 390px !important;
-    min-width: 0 !important;
-    margin: 0 auto !important;
-    padding: 24px 18px !important;
-    border-radius: 22px !important;
-    transform: none !important;
-  }
-
-  .login-hero,
-  .login-side,
-  .login-right,
-  .login-decoration {
-    display: none !important;
   }
 }
