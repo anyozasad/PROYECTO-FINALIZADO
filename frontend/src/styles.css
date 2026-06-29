@@ -1714,3 +1714,181 @@ a.nav-link:active,
     display: none !important;
   }
 }
+
+/* =========================================================
+   SIDEBAR PARTGO - CERRADO COMPLETO + PESTAÑA BONITA
+   Cuando se minimiza, desaparece completo el menú
+   ========================================================= */
+
+/* Layout normal abierto */
+.pg-public-root,
+.pg-app-root {
+  display: grid !important;
+  grid-template-columns: 205px minmax(0, 1fr) !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.pg-public-main,
+.pg-app-main {
+  margin-left: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Sidebar abierto */
+.pg-public-scroll,
+.pg-app-sidebar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 205px !important;
+  min-width: 205px !important;
+  max-width: 205px !important;
+  height: 100vh !important;
+  overflow: visible !important;
+  z-index: 80 !important;
+  transition:
+    width 0.25s ease,
+    min-width 0.25s ease,
+    max-width 0.25s ease,
+    padding 0.25s ease,
+    opacity 0.25s ease !important;
+}
+
+/* Cuando se cierra: el menú se va completo */
+.pg-public-root.pg-sidebar-is-collapsed,
+.pg-app-root.pg-sidebar-is-collapsed {
+  grid-template-columns: 0 minmax(0, 1fr) !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized,
+.pg-app-sidebar.pg-sidebar-minimized {
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-right: 0 !important;
+  background: transparent !important;
+}
+
+/* Oculta TODO el contenido del sidebar cuando está cerrado */
+.pg-public-scroll.pg-sidebar-minimized > *:not(.pg-sidebar-toggle-btn),
+.pg-app-sidebar.pg-sidebar-minimized > *:not(.pg-sidebar-toggle-btn) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Botón flecha: abierto, casi invisible y elegante */
+.pg-sidebar-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: -10px !important;
+  transform: translateY(-50%) !important;
+
+  width: 20px !important;
+  height: 58px !important;
+
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
+  border-left: 0 !important;
+  border-radius: 0 16px 16px 0 !important;
+
+  background: rgba(12, 10, 24, 0.45) !important;
+  backdrop-filter: blur(10px) !important;
+
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+
+  cursor: pointer !important;
+  z-index: 999999 !important;
+  box-shadow: none !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  opacity: 0.18 !important;
+  transition:
+    opacity 0.22s ease,
+    width 0.22s ease,
+    right 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.15s ease !important;
+}
+
+/* Aparece bonito cuando pasas el mouse por la raya */
+.pg-public-scroll:hover .pg-sidebar-toggle-btn,
+.pg-app-sidebar:hover .pg-sidebar-toggle-btn,
+.pg-sidebar-toggle-btn:hover {
+  opacity: 1 !important;
+  width: 26px !important;
+  right: -13px !important;
+  background: rgba(109, 40, 217, 0.38) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.24) !important;
+}
+
+/* Cuando está cerrado, solo queda una pestañita para abrir */
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-toggle-btn,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-toggle-btn {
+  right: -34px !important;
+  width: 28px !important;
+  height: 72px !important;
+  opacity: 0.65 !important;
+
+  border-radius: 0 18px 18px 0 !important;
+  border: 1px solid rgba(168, 85, 247, 0.35) !important;
+  border-left: 0 !important;
+
+  background: rgba(20, 15, 35, 0.78) !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Hover cuando está cerrado */
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-toggle-btn:hover,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-toggle-btn:hover {
+  opacity: 1 !important;
+  width: 34px !important;
+  right: -40px !important;
+  background: linear-gradient(180deg, #8b5cf6, #6d28d9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Click suave */
+.pg-sidebar-toggle-btn:active {
+  transform: translateY(-50%) scale(0.94) !important;
+}
+
+/* En celular no mostrar esa flecha lateral */
+@media (max-width: 768px) {
+  .pg-public-root,
+  .pg-app-root,
+  .pg-public-root.pg-sidebar-is-collapsed,
+  .pg-app-root.pg-sidebar-is-collapsed {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .pg-public-scroll,
+  .pg-app-sidebar,
+  .pg-public-scroll.pg-sidebar-minimized,
+  .pg-app-sidebar.pg-sidebar-minimized {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .pg-sidebar-toggle-btn {
+    display: none !important;
+  }
+}
