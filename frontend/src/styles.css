@@ -1529,3 +1529,529 @@ img {
     min-width: 700px;
   }
 }
+/* =========================================================
+   PARTGO FIX MOBILE REAL
+   Admin + Usuario + Público + Scroll celular
+   Pegar al FINAL de src/index.css
+   ========================================================= */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: auto;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+/* Evita que tablas, cards o grids revienten el ancho */
+.pg-app-content,
+.pg-public-main,
+.pg-public-page,
+.pub-categorias-page,
+.pub-pedidos-page,
+.pub-carrito-page,
+.pub-checkout-page,
+.detalle-public-page {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tablas responsivas */
+.pg-card,
+.pg-table-wrap,
+.content-card,
+.admin-card {
+  max-width: 100%;
+  overflow-x: auto !important;
+}
+
+/* =========================================================
+   MOBILE GENERAL
+   ========================================================= */
+
+@media (max-width: 900px) {
+  html,
+  body {
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body {
+    padding: 0 !important;
+  }
+
+  /* Quita trabas de scroll por layouts fijos */
+  .pg-app-root,
+  .pg-public-root {
+    display: block !important;
+    width: 100% !important;
+    min-height: 100dvh !important;
+    overflow: visible !important;
+  }
+
+  /* =====================================================
+     SIDEBAR ADMIN Y USUARIO COMO MENÚ INFERIOR
+     ===================================================== */
+
+  .pg-app-sidebar,
+  .pg-public-scroll {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 68px !important;
+    min-height: 68px !important;
+    max-height: 68px !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 0 !important;
+    border-right: 0 !important;
+    border-top: 1px solid var(--pg-border, var(--border)) !important;
+    border-bottom: 0 !important;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, .28) !important;
+    scrollbar-width: none !important;
+  }
+
+  .pg-app-sidebar::-webkit-scrollbar,
+  .pg-public-scroll::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Oculta logo/perfil/promos en móvil para que no ocupe todo */
+  .pg-app-sidebar > a,
+  .pg-app-sidebar .pg-sidebar-profile,
+  .pg-app-sidebar .pg-sidebar-promo,
+  .pg-app-sidebar .pg-sidebar-support,
+  .pg-app-sidebar .pg-sect-label,
+  .pg-public-scroll > button,
+  .pg-public-scroll > div:last-child {
+    display: none !important;
+  }
+
+  .pg-app-sidebar nav,
+  .pg-public-scroll nav {
+    width: 100% !important;
+    height: 68px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 8px 10px !important;
+    margin: 0 !important;
+    flex: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .pg-app-sidebar nav::-webkit-scrollbar,
+  .pg-public-scroll nav::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .pg-app-sidebar nav > div {
+    display: flex !important;
+    gap: 6px !important;
+    min-width: max-content !important;
+  }
+
+  .pg-app-sidebar nav a,
+  .pg-public-scroll nav button {
+    width: auto !important;
+    min-width: 72px !important;
+    height: 50px !important;
+    margin: 0 !important;
+    padding: 7px 10px !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    text-align: center !important;
+    font-size: 10px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+
+  .pg-app-sidebar nav a span,
+  .pg-public-scroll nav button span {
+    max-width: 68px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .pg-app-sidebar nav a span:first-child,
+  .pg-public-scroll nav button span:first-child {
+    font-size: 16px !important;
+    width: auto !important;
+  }
+
+  /* =====================================================
+     MAIN CONTENT
+     ===================================================== */
+
+  .pg-app-main,
+  .pg-public-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+    min-height: 100dvh !important;
+    padding-bottom: 82px !important;
+    overflow: visible !important;
+  }
+
+  .pg-app-content {
+    padding: 12px !important;
+    padding-bottom: 92px !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* =====================================================
+     TOPBAR ADMIN / USUARIO
+     ===================================================== */
+
+  .pg-app-topbar,
+  .pg-public-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9000 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 58px !important;
+    padding: 10px 12px !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .18) !important;
+  }
+
+  .pg-app-topbar h2 {
+    width: 100% !important;
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  .pg-app-search,
+  .pg-public-header-search {
+    order: 3 !important;
+    flex: 1 0 100% !important;
+    max-width: none !important;
+    width: 100% !important;
+    height: 42px !important;
+  }
+
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    width: 100% !important;
+    margin-left: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    align-items: stretch !important;
+  }
+
+  .pg-app-top-actions .pg-topbar-icon-btn,
+  .pg-public-theme-btn,
+  .pg-public-cart-btn,
+  .pg-public-login-btn,
+  .pg-public-account-btn,
+  .pg-logout-action-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 40px !important;
+    justify-content: center !important;
+  }
+
+  .pg-public-header-actions > span {
+    display: none !important;
+  }
+
+  .pg-logout-text {
+    display: none !important;
+  }
+
+  /* =====================================================
+     CARDS / GRIDS / FORMULARIOS
+     ===================================================== */
+
+  .pg-card,
+  .pg-stat,
+  .content-card,
+  .admin-card,
+  .metric-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 16px !important;
+    padding: 14px !important;
+    overflow-x: auto !important;
+  }
+
+  .row,
+  .container,
+  .container-fluid {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .pg-table {
+    min-width: 720px !important;
+  }
+
+  table {
+    min-width: 720px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100% !important;
+  }
+
+  .pg-input,
+  .pg-select,
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Botones más tocables */
+  .pg-btn,
+  .pg-btn-outline,
+  .pg-btn-ghost,
+  .pg-btn-danger,
+  .pg-btn-success {
+    min-height: 42px !important;
+  }
+
+  /* Modales no se salen en celular */
+  .pg-modal-overlay {
+    padding: 12px !important;
+    align-items: flex-end !important;
+  }
+
+  .pg-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 88dvh !important;
+    border-radius: 18px 18px 0 0 !important;
+    padding: 18px !important;
+  }
+
+  .swal2-popup {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    border-radius: 18px !important;
+  }
+
+  /* =====================================================
+     LOGIN MOBILE
+     ===================================================== */
+
+  .login-page {
+    min-height: 100dvh !important;
+    padding: 14px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow-x: hidden !important;
+  }
+
+  .login-card {
+    width: 100% !important;
+    max-width: 420px !important;
+    padding: 24px 18px !important;
+    border-radius: 22px !important;
+  }
+
+  .login-card h2 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+  }
+
+  .social-login-buttons,
+  .login-social-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* =====================================================
+     PÁGINAS PÚBLICAS / USUARIO
+     ===================================================== */
+
+  .pg-public-page,
+  .pub-categorias-page,
+  .pub-pedidos-page,
+  .pub-carrito-page,
+  .pub-checkout-page,
+  .pub-ofertas-page,
+  .pub-productos-page,
+  .pub-perfil-page,
+  .pub-ajustes-page,
+  .pub-reclamos-page {
+    width: 100% !important;
+    padding: 14px !important;
+    padding-bottom: 92px !important;
+    display: block !important;
+    min-height: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .pub-cat-sidebar {
+    position: static !important;
+    width: 100% !important;
+    padding: 10px !important;
+    margin-bottom: 12px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--pg-border) !important;
+    overflow-x: auto !important;
+  }
+
+  .pub-cat-sidebar button {
+    width: auto !important;
+    min-width: max-content !important;
+  }
+
+  .pub-cat-grid,
+  .product-grid,
+  .store-product-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .pub-cat-card,
+  .product-card,
+  .store-product-card {
+    width: 100% !important;
+    min-height: auto !important;
+    border-radius: 16px !important;
+  }
+
+  .product-image,
+  .store-product-img,
+  .pub-cat-img {
+    height: 170px !important;
+  }
+
+  /* Checkout / carrito */
+  .checkout-grid,
+  .cart-grid,
+  .store-guest-checkout-wrap {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .checkout-panel,
+  .cart-panel,
+  .store-order-box {
+    width: 100% !important;
+    position: static !important;
+  }
+
+  /* =====================================================
+     SCROLL BUTTONS: en celular estorban, se ocultan
+     ===================================================== */
+
+  .pg-scroll-controls {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .pg-app-content,
+  .pg-public-page,
+  .pub-categorias-page,
+  .pub-pedidos-page,
+  .pub-carrito-page,
+  .pub-checkout-page {
+    padding: 10px !important;
+    padding-bottom: 88px !important;
+  }
+
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .pg-app-profile-chip {
+    display: none !important;
+  }
+
+  .pg-public-logo-text {
+    display: none !important;
+  }
+
+  .pg-public-header > button:first-child span:last-child {
+    display: none !important;
+  }
+
+  .pg-public-cart-btn p {
+    display: none !important;
+  }
+
+  .pg-public-cart-btn {
+    padding: 7px !important;
+  }
+
+  .pg-app-sidebar nav a,
+  .pg-public-scroll nav button {
+    min-width: 64px !important;
+    font-size: 9px !important;
+  }
+
+  .pg-app-sidebar nav a span:first-child,
+  .pg-public-scroll nav button span:first-child {
+    font-size: 17px !important;
+  }
+}
+
+/* =========================================================
+   FIX CONTRA TRABAS DE SCROLL POR ELEMENTOS FIJOS
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  * {
+    scroll-behavior: auto !important;
+  }
+
+  .pg-app-main,
+  .pg-public-main,
+  .pg-app-content,
+  .pg-public-page {
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
