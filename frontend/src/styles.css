@@ -3161,3 +3161,215 @@ body {
     position: static !important;
   }
 }
+/* =========================================================
+   PARTGO MOBILE CLEAN FIX
+   Login responsive + Admin/Usuario con scroll horizontal
+   ========================================================= */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+/* LOGIN EN CELULAR */
+@media (max-width: 768px) {
+  .login-page,
+  .login-shell {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 100dvh !important;
+    padding: 18px 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow-x: hidden !important;
+    background: #070b16 !important;
+  }
+
+  .login-card,
+  .login-panel {
+    width: 100% !important;
+    max-width: 390px !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    padding: 24px 18px !important;
+    border-radius: 22px !important;
+    transform: none !important;
+  }
+
+  .login-card h1,
+  .login-card h2,
+  .login-panel h1,
+  .login-panel h2 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+  }
+
+  .login-card input,
+  .login-panel input {
+    height: 48px !important;
+    font-size: 15px !important;
+  }
+
+  .login-card button,
+  .login-panel button {
+    min-height: 46px !important;
+    font-size: 14px !important;
+  }
+
+  .social-login-buttons,
+  .login-social-grid,
+  .login-social {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .login-hero,
+  .login-side,
+  .login-right,
+  .login-decoration {
+    display: none !important;
+  }
+}
+
+/* ADMIN Y USUARIO EN CELULAR: NO APLASTAR, PERMITIR DESLIZAR */
+@media (max-width: 900px) {
+  body {
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .pg-app-root,
+  .pg-public-root {
+    width: 1100px !important;
+    min-width: 1100px !important;
+    max-width: none !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    overflow: visible !important;
+  }
+
+  .pg-app-sidebar,
+  .pg-public-scroll {
+    width: 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
+    height: 100dvh !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pg-app-main,
+  .pg-public-main {
+    width: 840px !important;
+    min-width: 840px !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+
+  .pg-app-content,
+  .pg-public-page,
+  .pg-public-main > div {
+    width: 840px !important;
+    min-width: 840px !important;
+    max-width: none !important;
+    padding: 20px !important;
+    overflow: visible !important;
+  }
+
+  .pg-app-topbar,
+  .pg-public-header {
+    width: 840px !important;
+    min-width: 840px !important;
+    max-width: none !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 14px 20px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+  }
+
+  .pg-app-search,
+  .pg-public-header-search {
+    width: 300px !important;
+    min-width: 260px !important;
+    max-width: 340px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    margin-left: auto !important;
+  }
+
+  .pg-card,
+  .admin-card,
+  .content-card,
+  .metric-card,
+  .pg-panel {
+    max-width: none !important;
+    overflow-x: auto !important;
+  }
+
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  table,
+  .pg-table {
+    min-width: 850px !important;
+    width: max-content !important;
+  }
+
+  .pub-product-grid,
+  .store-product-grid,
+  .product-grid,
+  .pub-cat-grid,
+  .products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(230px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .product-card,
+  .store-product-card,
+  .pub-cat-card,
+  .producto-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  .product-image,
+  .store-product-img,
+  .pub-cat-img,
+  .producto-img {
+    width: 100% !important;
+    height: 170px !important;
+    object-fit: contain !important;
+  }
+}
