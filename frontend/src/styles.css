@@ -1892,3 +1892,239 @@ a.nav-link:active,
     display: none !important;
   }
 }
+
+/* =========================================================
+   PARTGO MOBILE SCROLL FINO
+   Sin rayas visibles + deslizar izquierda/derecha
+   Usuario + Admin + Formularios + Tablas
+   ========================================================= */
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain !important;
+  }
+
+  /* Oculta barras/rayas de scroll, pero permite deslizar */
+  .pg-x-scroll,
+  .pg-public-main,
+  .pg-app-main,
+  .pg-public-page,
+  .pg-app-content,
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap,
+  .pg-card,
+  .admin-card,
+  .content-card,
+  .metric-card,
+  .pg-panel {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .pg-x-scroll::-webkit-scrollbar,
+  .pg-public-main::-webkit-scrollbar,
+  .pg-app-main::-webkit-scrollbar,
+  .pg-public-page::-webkit-scrollbar,
+  .pg-app-content::-webkit-scrollbar,
+  .pg-table-wrap::-webkit-scrollbar,
+  .table-responsive::-webkit-scrollbar,
+  .admin-table-wrap::-webkit-scrollbar,
+  .content-table-wrap::-webkit-scrollbar,
+  .pg-card::-webkit-scrollbar,
+  .admin-card::-webkit-scrollbar,
+  .content-card::-webkit-scrollbar,
+  .metric-card::-webkit-scrollbar,
+  .pg-panel::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Contenido principal no debe romperse */
+  .pg-public-main,
+  .pg-app-main,
+  .pg-public-page,
+  .pg-app-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  /* Formularios o páginas de 2 columnas: se acomodan bonito */
+  .pg-public-page > div,
+  .pg-app-content > div {
+    max-width: 100% !important;
+  }
+
+  /* Filtros, botones y chips: deslizan horizontal sin raya */
+  .filter-row,
+  .filters-row,
+  .category-filters,
+  .categorias-lista,
+  .category-list,
+  .store-category-list,
+  .pub-cat-sidebar,
+  .tabs-row,
+  .status-tabs,
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    padding-bottom: 4px !important;
+  }
+
+  .filter-row::-webkit-scrollbar,
+  .filters-row::-webkit-scrollbar,
+  .category-filters::-webkit-scrollbar,
+  .categorias-lista::-webkit-scrollbar,
+  .category-list::-webkit-scrollbar,
+  .store-category-list::-webkit-scrollbar,
+  .pub-cat-sidebar::-webkit-scrollbar,
+  .tabs-row::-webkit-scrollbar,
+  .status-tabs::-webkit-scrollbar,
+  .pg-app-top-actions::-webkit-scrollbar,
+  .pg-public-header-actions::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .filter-row > *,
+  .filters-row > *,
+  .category-filters > *,
+  .categorias-lista > *,
+  .category-list > *,
+  .store-category-list > *,
+  .pub-cat-sidebar > *,
+  .tabs-row > *,
+  .status-tabs > *,
+  .pg-app-top-actions > *,
+  .pg-public-header-actions > * {
+    flex: 0 0 auto !important;
+  }
+
+  /* Tablas admin: deslizar derecha/izquierda sin raya */
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap,
+  .pg-card:has(table),
+  .admin-card:has(table),
+  .content-card:has(table) {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 16px !important;
+  }
+
+  table,
+  .pg-table {
+    min-width: 760px !important;
+    width: max-content !important;
+  }
+
+  /* Formularios en celular: que no se partan feo */
+  form,
+  .form-card,
+  .reclamo-form,
+  .libro-form,
+  .checkout-form,
+  .profile-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  /* Si hay layouts de dos columnas, se vuelven una columna bonita */
+  .reclamo-layout,
+  .libro-reclamos-layout,
+  .checkout-grid,
+  .cart-grid,
+  .profile-grid,
+  .settings-grid,
+  .admin-form-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Si algún div tiene grid inline grande, evita que corte horrible */
+  div[style*="grid-template-columns"] {
+    max-width: 100% !important;
+  }
+
+  /* Efecto suave visual al deslizar: bordes con fade, sin raya */
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap,
+  .filter-row,
+  .filters-row,
+  .category-filters,
+  .categorias-lista,
+  .category-list,
+  .store-category-list,
+  .pub-cat-sidebar,
+  .tabs-row,
+  .status-tabs {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 14px,
+      black calc(100% - 14px),
+      transparent 100%
+    ) !important;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 14px,
+      black calc(100% - 14px),
+      transparent 100%
+    ) !important;
+  }
+
+  /* Cards en usuario/categorías/productos más limpias */
+  .product-card,
+  .store-product-card,
+  .producto-card,
+  .pub-cat-card,
+  .category-card,
+  .pg-card,
+  .admin-card,
+  .content-card {
+    border-radius: 18px !important;
+    max-width: 100% !important;
+  }
+}
