@@ -2869,7 +2869,6 @@ body {
   body,
   #root {
     width: auto !important;
-    min-width: 1180px !important;
     max-width: none !important;
     overflow-x: auto !important;
     overflow-y: auto !important;
@@ -3240,7 +3239,7 @@ body,
 }
 
 /* ADMIN Y USUARIO EN CELULAR: NO APLASTAR, PERMITIR DESLIZAR */
-@media (max-width: 900px) {
+{
   body {
     overflow-x: auto !important;
     overflow-y: auto !important;
@@ -3250,7 +3249,6 @@ body,
   .pg-app-root,
   .pg-public-root {
     width: 1100px !important;
-    min-width: 1100px !important;
     max-width: none !important;
     min-height: 100dvh !important;
     display: flex !important;
@@ -3371,5 +3369,406 @@ body,
     width: 100% !important;
     height: 170px !important;
     object-fit: contain !important;
+  }
+}
+/* =========================================================
+   PARTGO RESPONSIVE FINAL LIMPIO
+   Home + Usuario + Admin para celular
+   ========================================================= */
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body {
+    margin: 0 !important;
+    background: #070912 !important;
+  }
+
+  /* =========================
+     LAYOUT GENERAL
+     ========================= */
+
+  .pg-app-root,
+  .pg-public-root {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    display: block !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .pg-app-main,
+  .pg-public-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    display: block !important;
+    overflow-x: hidden !important;
+  }
+
+  .pg-app-content,
+  .pg-public-page,
+  .pg-public-main > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 14px !important;
+    overflow-x: hidden !important;
+  }
+
+  /* =========================
+     SIDEBAR / MENÚ CELULAR
+     ========================= */
+
+  .pg-app-sidebar,
+  .pg-public-scroll {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 10px !important;
+    display: block !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  }
+
+  .pg-app-sidebar nav,
+  .pg-public-scroll nav {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 4px !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .pg-app-sidebar nav > div {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    min-width: max-content !important;
+  }
+
+  .pg-app-sidebar nav a,
+  .pg-public-scroll nav button,
+  .pg-nav-link,
+  .pg-public-nav-button {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 92px !important;
+    max-width: 120px !important;
+    height: 48px !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+
+  .pg-sidebar-profile,
+  .pg-sidebar-promo,
+  .pg-sidebar-support,
+  .pg-sect-label {
+    display: none !important;
+  }
+
+  /* =========================
+     HEADER / BUSCADOR
+     ========================= */
+
+  .pg-app-topbar,
+  .pg-public-header {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    padding: 12px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    overflow: hidden !important;
+  }
+
+  .pg-app-search,
+  .pg-public-header-search {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: 1 0 100% !important;
+  }
+
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .pg-app-top-actions > *,
+  .pg-public-header-actions > * {
+    flex: 0 0 auto !important;
+  }
+
+  /* =========================
+     HOME PÚBLICO
+     ========================= */
+
+  .store-header,
+  .store-hero,
+  .store-section,
+  .store-features,
+  .store-categories,
+  .store-products {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  .store-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .store-nav {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .store-nav a,
+  .store-nav button {
+    flex: 0 0 auto !important;
+  }
+
+  .store-hero {
+    min-height: auto !important;
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    gap: 16px !important;
+  }
+
+  .store-hero h1,
+  .store-hero h2 {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+
+  .store-hero p {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  .store-hero img,
+  .hero-img,
+  .banner-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 260px !important;
+    object-fit: cover !important;
+    border-radius: 18px !important;
+  }
+
+  .store-features {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .store-feature {
+    width: 100% !important;
+    padding: 16px !important;
+  }
+
+  /* =========================
+     PRODUCTOS / CATEGORÍAS
+     ========================= */
+
+  .store-product-grid,
+  .product-grid,
+  .products-grid,
+  .pub-product-grid,
+  .pub-cat-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .store-product-card,
+  .product-card,
+  .producto-card,
+  .pub-cat-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .store-product-img,
+  .product-image,
+  .producto-img,
+  .pub-cat-img {
+    width: 100% !important;
+    height: 170px !important;
+    object-fit: contain !important;
+  }
+
+  .store-category-list,
+  .category-list,
+  .categorias-lista,
+  .pub-cat-sidebar {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    padding: 8px 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .store-category-list button,
+  .category-list button,
+  .categorias-lista button,
+  .pub-cat-sidebar button {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+
+  /* =========================
+     ADMIN / TABLAS
+     ========================= */
+
+  .pg-card,
+  .admin-card,
+  .content-card,
+  .metric-card,
+  .pg-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 14px !important;
+    border-radius: 16px !important;
+    overflow-x: auto !important;
+  }
+
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  table,
+  .pg-table {
+    min-width: 760px !important;
+    width: max-content !important;
+  }
+
+  /* =========================
+     FORMULARIOS
+     ========================= */
+
+  input,
+  select,
+  textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  button {
+    max-width: 100% !important;
+  }
+
+  .row,
+  .container,
+  .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  /* =========================
+     LOGIN
+     ========================= */
+
+  .login-page,
+  .login-shell {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 100dvh !important;
+    padding: 16px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow-x: hidden !important;
+  }
+
+  .login-card,
+  .login-panel {
+    width: 100% !important;
+    max-width: 390px !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    padding: 24px 18px !important;
+    border-radius: 22px !important;
+    transform: none !important;
+  }
+
+  .login-hero,
+  .login-side,
+  .login-right,
+  .login-decoration {
+    display: none !important;
   }
 }
