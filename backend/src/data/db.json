@@ -1,0 +1,122 @@
+{
+  "roles": [
+    {
+      "id": 1,
+      "nombre": "Administrador"
+    },
+    {
+      "id": 2,
+      "nombre": "Vendedor"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Administrador",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "rol_id": 1,
+      "estado": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Vendedor",
+      "email": "vendedor@gmail.com",
+      "password": "123456",
+      "rol_id": 2,
+      "estado": 1
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Motor",
+      "descripcion": "Repuestos para motor de moto"
+    },
+    {
+      "id": 2,
+      "nombre": "Frenos",
+      "descripcion": "Pastillas, discos y accesorios de freno"
+    },
+    {
+      "id": 3,
+      "nombre": "Transmisión",
+      "descripcion": "Cadenas, piñones y coronas"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "tipo_documento": "DNI",
+      "numero_documento": "74581236",
+      "nombre": "Juan Pérez",
+      "telefono": "987654321",
+      "direccion": "Av. Principal 123"
+    },
+    {
+      "id": 2,
+      "tipo_documento": "RUC",
+      "numero_documento": "20601234567",
+      "nombre": "Moto Servicios SAC",
+      "telefono": "912345678",
+      "direccion": "Jr. Comercio 456"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "categoria_id": 1,
+      "nombre": "Bujía NGK",
+      "marca": "NGK",
+      "modelo_moto": "Universal",
+      "descripcion": "Bujía para motocicleta",
+      "precio": 18.5,
+      "stock": 20,
+      "estado": 1
+    },
+    {
+      "id": 2,
+      "categoria_id": 2,
+      "nombre": "Pastillas de freno",
+      "marca": "Brembo",
+      "modelo_moto": "Honda CB",
+      "descripcion": "Pastillas delanteras",
+      "precio": 45,
+      "stock": 5,
+      "estado": 1
+    },
+    {
+      "id": 3,
+      "categoria_id": 3,
+      "nombre": "Cadena reforzada",
+      "marca": "DID",
+      "modelo_moto": "Yamaha FZ",
+      "descripcion": "Cadena 428 reforzada",
+      "precio": 95,
+      "stock": 12,
+      "estado": 1
+    }
+  ],
+  "ventas": [
+    {
+      "id": 1,
+      "cliente_id": 1,
+      "usuario_id": 1,
+      "metodo_pago": "EFECTIVO",
+      "total": 63.5,
+      "estado": "REGISTRADA",
+      "fecha": "2026-05-07T00:00:00.000Z",
+      "detalle": []
+    }
+  ],
+  "empresa": [
+    {
+      "id": 1,
+      "nombre": "PartGo",
+      "ruc": "20609998881",
+      "direccion": "Av. Repuestos 100",
+      "telefono": "900123456",
+      "correo": "contacto@gmail.com"
+    }
+  ]
+}
