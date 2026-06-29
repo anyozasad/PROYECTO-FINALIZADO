@@ -1645,3 +1645,72 @@ a.nav-link:active,
     font-size: 22px !important;
   }
 }
+/* =========================================================
+   FLECHA ELEGANTE SIDEBAR - DISCRETA
+   No se ve resaltada, aparece suave al pasar el mouse
+   ========================================================= */
+
+.pg-sidebar-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: -10px !important;
+  transform: translateY(-50%) !important;
+
+  width: 20px !important;
+  height: 56px !important;
+
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
+  border-left: none !important;
+  border-radius: 0 14px 14px 0 !important;
+
+  background: rgba(15, 12, 28, 0.72) !important;
+  backdrop-filter: blur(8px) !important;
+
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+
+  cursor: pointer !important;
+  z-index: 99999 !important;
+
+  box-shadow: none !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  opacity: 0.22 !important;
+  transition:
+    opacity 0.22s ease,
+    width 0.22s ease,
+    right 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+/* Cuando el cliente pasa el mouse cerca del menú */
+.pg-public-scroll:hover .pg-sidebar-toggle-btn,
+.pg-app-sidebar:hover .pg-sidebar-toggle-btn,
+.pg-sidebar-toggle-btn:hover {
+  opacity: 1 !important;
+  width: 26px !important;
+  right: -13px !important;
+
+  background: rgba(109, 40, 217, 0.35) !important;
+  color: #ffffff !important;
+
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.25) !important;
+}
+
+/* Al hacer click se siente más profesional */
+.pg-sidebar-toggle-btn:active {
+  transform: translateY(-50%) scale(0.94) !important;
+}
+
+/* Que no parezca botón gigante en celular */
+@media (max-width: 768px) {
+  .pg-sidebar-toggle-btn {
+    display: none !important;
+  }
+}
