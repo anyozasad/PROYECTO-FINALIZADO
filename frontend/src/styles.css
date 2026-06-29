@@ -1397,3 +1397,117 @@ a.nav-link:active,
     width: max-content !important;
   }
 }
+
+/* =========================================================
+   FLECHA PARA MINIMIZAR SIDEBAR PARTGO
+   Usuario + Admin
+   ========================================================= */
+
+.pg-public-scroll,
+.pg-app-sidebar {
+  position: relative !important;
+  overflow: visible !important;
+  transition: width 0.25s ease, min-width 0.25s ease, max-width 0.25s ease;
+}
+
+.pg-sidebar-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: -15px !important;
+  transform: translateY(-50%) !important;
+  width: 30px !important;
+  height: 64px !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #9b4dff, #6d28d9) !important;
+  color: #fff !important;
+  font-size: 26px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  z-index: 99999 !important;
+  box-shadow: 0 10px 25px rgba(109, 40, 217, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.pg-sidebar-toggle-btn:hover {
+  filter: brightness(1.12);
+}
+
+/* Sidebar minimizado */
+.pg-public-scroll.pg-sidebar-minimized,
+.pg-app-sidebar.pg-sidebar-minimized {
+  width: 78px !important;
+  min-width: 78px !important;
+  max-width: 78px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* Centrar elementos cuando está minimizado */
+.pg-public-scroll.pg-sidebar-minimized nav,
+.pg-app-sidebar.pg-sidebar-minimized nav {
+  align-items: center !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized nav a,
+.pg-public-scroll.pg-sidebar-minimized nav button,
+.pg-app-sidebar.pg-sidebar-minimized nav a,
+.pg-app-sidebar.pg-sidebar-minimized nav button {
+  justify-content: center !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  gap: 0 !important;
+}
+
+/* Ocultar textos cuando está minimizado */
+.pg-public-scroll.pg-sidebar-minimized nav a span:not(:first-child),
+.pg-public-scroll.pg-sidebar-minimized nav button span:not(:first-child),
+.pg-app-sidebar.pg-sidebar-minimized nav a span:not(:first-child),
+.pg-app-sidebar.pg-sidebar-minimized nav button span:not(:first-child) {
+  display: none !important;
+}
+
+/* Ocultar bloques grandes */
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-promo,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-profile,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-support,
+.pg-public-scroll.pg-sidebar-minimized .pg-sect-label,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-promo,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-profile,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-support,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sect-label {
+  display: none !important;
+}
+
+/* Logo minimizado */
+.pg-public-scroll.pg-sidebar-minimized h1,
+.pg-public-scroll.pg-sidebar-minimized h2,
+.pg-public-scroll.pg-sidebar-minimized p,
+.pg-app-sidebar.pg-sidebar-minimized h1,
+.pg-app-sidebar.pg-sidebar-minimized h2,
+.pg-app-sidebar.pg-sidebar-minimized p {
+  display: none !important;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+  .pg-sidebar-toggle-btn {
+    top: 14px !important;
+    right: 12px !important;
+    transform: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    font-size: 22px !important;
+  }
+
+  .pg-public-scroll.pg-sidebar-minimized,
+  .pg-app-sidebar.pg-sidebar-minimized {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
