@@ -1126,1208 +1126,189 @@ a.nav-link:active,
   opacity: .85 !important;
 }
 /* =========================================================
-   FIX RESPONSIVE MOBILE PARTGO
-   Mejora visual para celular sin romper PC
+   PARTGO MOBILE FIX LIMPIO
+   Home + Usuario + Admin responsive correcto
    ========================================================= */
 
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* CELULAR */
 @media (max-width: 768px) {
-
-  body {
-    background: #f4f5f7;
-  }
-
-  /* Top bar */
-  .store-top-bar {
-    font-size: 11px !important;
-    padding: 7px 10px !important;
-    line-height: 1.3 !important;
-  }
-
-  /* Header principal */
-  .store-header {
-    position: relative !important;
-    top: 0 !important;
-    padding: 12px 14px !important;
-    gap: 12px !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-
-  .store-logo {
-    justify-content: center !important;
-    text-align: center !important;
-  }
-
-  .store-logo-icon {
-    width: 44px !important;
-    height: 44px !important;
-    font-size: 24px !important;
-  }
-
-  .store-logo h1 {
-    font-size: 24px !important;
-    line-height: 22px !important;
-  }
-
-  .store-logo span {
-    font-size: 11px !important;
-  }
-
-  .store-search-box {
-    order: 2 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    flex-basis: auto !important;
-  }
-
-  .store-search-box input {
-    padding: 13px 16px !important;
-    font-size: 14px !important;
-  }
-
-  .store-search-box button {
-    width: 48px !important;
-  }
-
-  .store-contact-info {
-    display: none !important;
-  }
-
-  .store-icons {
-    justify-content: center !important;
-    gap: 22px !important;
-    order: 3 !important;
-  }
-
-  /* Menú horizontal más limpio */
-  .store-nav {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 2000 !important;
-    justify-content: flex-start !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    white-space: nowrap !important;
-    padding: 0 6px !important;
-    scrollbar-width: none !important;
-  }
-
-  .store-nav::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  .store-nav button,
-  .store-nav a {
-    min-width: max-content !important;
-    padding: 13px 15px !important;
-    font-size: 12px !important;
-    min-height: 46px !important;
-  }
-
-  .store-nav button.active {
-    border-radius: 10px !important;
-    background: #ffb400 !important;
-  }
-
-  /* Hero */
-  .store-hero {
-    min-height: auto !important;
-    padding: 34px 18px !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 22px !important;
-  }
-
-  .store-hero-content {
-    max-width: 100% !important;
-  }
-
-  .store-tag {
-    font-size: 12px !important;
-    margin-bottom: 12px !important;
-  }
-
-  .store-hero h2 {
-    font-size: 32px !important;
-    line-height: 1.1 !important;
-    margin-bottom: 14px !important;
-  }
-
-  .store-hero p {
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 20px !important;
-  }
-
-  .store-btn {
-    width: 100% !important;
-    text-align: center !important;
-    padding: 13px 18px !important;
-    border-radius: 12px !important;
-  }
-
-  .store-hero-product {
-    transform: none !important;
-    gap: 14px !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .store-oil {
-    width: 115px !important;
-    height: 190px !important;
-    font-size: 24px !important;
-  }
-
-  .store-oil small {
-    font-size: 13px !important;
-  }
-
-  .store-oil-gray {
-    height: 175px !important;
-  }
-
-  .store-hero-promo {
-    width: 100% !important;
-    border-radius: 16px !important;
-  }
-
-  .store-hero-promo img {
-    height: 180px !important;
-    object-fit: cover !important;
-  }
-
-  /* Beneficios */
-  .store-features {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    padding: 22px 16px !important;
-  }
-
-  .store-feature {
-    padding: 20px !important;
-  }
-
-  .store-feature h3 {
-    font-size: 18px !important;
-  }
-
-  .store-feature p {
-    font-size: 14px !important;
-  }
-
-  /* Secciones */
-  .store-categories,
-  .store-products,
-  .store-section,
-  .store-contact,
-  .store-contact-page {
-    padding: 28px 16px !important;
-  }
-
-  .store-section {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-
-  .store-section-text h2,
-  .store-contact h2,
-  .store-categories h2,
-  .store-products h2 {
-    font-size: 24px !important;
-    line-height: 1.2 !important;
-  }
-
-  .store-section-text p {
-    font-size: 14px !important;
-  }
-
-  .store-about-card {
-    padding: 26px 18px !important;
-    border-radius: 18px !important;
-  }
-
-  .store-about-card h3 {
-    font-size: 24px !important;
-  }
-
-  /* Categorías */
-  .store-category-list {
-    display: flex !important;
-    overflow-x: auto !important;
-    flex-wrap: nowrap !important;
-    gap: 10px !important;
-    padding-bottom: 8px !important;
-    scrollbar-width: none !important;
-  }
-
-  .store-category-list::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  .store-category-list button {
-    min-width: max-content !important;
-    padding: 11px 16px !important;
-    font-size: 13px !important;
-  }
-
-  /* Productos */
-  .store-products-title {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-  }
-
-  .store-product-grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
-  }
-
-  .store-product-card {
-    min-height: auto !important;
-    padding: 18px !important;
-    border-radius: 18px !important;
-  }
-
-  .store-product-img {
-    height: 180px !important;
-  }
-
-  .store-product-card h3 {
-    font-size: 17px !important;
-  }
-
-  .store-product-card p {
-    font-size: 18px !important;
-  }
-
-  .store-product-card button {
-    width: 100% !important;
-    border-radius: 12px !important;
-  }
-
-  /* Carrito lateral */
-  .store-cart-panel {
-    width: 100% !important;
-    padding: 18px !important;
-  }
-
-  .store-cart-item {
-    grid-template-columns: 58px 1fr !important;
-    gap: 10px !important;
-  }
-
-  .store-qty,
-  .store-trash {
-    justify-self: start !important;
-  }
-
-  .store-checkout-modal {
-    width: calc(100% - 24px) !important;
-    padding: 20px !important;
-  }
-
-  /* Checkout */
-  .store-guest-checkout-page {
-    padding: 24px 14px !important;
-  }
-
-  .store-guest-checkout-wrap {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-
-  .store-order-box {
-    order: -1 !important;
-    padding: 18px !important;
-  }
-
-  .two-cols {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Login */
-  .login-page {
-    padding: 18px !important;
-    align-items: center !important;
-  }
-
-  .login-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 28px 20px !important;
-    border-radius: 22px !important;
-  }
-
-  .login-card h2 {
-    font-size: 42px !important;
-    letter-spacing: -1px !important;
-  }
-
-  .login-gold-orb {
-    width: 420px !important;
-    height: 420px !important;
-    right: -210px !important;
-    top: -120px !important;
-  }
-
-  .login-back-home {
-    top: 12px !important;
-    left: 12px !important;
-    padding: 10px 14px !important;
-    font-size: 13px !important;
-  }
-
-  .social-login-buttons {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Admin en celular */
-  .app-shell {
-    flex-direction: column !important;
-  }
-
-  .sidebar {
+  html,
+  body,
+  #root {
     width: 100% !important;
     min-width: 0 !important;
-    max-width: none !important;
-    height: auto !important;
-    position: relative !important;
-    padding: 16px !important;
-  }
-
-  .main-content {
-    padding: 14px !important;
-  }
-
-  .topbar {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 10px !important;
-  }
-
-  .content-card,
-  .admin-card {
-    padding: 16px !important;
-    border-radius: 16px !important;
+    max-width: 100% !important;
     overflow-x: auto !important;
-  }
-
-  table {
-    min-width: 700px;
-  }
-}
-/* =========================================================
-   PARTGO FIX MOBILE REAL
-   Admin + Usuario + Público + Scroll celular
-   Pegar al FINAL de src/index.css
-   ========================================================= */
-
-html,
-body,
-#root {
-  width: 100%;
-  min-height: 100%;
-  max-width: 100%;
-  overflow-x: hidden !important;
-}
-
-body {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: auto;
-}
-
-img,
-video,
-canvas,
-svg {
-  max-width: 100%;
-}
-
-/* Evita que tablas, cards o grids revienten el ancho */
-.pg-app-content,
-.pg-public-main,
-.pg-public-page,
-.pub-categorias-page,
-.pub-pedidos-page,
-.pub-carrito-page,
-.pub-checkout-page,
-.detalle-public-page {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Tablas responsivas */
-.pg-card,
-.pg-table-wrap,
-.content-card,
-.admin-card {
-  max-width: 100%;
-  overflow-x: auto !important;
-}
-
-/* =========================================================
-   MOBILE GENERAL
-   ========================================================= */
-
-@media (max-width: 900px) {
-  html,
-  body {
-    height: auto !important;
-    overflow-x: hidden !important;
     overflow-y: auto !important;
   }
 
   body {
-    padding: 0 !important;
-  }
-
-  /* Quita trabas de scroll por layouts fijos */
-  .pg-app-root,
-  .pg-public-root {
-    display: block !important;
-    width: 100% !important;
-    min-height: 100dvh !important;
-    overflow: visible !important;
-  }
-
-  /* =====================================================
-     SIDEBAR ADMIN Y USUARIO COMO MENÚ INFERIOR
-     ===================================================== */
-
-  .pg-app-sidebar,
-  .pg-public-scroll {
-    position: fixed !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 68px !important;
-    min-height: 68px !important;
-    max-height: 68px !important;
-    z-index: 9999 !important;
-    display: flex !important;
-    align-items: center !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    padding: 0 !important;
-    border-right: 0 !important;
-    border-top: 1px solid var(--pg-border, var(--border)) !important;
-    border-bottom: 0 !important;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, .28) !important;
-    scrollbar-width: none !important;
-  }
-
-  .pg-app-sidebar::-webkit-scrollbar,
-  .pg-public-scroll::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  /* Oculta logo/perfil/promos en móvil para que no ocupe todo */
-  .pg-app-sidebar > a,
-  .pg-app-sidebar .pg-sidebar-profile,
-  .pg-app-sidebar .pg-sidebar-promo,
-  .pg-app-sidebar .pg-sidebar-support,
-  .pg-app-sidebar .pg-sect-label,
-  .pg-public-scroll > button,
-  .pg-public-scroll > div:last-child {
-    display: none !important;
-  }
-
-  .pg-app-sidebar nav,
-  .pg-public-scroll nav {
-    width: 100% !important;
-    height: 68px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    padding: 8px 10px !important;
     margin: 0 !important;
-    flex: none !important;
-    scrollbar-width: none !important;
+    background: #070912 !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
-  .pg-app-sidebar nav::-webkit-scrollbar,
-  .pg-public-scroll nav::-webkit-scrollbar {
-    display: none !important;
+  /* Layout general */
+  .pg-public-root,
+  .pg-app-root {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    display: block !important;
+    overflow-x: hidden !important;
+  }
+
+  .pg-public-main,
+  .pg-app-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .pg-public-page,
+  .pg-public-main > div,
+  .pg-app-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Menú usuario/admin arriba y deslizable */
+  .pg-public-scroll,
+  .pg-app-sidebar {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 8px !important;
+    z-index: 9999 !important;
+    display: block !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .pg-public-scroll nav,
+  .pg-app-sidebar nav {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    padding: 4px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   .pg-app-sidebar nav > div {
     display: flex !important;
-    gap: 6px !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
     min-width: max-content !important;
   }
 
+  .pg-public-scroll nav button,
   .pg-app-sidebar nav a,
-  .pg-public-scroll nav button {
-    width: auto !important;
-    min-width: 72px !important;
-    height: 50px !important;
-    margin: 0 !important;
-    padding: 7px 10px !important;
-    border-radius: 14px !important;
+  .pg-public-nav-button,
+  .pg-nav-link {
+    flex: 0 0 auto !important;
+    min-width: 92px !important;
+    height: 48px !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
     display: flex !important;
-    flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 3px !important;
-    text-align: center !important;
-    font-size: 10px !important;
-    line-height: 1.1 !important;
+    gap: 6px !important;
     white-space: nowrap !important;
   }
 
-  .pg-app-sidebar nav a span,
-  .pg-public-scroll nav button span {
-    max-width: 68px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  .pg-app-sidebar nav a span:first-child,
-  .pg-public-scroll nav button span:first-child {
-    font-size: 16px !important;
-    width: auto !important;
-  }
-
-  /* =====================================================
-     MAIN CONTENT
-     ===================================================== */
-
-  .pg-app-main,
-  .pg-public-main {
-    margin-left: 0 !important;
-    width: 100% !important;
-    min-height: 100dvh !important;
-    padding-bottom: 82px !important;
-    overflow: visible !important;
-  }
-
-  .pg-app-content {
-    padding: 12px !important;
-    padding-bottom: 92px !important;
-    width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  /* =====================================================
-     TOPBAR ADMIN / USUARIO
-     ===================================================== */
-
-  .pg-app-topbar,
-  .pg-public-header {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 9000 !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 58px !important;
-    padding: 10px 12px !important;
-    gap: 8px !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .18) !important;
-  }
-
-  .pg-app-topbar h2 {
-    width: 100% !important;
-    font-size: 18px !important;
-    line-height: 1.2 !important;
-    margin: 0 !important;
-  }
-
-  .pg-app-search,
-  .pg-public-header-search {
-    order: 3 !important;
-    flex: 1 0 100% !important;
-    max-width: none !important;
-    width: 100% !important;
-    height: 42px !important;
-  }
-
-  .pg-app-top-actions,
-  .pg-public-header-actions {
-    width: 100% !important;
-    margin-left: 0 !important;
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 7px !important;
-    align-items: stretch !important;
-  }
-
-  .pg-app-top-actions .pg-topbar-icon-btn,
-  .pg-public-theme-btn,
-  .pg-public-cart-btn,
-  .pg-public-login-btn,
-  .pg-public-account-btn,
-  .pg-logout-action-btn {
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: 40px !important;
-    justify-content: center !important;
-  }
-
-  .pg-public-header-actions > span {
-    display: none !important;
-  }
-
-  .pg-logout-text {
-    display: none !important;
-  }
-
-  /* =====================================================
-     CARDS / GRIDS / FORMULARIOS
-     ===================================================== */
-
-  .pg-card,
-  .pg-stat,
-  .content-card,
-  .admin-card,
-  .metric-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    border-radius: 16px !important;
-    padding: 14px !important;
-    overflow-x: auto !important;
-  }
-
-  .row,
-  .container,
-  .container-fluid {
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  [class*="col-"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-  }
-
-  .pg-table {
-    min-width: 720px !important;
-  }
-
-  table {
-    min-width: 720px;
-  }
-
-  input,
-  select,
-  textarea,
-  button {
-    max-width: 100% !important;
-  }
-
-  .pg-input,
-  .pg-select,
-  input,
-  select,
-  textarea {
-    font-size: 16px !important;
-  }
-
-  /* Botones más tocables */
-  .pg-btn,
-  .pg-btn-outline,
-  .pg-btn-ghost,
-  .pg-btn-danger,
-  .pg-btn-success {
-    min-height: 42px !important;
-  }
-
-  /* Modales no se salen en celular */
-  .pg-modal-overlay {
-    padding: 12px !important;
-    align-items: flex-end !important;
-  }
-
-  .pg-modal {
-    width: 100% !important;
-    max-width: 100% !important;
-    max-height: 88dvh !important;
-    border-radius: 18px 18px 0 0 !important;
-    padding: 18px !important;
-  }
-
-  .swal2-popup {
-    width: calc(100vw - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
-    border-radius: 18px !important;
-  }
-
-  /* =====================================================
-     LOGIN MOBILE
-     ===================================================== */
-
-  .login-page {
-    min-height: 100dvh !important;
-    padding: 14px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow-x: hidden !important;
-  }
-
-  .login-card {
-    width: 100% !important;
-    max-width: 420px !important;
-    padding: 24px 18px !important;
-    border-radius: 22px !important;
-  }
-
-  .login-card h2 {
-    font-size: 26px !important;
-    line-height: 1.15 !important;
-  }
-
-  .social-login-buttons,
-  .login-social-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  /* =====================================================
-     PÁGINAS PÚBLICAS / USUARIO
-     ===================================================== */
-
-  .pg-public-page,
-  .pub-categorias-page,
-  .pub-pedidos-page,
-  .pub-carrito-page,
-  .pub-checkout-page,
-  .pub-ofertas-page,
-  .pub-productos-page,
-  .pub-perfil-page,
-  .pub-ajustes-page,
-  .pub-reclamos-page {
-    width: 100% !important;
-    padding: 14px !important;
-    padding-bottom: 92px !important;
-    display: block !important;
-    min-height: auto !important;
-    overflow-x: hidden !important;
-  }
-
-  .pub-cat-sidebar {
-    position: static !important;
-    width: 100% !important;
-    padding: 10px !important;
-    margin-bottom: 12px !important;
-    border-right: 0 !important;
-    border-bottom: 1px solid var(--pg-border) !important;
-    overflow-x: auto !important;
-  }
-
-  .pub-cat-sidebar button {
-    width: auto !important;
-    min-width: max-content !important;
-  }
-
-  .pub-cat-grid,
-  .product-grid,
-  .store-product-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
-  .pub-cat-card,
-  .product-card,
-  .store-product-card {
-    width: 100% !important;
-    min-height: auto !important;
-    border-radius: 16px !important;
-  }
-
-  .product-image,
-  .store-product-img,
-  .pub-cat-img {
-    height: 170px !important;
-  }
-
-  /* Checkout / carrito */
-  .checkout-grid,
-  .cart-grid,
-  .store-guest-checkout-wrap {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
-  .checkout-panel,
-  .cart-panel,
-  .store-order-box {
-    width: 100% !important;
-    position: static !important;
-  }
-
-  /* =====================================================
-     SCROLL BUTTONS: en celular estorban, se ocultan
-     ===================================================== */
-
-  .pg-scroll-controls {
-    display: none !important;
-  }
-}
-
-/* =========================================================
-   CELULAR PEQUEÑO
-   ========================================================= */
-
-@media (max-width: 520px) {
-  .pg-app-content,
-  .pg-public-page,
-  .pub-categorias-page,
-  .pub-pedidos-page,
-  .pub-carrito-page,
-  .pub-checkout-page {
-    padding: 10px !important;
-    padding-bottom: 88px !important;
-  }
-
-  .pg-app-top-actions,
-  .pg-public-header-actions {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-
-  .pg-app-profile-chip {
-    display: none !important;
-  }
-
-  .pg-public-logo-text {
-    display: none !important;
-  }
-
-  .pg-public-header > button:first-child span:last-child {
-    display: none !important;
-  }
-
-  .pg-public-cart-btn p {
-    display: none !important;
-  }
-
-  .pg-public-cart-btn {
-    padding: 7px !important;
-  }
-
-  .pg-app-sidebar nav a,
-  .pg-public-scroll nav button {
-    min-width: 64px !important;
-    font-size: 9px !important;
-  }
-
-  .pg-app-sidebar nav a span:first-child,
-  .pg-public-scroll nav button span:first-child {
-    font-size: 17px !important;
-  }
-}
-
-/* =========================================================
-   FIX CONTRA TRABAS DE SCROLL POR ELEMENTOS FIJOS
-   ========================================================= */
-
-@media (hover: none) and (pointer: coarse) {
-  * {
-    scroll-behavior: auto !important;
-  }
-
-  .pg-app-main,
-  .pg-public-main,
-  .pg-app-content,
-  .pg-public-page {
-    -webkit-overflow-scrolling: touch !important;
-  }
-}
-
-/* =========================================================
-   FIX MOBILE REAL PARTGO - SCROLL + ADMIN + USUARIO
-   Pegar al FINAL de src/index.css
-   ========================================================= */
-
-html,
-body,
-#root {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 100% !important;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-}
-
-body {
-  touch-action: pan-y !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-
-/* Evita que cualquier contenedor bloquee el scroll */
-@media (max-width: 900px) {
-  .pg-app-root,
-  .pg-public-root {
-    display: block !important;
-    width: 100% !important;
-    min-height: auto !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  .pg-app-main,
-  .pg-public-main {
-    margin-left: 0 !important;
-    width: 100% !important;
-    min-height: auto !important;
-    height: auto !important;
-    display: block !important;
-    overflow: visible !important;
-  }
-
-  .pg-app-content,
-  .pg-public-main > div {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 12px !important;
-    padding-bottom: 35px !important;
-    overflow: visible !important;
-  }
-
-  /* Sidebar admin/usuario arriba, NO fija abajo */
-  .pg-app-sidebar,
-  .pg-public-scroll {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    bottom: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    min-height: auto !important;
-    display: block !important;
-    overflow: visible !important;
-    padding: 8px !important;
-    border-right: 0 !important;
-    border-bottom: 1px solid var(--border, var(--pg-border)) !important;
-    z-index: 10 !important;
-  }
-
-  /* Ocultar cosas que ocupan demasiado en celular */
   .pg-sidebar-profile,
   .pg-sidebar-promo,
   .pg-sidebar-support,
-  .pg-sect-label,
-  .pg-public-scroll > button,
-  .pg-public-scroll > div:last-child {
+  .pg-sect-label {
     display: none !important;
   }
 
-  /* Menú horizontal deslizable */
-  .pg-app-sidebar nav,
-  .pg-public-scroll nav {
-    width: 100% !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    padding: 6px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scrollbar-width: none !important;
-  }
-
-  .pg-app-sidebar nav::-webkit-scrollbar,
-  .pg-public-scroll nav::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  .pg-app-sidebar nav > div {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    min-width: max-content !important;
-  }
-
-  .pg-nav-link,
-  .pg-public-nav-button {
-    flex: 0 0 auto !important;
-    min-width: 78px !important;
-    height: 52px !important;
-    margin: 0 !important;
-    padding: 7px 10px !important;
-    border-radius: 12px !important;
-    font-size: 10px !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-    white-space: nowrap !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 3px !important;
-  }
-
-  .pg-nav-link span:first-child,
-  .pg-public-nav-button span:first-child {
-    font-size: 17px !important;
-    width: auto !important;
-  }
-
-  .pg-nav-link span:last-child,
-  .pg-public-nav-button span:last-child {
-    max-width: 72px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  /* Header/topbar ya no se queda trabando arriba */
-  .pg-app-topbar,
-  .pg-public-header {
+  /* Header */
+  .pg-public-header,
+  .pg-app-topbar {
     position: relative !important;
-    top: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
     height: auto !important;
-    min-height: auto !important;
     padding: 10px !important;
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 8px !important;
-    align-items: stretch !important;
-    z-index: 5 !important;
+    overflow: hidden !important;
   }
 
-  .pg-app-topbar h2 {
+  .pg-public-header-search,
+  .pg-app-search {
     width: 100% !important;
-    font-size: 18px !important;
-    margin: 0 !important;
-  }
-
-  .pg-app-search,
-  .pg-public-header-search {
-    order: 3 !important;
-    width: 100% !important;
+    min-width: 0 !important;
     max-width: 100% !important;
     flex: 1 0 100% !important;
   }
 
-  .pg-app-top-actions,
-  .pg-public-header-actions {
+  .pg-public-header-actions,
+  .pg-app-top-actions {
     width: 100% !important;
-    margin-left: 0 !important;
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 7px !important;
-  }
-
-  .pg-app-profile-chip,
-  .pg-public-header-actions > span {
-    display: none !important;
-  }
-
-  .pg-logout-text {
-    display: none !important;
-  }
-
-  .pg-topbar-icon-btn,
-  .pg-public-theme-btn,
-  .pg-public-cart-btn,
-  .pg-public-login-btn,
-  .pg-public-account-btn,
-  .pg-logout-action-btn {
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: 42px !important;
-    justify-content: center !important;
-  }
-
-  /* Cards y formularios */
-  .pg-card,
-  .pg-stat,
-  .content-card,
-  .admin-card,
-  .metric-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 14px !important;
-    border-radius: 16px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
     overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
-  .row,
-  .container,
-  .container-fluid {
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .pg-public-header-actions > *,
+  .pg-app-top-actions > * {
+    flex: 0 0 auto !important;
   }
 
-  [class*="col-"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 16px !important;
-  }
-
-  /* Tablas no rompen pantalla */
-  .pg-table,
-  table {
-    min-width: 720px !important;
-  }
-
-  .pg-table-wrap,
-  .table-responsive {
-    width: 100% !important;
-    overflow-x: auto !important;
-  }
-
-  /* Productos y páginas públicas */
-  .pub-product-grid,
-  .store-product-grid,
-  .product-grid,
-  .pub-cat-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
+  /* Home */
   .store-header,
   .store-hero,
   .store-section,
   .store-features,
   .store-categories,
   .store-products {
+    width: 100% !important;
+    max-width: 100% !important;
     padding-left: 14px !important;
     padding-right: 14px !important;
+    box-sizing: border-box !important;
   }
 
-  .store-header,
-  .store-hero,
-  .store-section {
+  .store-header {
     flex-direction: column !important;
-    display: flex !important;
-    text-align: center !important;
+    align-items: stretch !important;
+    gap: 12px !important;
   }
 
   .store-nav {
-    overflow-x: auto !important;
+    width: 100% !important;
     justify-content: flex-start !important;
+    overflow-x: auto !important;
     white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   .store-nav a,
@@ -2335,399 +1316,85 @@ body {
     flex: 0 0 auto !important;
   }
 
+  .store-hero {
+    min-height: auto !important;
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    gap: 16px !important;
+  }
+
+  .store-hero h1,
   .store-hero h2 {
-    font-size: 30px !important;
+    font-size: 28px !important;
     line-height: 1.15 !important;
   }
 
   .store-hero p {
     font-size: 14px !important;
+    line-height: 1.45 !important;
   }
 
-  .store-features,
-  .store-product-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Login */
-  .login-shell,
-  .login-page {
-    min-height: auto !important;
+  .store-hero img,
+  .hero-img,
+  .banner-img {
+    width: 100% !important;
     height: auto !important;
-    overflow: visible !important;
+    max-height: 260px !important;
+    object-fit: cover !important;
+    border-radius: 18px !important;
+  }
+
+  .store-features {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .store-feature {
+    width: 100% !important;
     padding: 16px !important;
   }
 
-  .login-panel,
-  .login-card {
-    width: 100% !important;
-    max-width: 430px !important;
-    margin: 0 auto !important;
-    padding: 22px 18px !important;
-    border-radius: 20px !important;
-  }
-
-  .login-hero {
-    display: none !important;
-  }
-
-  .login-social,
-  .social-login-buttons {
-    width: 100% !important;
-  }
-
-  /* Modales */
-  .pg-modal-overlay {
-    padding: 12px !important;
-    align-items: flex-end !important;
-  }
-
-  .pg-modal {
-    width: 100% !important;
-    max-width: 100% !important;
-    max-height: 88dvh !important;
-    overflow-y: auto !important;
-    border-radius: 18px 18px 0 0 !important;
-  }
-
-  .swal2-popup {
-    width: calc(100vw - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
-  }
-}
-
-@media (max-width: 520px) {
-  .pg-app-content,
-  .pg-public-main > div {
-    padding: 10px !important;
-    padding-bottom: 30px !important;
-  }
-
-  .pg-app-top-actions,
-  .pg-public-header-actions {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-
-  .pg-nav-link,
-  .pg-public-nav-button {
-    min-width: 68px !important;
-    font-size: 9px !important;
-  }
-
-  .pg-public-logo-text {
-    display: none !important;
-  }
-}
-/* =========================================================
-   FIX FINAL MOBILE PARTGO
-   Admin + Usuario + scroll horizontal funcionando
-   PEGAR AL FINAL DE src/styles.css
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  html,
-  body,
-  #root {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: 100% !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    touch-action: pan-y !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  /* CONTENEDORES GENERALES */
-  .pg-app-root,
-  .pg-public-root,
-  .pg-app-main,
-  .pg-public-main {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: auto !important;
-    height: auto !important;
-    display: block !important;
-    overflow: visible !important;
-    margin-left: 0 !important;
-  }
-
-  .pg-app-content,
-  .pg-public-main,
-  .pg-public-page {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 12px !important;
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
-  }
-
-  /* =====================================================
-     MENÚ ADMIN / USUARIO HORIZONTAL
-     ===================================================== */
-
-  .pg-app-sidebar,
-  .pg-public-scroll {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    max-height: none !important;
-    padding: 10px 8px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    white-space: nowrap !important;
-    border-right: 0 !important;
-    border-bottom: 1px solid rgba(255,255,255,.12) !important;
-    z-index: 10 !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: thin !important;
-    touch-action: pan-x !important;
-  }
-
-  .pg-app-sidebar nav,
-  .pg-public-scroll nav {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    white-space: nowrap !important;
-    padding: 6px 4px !important;
-    margin: 0 !important;
-    -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-x !important;
-  }
-
-  .pg-app-sidebar nav > div {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    min-width: max-content !important;
-    width: max-content !important;
-  }
-
-  .pg-nav-link,
-  .pg-public-nav-button,
-  .pg-app-sidebar nav a,
-  .pg-public-scroll nav button {
-    flex: 0 0 auto !important;
-    min-width: 90px !important;
-    max-width: 110px !important;
-    height: 58px !important;
-    padding: 8px 10px !important;
-    border-radius: 14px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 4px !important;
-    font-size: 10px !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-    white-space: normal !important;
-  }
-
-  .pg-nav-link span:first-child,
-  .pg-public-nav-button span:first-child,
-  .pg-app-sidebar nav a span:first-child,
-  .pg-public-scroll nav button span:first-child {
-    font-size: 18px !important;
-  }
-
-  .pg-nav-link span:last-child,
-  .pg-public-nav-button span:last-child,
-  .pg-app-sidebar nav a span:last-child,
-  .pg-public-scroll nav button span:last-child {
-    max-width: 90px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  /* Oculta partes grandes del sidebar en celular */
-  .pg-sidebar-profile,
-  .pg-sidebar-promo,
-  .pg-sidebar-support,
-  .pg-sect-label,
-  .pg-public-scroll > button,
-  .pg-public-scroll > div:last-child {
-    display: none !important;
-  }
-
-  /* =====================================================
-     TOPBAR ADMIN / USUARIO
-     ===================================================== */
-
-  .pg-app-topbar,
-  .pg-public-header {
-    position: relative !important;
-    top: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: 10px !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 8px !important;
-    align-items: stretch !important;
-    overflow: visible !important;
-  }
-
-  .pg-app-topbar h2 {
-    width: 100% !important;
-    font-size: 18px !important;
-    line-height: 1.2 !important;
-    margin: 0 !important;
-  }
-
-  .pg-app-search,
-  .pg-public-header-search {
-    order: 3 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 1 0 100% !important;
-  }
-
-  .pg-app-top-actions,
-  .pg-public-header-actions {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    padding-bottom: 4px !important;
-    -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-x !important;
-  }
-
-  .pg-app-top-actions > *,
-  .pg-public-header-actions > * {
-    flex: 0 0 auto !important;
-  }
-
-  .pg-app-profile-chip,
-  .pg-public-header-actions > span {
-    display: none !important;
-  }
-
-  .pg-logout-text {
-    display: none !important;
-  }
-
-  /* =====================================================
-     ADMIN / USUARIO CARDS Y TABLAS
-     ===================================================== */
-
-  .pg-card,
-  .pg-stat,
-  .content-card,
-  .admin-card,
-  .metric-card,
-  .pg-panel {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 14px !important;
-    border-radius: 16px !important;
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  .pg-table-wrap,
-  .table-responsive,
-  .admin-table-wrap,
-  .content-table-wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-    -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-x !important;
-  }
-
-  table,
-  .pg-table {
-    width: max-content !important;
-    min-width: 720px !important;
-  }
-
-  /* Formularios admin */
-  .row,
-  .container,
-  .container-fluid {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  [class*="col-"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 16px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  button {
-    max-width: 100% !important;
-  }
-
-  /* =====================================================
-     PRODUCTOS / USUARIO
-     ===================================================== */
-
-  .pub-product-grid,
+  /* Productos y categorías */
   .store-product-grid,
   .product-grid,
-  .pub-cat-grid,
-  .products-grid {
+  .products-grid,
+  .pub-product-grid,
+  .pub-cat-grid {
+    width: 100% !important;
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 14px !important;
-    width: 100% !important;
   }
 
-  .pub-cat-card,
-  .product-card,
   .store-product-card,
-  .producto-card {
+  .product-card,
+  .producto-card,
+  .pub-cat-card {
     width: 100% !important;
     max-width: 100% !important;
-    min-height: auto !important;
+    min-width: 0 !important;
     border-radius: 16px !important;
     overflow: hidden !important;
   }
 
-  .product-image,
   .store-product-img,
-  .pub-cat-img,
-  .producto-img {
+  .product-image,
+  .producto-img,
+  .pub-cat-img {
     width: 100% !important;
     height: 170px !important;
     object-fit: contain !important;
   }
 
-  /* Categorías deslizable */
   .store-category-list,
-  .pub-cat-sidebar,
   .category-list,
-  .categorias-lista {
+  .categorias-lista,
+  .pub-cat-sidebar {
     width: 100% !important;
-    max-width: 100% !important;
     display: flex !important;
     flex-wrap: nowrap !important;
     gap: 8px !important;
@@ -2736,334 +1403,27 @@ body {
     white-space: nowrap !important;
     padding: 8px 0 !important;
     -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-x !important;
   }
 
   .store-category-list button,
-  .pub-cat-sidebar button,
   .category-list button,
-  .categorias-lista button {
+  .categorias-lista button,
+  .pub-cat-sidebar button {
     flex: 0 0 auto !important;
     min-width: max-content !important;
   }
 
-  /* =====================================================
-     CARRITO / CHECKOUT
-     ===================================================== */
-
-  .checkout-grid,
-  .cart-grid,
-  .store-guest-checkout-wrap,
-  .pub-checkout-grid,
-  .pub-carrito-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    width: 100% !important;
-  }
-
-  .checkout-panel,
-  .cart-panel,
-  .store-order-box,
-  .resumen-pedido {
-    width: 100% !important;
-    max-width: 100% !important;
-    position: static !important;
-  }
-
-  /* =====================================================
-     LOGIN
-     ===================================================== */
-
-  .login-shell,
-  .login-page {
-    width: 100% !important;
-    min-height: 100dvh !important;
-    height: auto !important;
-    padding: 14px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-  }
-
-  .login-panel,
-  .login-card {
-    width: 100% !important;
-    max-width: 430px !important;
-    margin: 0 auto !important;
-    padding: 22px 18px !important;
-    border-radius: 20px !important;
-  }
-
-  .login-hero {
-    display: none !important;
-  }
-
-  .social-login-buttons,
-  .login-social-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-
-  /* =====================================================
-     MODALES
-     ===================================================== */
-
-  .pg-modal-overlay {
-    padding: 12px !important;
-    align-items: flex-end !important;
-    overflow-y: auto !important;
-  }
-
-  .pg-modal,
-  .modal-content {
-    width: 100% !important;
-    max-width: 100% !important;
-    max-height: 88dvh !important;
-    overflow-y: auto !important;
-    border-radius: 18px 18px 0 0 !important;
-  }
-
-  .swal2-popup {
-    width: calc(100vw - 24px) !important;
-    max-width: calc(100vw - 24px) !important;
-  }
-}
-
-/* Celulares pequeños */
-@media (max-width: 520px) {
-  .pg-app-content,
-  .pg-public-main,
-  .pg-public-page {
-    padding: 10px !important;
-  }
-
-  .pg-nav-link,
-  .pg-public-nav-button,
-  .pg-app-sidebar nav a,
-  .pg-public-scroll nav button {
-    min-width: 74px !important;
-    max-width: 92px !important;
-    font-size: 9px !important;
-  }
-
-  .pg-app-top-actions,
-  .pg-public-header-actions {
-    overflow-x: auto !important;
-  }
-
-  .pg-public-logo-text {
-    display: none !important;
-  }
-}
-
-/* =========================================================
-   PARTGO FIX DEFINITIVO MOBILE
-   Admin y Usuario como escritorio + scroll derecha/izquierda
-   PEGAR AL FINAL DE src/styles.css
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  html,
-  body,
-  #root {
-    width: auto !important;
-    min-width: 1180px !important;
-    max-width: none !important;
-    overflow-x: auto !important;
-    overflow-y: auto !important;
-    touch-action: pan-x pan-y !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  body {
-    margin: 0 !important;
-  }
-
-  /* ADMIN Y USUARIO: NO COMPRIMIR EN CELULAR */
-  .pg-app-root,
-  .pg-public-root {
-    width: 1180px !important;
-    min-width: 1180px !important;
-    max-width: none !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    display: flex !important;
-    overflow: visible !important;
-  }
-
-  /* SIDEBAR NORMAL, NO ABAJO, NO HORIZONTAL, NO APRETADO */
-  .pg-app-sidebar,
-  .pg-public-scroll {
-    position: sticky !important;
-    top: 0 !important;
-    left: 0 !important;
-    bottom: auto !important;
-    width: 280px !important;
-    min-width: 280px !important;
-    max-width: 280px !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    max-height: 100vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    z-index: 20 !important;
-    padding: 18px !important;
-    border-right: 1px solid rgba(255,255,255,.1) !important;
-  }
-
-  .pg-app-sidebar nav,
-  .pg-public-scroll nav {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    gap: 8px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    overflow: visible !important;
-    padding: 0 !important;
-  }
-
-  .pg-app-sidebar nav > div {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  .pg-nav-link,
-  .pg-public-nav-button,
-  .pg-app-sidebar nav a,
-  .pg-public-scroll nav button {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    height: auto !important;
-    min-height: 48px !important;
-    padding: 12px 14px !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 12px !important;
-    white-space: nowrap !important;
-    font-size: 14px !important;
-    line-height: 1.2 !important;
-    text-align: left !important;
-  }
-
-  .pg-nav-link span:first-child,
-  .pg-public-nav-button span:first-child,
-  .pg-app-sidebar nav a span:first-child,
-  .pg-public-scroll nav button span:first-child {
-    font-size: 18px !important;
-    width: 24px !important;
-    min-width: 24px !important;
-  }
-
-  .pg-nav-link span:last-child,
-  .pg-public-nav-button span:last-child,
-  .pg-app-sidebar nav a span:last-child,
-  .pg-public-scroll nav button span:last-child {
-    max-width: none !important;
-    overflow: visible !important;
-    text-overflow: unset !important;
-    white-space: nowrap !important;
-  }
-
-  /* CONTENIDO NORMAL, NO APRETADO */
-  .pg-app-main,
-  .pg-public-main {
-    width: 900px !important;
-    min-width: 900px !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    overflow: visible !important;
-    display: block !important;
-  }
-
-  .pg-app-content,
-  .pg-public-page,
-  .pg-public-main > div {
-    width: 900px !important;
-    min-width: 900px !important;
-    max-width: none !important;
-    padding: 24px !important;
-    overflow: visible !important;
-  }
-
-  /* TOPBAR NORMAL */
-  .pg-app-topbar,
-  .pg-public-header {
-    position: sticky !important;
-    top: 0 !important;
-    width: 900px !important;
-    min-width: 900px !important;
-    max-width: none !important;
-    height: auto !important;
-    min-height: 72px !important;
-    padding: 16px 24px !important;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    gap: 16px !important;
-    overflow: visible !important;
-    z-index: 15 !important;
-  }
-
-  .pg-app-topbar h2 {
-    width: auto !important;
-    font-size: 24px !important;
-    line-height: 1.2 !important;
-  }
-
-  .pg-app-search,
-  .pg-public-header-search {
-    order: initial !important;
-    width: 320px !important;
-    min-width: 280px !important;
-    max-width: 380px !important;
-    flex: 0 0 auto !important;
-  }
-
-  .pg-app-top-actions,
-  .pg-public-header-actions {
-    width: auto !important;
-    max-width: none !important;
-    margin-left: auto !important;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 10px !important;
-    overflow: visible !important;
-  }
-
-  .pg-app-profile-chip,
-  .pg-public-header-actions > span,
-  .pg-logout-text,
-  .pg-public-logo-text {
-    display: flex !important;
-  }
-
-  /* CARDS, GRIDS, DASHBOARD */
+  /* Admin: tablas con scroll lateral */
   .pg-card,
-  .pg-stat,
-  .content-card,
   .admin-card,
+  .content-card,
   .metric-card,
   .pg-panel {
     width: 100% !important;
-    max-width: none !important;
-    padding: 20px !important;
-    border-radius: 20px !important;
-    overflow: visible !important;
+    max-width: 100% !important;
+    padding: 14px !important;
+    border-radius: 16px !important;
+    overflow-x: auto !important;
   }
 
   .pg-table-wrap,
@@ -3071,7 +1431,7 @@ body {
   .admin-table-wrap,
   .content-table-wrap {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     overflow-x: auto !important;
     overflow-y: visible !important;
     -webkit-overflow-scrolling: touch !important;
@@ -3079,115 +1439,50 @@ body {
 
   table,
   .pg-table {
+    min-width: 760px !important;
+    width: max-content !important;
+  }
+
+  /* Formularios */
+  input,
+  select,
+  textarea {
     width: 100% !important;
-    min-width: 850px !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
   }
 
-  /* PRODUCTOS USUARIO: NO MÁS TARJETAS FLACAS */
-  .pub-product-grid,
-  .store-product-grid,
-  .product-grid,
-  .pub-cat-grid,
-  .products-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
-    gap: 18px !important;
+  button {
+    max-width: 100% !important;
+  }
+
+  .row,
+  .container,
+  .container-fluid {
     width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
-  .pub-cat-card,
-  .product-card,
-  .store-product-card,
-  .producto-card {
+  [class*="col-"] {
     width: 100% !important;
-    max-width: none !important;
-    min-height: auto !important;
-    border-radius: 18px !important;
-    overflow: hidden !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
   }
 
-  .product-image,
-  .store-product-img,
-  .pub-cat-img,
-  .producto-img {
-    width: 100% !important;
-    height: 180px !important;
-    object-fit: contain !important;
-  }
-
-  /* FILTROS / CATEGORÍAS NORMAL */
-  .store-category-list,
-  .pub-cat-sidebar,
-  .category-list,
-  .categorias-lista {
-    width: 100% !important;
-    max-width: none !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 10px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    white-space: nowrap !important;
-    padding: 10px 0 !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  .store-category-list button,
-  .pub-cat-sidebar button,
-  .category-list button,
-  .categorias-lista button {
-    flex: 0 0 auto !important;
-    min-width: max-content !important;
-  }
-
-  /* CARRITO / CHECKOUT */
-  .checkout-grid,
-  .cart-grid,
-  .store-guest-checkout-wrap,
-  .pub-checkout-grid,
-  .pub-carrito-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 360px !important;
-    gap: 20px !important;
-    width: 100% !important;
-  }
-
-  .checkout-panel,
-  .cart-panel,
-  .store-order-box,
-  .resumen-pedido {
-    width: 100% !important;
-    max-width: none !important;
-    position: static !important;
-  }
-}
-/* =========================================================
-   PARTGO MOBILE CLEAN FIX
-   Login responsive + Admin/Usuario con scroll horizontal
-   ========================================================= */
-
-html,
-body,
-#root {
-  width: 100%;
-  min-height: 100%;
-  overflow-x: auto;
-  overflow-y: auto;
-}
-
-/* LOGIN EN CELULAR */
-@media (max-width: 768px) {
+  /* Login */
   .login-page,
   .login-shell {
     width: 100% !important;
     min-width: 0 !important;
+    max-width: 100% !important;
     min-height: 100dvh !important;
-    padding: 18px 14px !important;
+    padding: 16px !important;
     display: flex !important;
-    align-items: center !important;
     justify-content: center !important;
+    align-items: center !important;
     overflow-x: hidden !important;
-    background: #070b16 !important;
   }
 
   .login-card,
@@ -3201,175 +1496,10 @@ body,
     transform: none !important;
   }
 
-  .login-card h1,
-  .login-card h2,
-  .login-panel h1,
-  .login-panel h2 {
-    font-size: 26px !important;
-    line-height: 1.15 !important;
-    text-align: center !important;
-  }
-
-  .login-card input,
-  .login-panel input {
-    height: 48px !important;
-    font-size: 15px !important;
-  }
-
-  .login-card button,
-  .login-panel button {
-    min-height: 46px !important;
-    font-size: 14px !important;
-  }
-
-  .social-login-buttons,
-  .login-social-grid,
-  .login-social {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    width: 100% !important;
-  }
-
   .login-hero,
   .login-side,
   .login-right,
   .login-decoration {
     display: none !important;
-  }
-}
-
-/* ADMIN Y USUARIO EN CELULAR: NO APLASTAR, PERMITIR DESLIZAR */
-@media (max-width: 900px) {
-  body {
-    overflow-x: auto !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  .pg-app-root,
-  .pg-public-root {
-    width: 1100px !important;
-    min-width: 1100px !important;
-    max-width: none !important;
-    min-height: 100dvh !important;
-    display: flex !important;
-    overflow: visible !important;
-  }
-
-  .pg-app-sidebar,
-  .pg-public-scroll {
-    width: 260px !important;
-    min-width: 260px !important;
-    max-width: 260px !important;
-    height: 100dvh !important;
-    position: sticky !important;
-    top: 0 !important;
-    left: 0 !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    flex-shrink: 0 !important;
-  }
-
-  .pg-app-main,
-  .pg-public-main {
-    width: 840px !important;
-    min-width: 840px !important;
-    max-width: none !important;
-    overflow: visible !important;
-  }
-
-  .pg-app-content,
-  .pg-public-page,
-  .pg-public-main > div {
-    width: 840px !important;
-    min-width: 840px !important;
-    max-width: none !important;
-    padding: 20px !important;
-    overflow: visible !important;
-  }
-
-  .pg-app-topbar,
-  .pg-public-header {
-    width: 840px !important;
-    min-width: 840px !important;
-    max-width: none !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    gap: 14px !important;
-    padding: 14px 20px !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 50 !important;
-  }
-
-  .pg-app-search,
-  .pg-public-header-search {
-    width: 300px !important;
-    min-width: 260px !important;
-    max-width: 340px !important;
-    flex: 0 0 auto !important;
-  }
-
-  .pg-app-top-actions,
-  .pg-public-header-actions {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 10px !important;
-    margin-left: auto !important;
-  }
-
-  .pg-card,
-  .admin-card,
-  .content-card,
-  .metric-card,
-  .pg-panel {
-    max-width: none !important;
-    overflow-x: auto !important;
-  }
-
-  .pg-table-wrap,
-  .table-responsive,
-  .admin-table-wrap,
-  .content-table-wrap {
-    width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  table,
-  .pg-table {
-    min-width: 850px !important;
-    width: max-content !important;
-  }
-
-  .pub-product-grid,
-  .store-product-grid,
-  .product-grid,
-  .pub-cat-grid,
-  .products-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(230px, 1fr)) !important;
-    gap: 16px !important;
-  }
-
-  .product-card,
-  .store-product-card,
-  .pub-cat-card,
-  .producto-card {
-    width: 100% !important;
-    min-width: 0 !important;
-    border-radius: 18px !important;
-    overflow: hidden !important;
-  }
-
-  .product-image,
-  .store-product-img,
-  .pub-cat-img,
-  .producto-img {
-    width: 100% !important;
-    height: 170px !important;
-    object-fit: contain !important;
   }
 }
