@@ -2856,3 +2856,308 @@ body {
     display: none !important;
   }
 }
+
+/* =========================================================
+   PARTGO FIX DEFINITIVO MOBILE
+   Admin y Usuario como escritorio + scroll derecha/izquierda
+   PEGAR AL FINAL DE src/styles.css
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  html,
+  body,
+  #root {
+    width: auto !important;
+    min-width: 1180px !important;
+    max-width: none !important;
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    touch-action: pan-x pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body {
+    margin: 0 !important;
+  }
+
+  /* ADMIN Y USUARIO: NO COMPRIMIR EN CELULAR */
+  .pg-app-root,
+  .pg-public-root {
+    width: 1180px !important;
+    min-width: 1180px !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    overflow: visible !important;
+  }
+
+  /* SIDEBAR NORMAL, NO ABAJO, NO HORIZONTAL, NO APRETADO */
+  .pg-app-sidebar,
+  .pg-public-scroll {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: auto !important;
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    z-index: 20 !important;
+    padding: 18px !important;
+    border-right: 1px solid rgba(255,255,255,.1) !important;
+  }
+
+  .pg-app-sidebar nav,
+  .pg-public-scroll nav {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  .pg-app-sidebar nav > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .pg-nav-link,
+  .pg-public-nav-button,
+  .pg-app-sidebar nav a,
+  .pg-public-scroll nav button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 48px !important;
+    padding: 12px 14px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    white-space: nowrap !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
+  .pg-nav-link span:first-child,
+  .pg-public-nav-button span:first-child,
+  .pg-app-sidebar nav a span:first-child,
+  .pg-public-scroll nav button span:first-child {
+    font-size: 18px !important;
+    width: 24px !important;
+    min-width: 24px !important;
+  }
+
+  .pg-nav-link span:last-child,
+  .pg-public-nav-button span:last-child,
+  .pg-app-sidebar nav a span:last-child,
+  .pg-public-scroll nav button span:last-child {
+    max-width: none !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: nowrap !important;
+  }
+
+  /* CONTENIDO NORMAL, NO APRETADO */
+  .pg-app-main,
+  .pg-public-main {
+    width: 900px !important;
+    min-width: 900px !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .pg-app-content,
+  .pg-public-page,
+  .pg-public-main > div {
+    width: 900px !important;
+    min-width: 900px !important;
+    max-width: none !important;
+    padding: 24px !important;
+    overflow: visible !important;
+  }
+
+  /* TOPBAR NORMAL */
+  .pg-app-topbar,
+  .pg-public-header {
+    position: sticky !important;
+    top: 0 !important;
+    width: 900px !important;
+    min-width: 900px !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 72px !important;
+    padding: 16px 24px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 16px !important;
+    overflow: visible !important;
+    z-index: 15 !important;
+  }
+
+  .pg-app-topbar h2 {
+    width: auto !important;
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  .pg-app-search,
+  .pg-public-header-search {
+    order: initial !important;
+    width: 320px !important;
+    min-width: 280px !important;
+    max-width: 380px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    width: auto !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    overflow: visible !important;
+  }
+
+  .pg-app-profile-chip,
+  .pg-public-header-actions > span,
+  .pg-logout-text,
+  .pg-public-logo-text {
+    display: flex !important;
+  }
+
+  /* CARDS, GRIDS, DASHBOARD */
+  .pg-card,
+  .pg-stat,
+  .content-card,
+  .admin-card,
+  .metric-card,
+  .pg-panel {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 20px !important;
+    border-radius: 20px !important;
+    overflow: visible !important;
+  }
+
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap {
+    width: 100% !important;
+    max-width: none !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  table,
+  .pg-table {
+    width: 100% !important;
+    min-width: 850px !important;
+  }
+
+  /* PRODUCTOS USUARIO: NO MÁS TARJETAS FLACAS */
+  .pub-product-grid,
+  .store-product-grid,
+  .product-grid,
+  .pub-cat-grid,
+  .products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+
+  .pub-cat-card,
+  .product-card,
+  .store-product-card,
+  .producto-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: auto !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  .product-image,
+  .store-product-img,
+  .pub-cat-img,
+  .producto-img {
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: contain !important;
+  }
+
+  /* FILTROS / CATEGORÍAS NORMAL */
+  .store-category-list,
+  .pub-cat-sidebar,
+  .category-list,
+  .categorias-lista {
+    width: 100% !important;
+    max-width: none !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    padding: 10px 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .store-category-list button,
+  .pub-cat-sidebar button,
+  .category-list button,
+  .categorias-lista button {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+  }
+
+  /* CARRITO / CHECKOUT */
+  .checkout-grid,
+  .cart-grid,
+  .store-guest-checkout-wrap,
+  .pub-checkout-grid,
+  .pub-carrito-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 360px !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .checkout-panel,
+  .cart-panel,
+  .store-order-box,
+  .resumen-pedido {
+    width: 100% !important;
+    max-width: none !important;
+    position: static !important;
+  }
+}
