@@ -1,0 +1,165 @@
+﻿/* =====================================================
+   SOLO LETRAS FINAL - NO TOCA FONDO NI LAYOUT
+   ===================================================== */
+
+/* No tocar fondos, tamaños, grid, flex ni posiciones */
+
+/* HERO: solo color de letras */
+.hero h1,
+.home-hero h1,
+.pg-hero h1,
+.banner h1,
+.hero-title,
+.banner-title,
+[class*="hero"] h1,
+[class*="Hero"] h1 {
+  color: #ffffff !important;
+  font-weight: 950 !important;
+  text-shadow:
+    0 4px 12px rgba(0,0,0,.85),
+    0 12px 28px rgba(0,0,0,.65) !important;
+}
+
+.hero h1 span,
+.home-hero h1 span,
+.pg-hero h1 span,
+.banner h1 span,
+.hero-title span,
+.banner-title span,
+[class*="hero"] h1 span,
+[class*="Hero"] h1 span {
+  color: #a78bfa !important;
+  text-shadow:
+    0 4px 12px rgba(0,0,0,.85),
+    0 0 18px rgba(167,139,250,.45) !important;
+}
+
+.hero p,
+.home-hero p,
+.pg-hero p,
+.banner p,
+.hero-subtitle,
+.banner-subtitle,
+[class*="hero"] p,
+[class*="Hero"] p {
+  color: #e5e7eb !important;
+  font-weight: 600 !important;
+  text-shadow: 0 3px 10px rgba(0,0,0,.70) !important;
+}
+
+/* Etiqueta FRENOS / GARANTÍA */
+.hero .badge,
+.home-hero .badge,
+.pg-hero .badge,
+.banner .badge,
+[class*="hero"] .badge,
+[class*="Hero"] .badge {
+  color: #fbbf24 !important;
+  background: rgba(251,191,36,.12) !important;
+  border: 1px solid rgba(251,191,36,.60) !important;
+  font-weight: 900 !important;
+}
+
+/* Menú lateral: seleccionado morado, nunca blanco */
+.pg-public-scroll a,
+.pg-app-sidebar a,
+.sidebar a,
+aside a {
+  color: #dbe4f0 !important;
+  font-weight: 750 !important;
+}
+
+.pg-public-scroll a:hover,
+.pg-public-scroll a:focus,
+.pg-public-scroll a.active,
+.pg-public-scroll .active,
+.pg-app-sidebar a:hover,
+.pg-app-sidebar a:focus,
+.pg-app-sidebar a.active,
+.pg-app-sidebar .active,
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a.active,
+.sidebar .active,
+aside a:hover,
+aside a:focus,
+aside a.active,
+aside .active {
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(124,58,237,.28) !important;
+}
+
+/* Si Pedidos está deshabilitado, que no salga fondo blanco */
+.pg-public-scroll a.disabled,
+.pg-public-scroll a[aria-disabled="true"],
+.pg-public-scroll button:disabled,
+.pg-app-sidebar a.disabled,
+.pg-app-sidebar a[aria-disabled="true"],
+.pg-app-sidebar button:disabled,
+.sidebar a.disabled,
+.sidebar a[aria-disabled="true"],
+.sidebar button:disabled,
+aside a.disabled,
+aside a[aria-disabled="true"],
+aside button:disabled {
+  background: transparent !important;
+  color: rgba(219,228,240,.45) !important;
+  opacity: .75 !important;
+  box-shadow: none !important;
+}
+
+/* Botón cupón: visible, no apagado */
+.pg-public-scroll button,
+.sidebar button,
+aside button {
+  font-weight: 900 !important;
+}
+
+.pg-public-scroll button:disabled,
+.sidebar button:disabled,
+aside button:disabled {
+  background: #ffffff !important;
+  color: #7c3aed !important;
+  opacity: .85 !important;
+}
+
+/* Títulos de secciones en modo claro */
+body:not(.dark) .pg-public-main h2,
+body:not(.dark) .section-title,
+body:not(.dark) .home-section-title,
+body:not(.dark) .store-section-title {
+  color: #0f172a !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* Títulos de secciones en modo oscuro */
+body.dark .pg-public-main h2,
+body.dark .section-title,
+body.dark .home-section-title,
+body.dark .store-section-title,
+html.dark .pg-public-main h2,
+html.dark .section-title,
+html.dark .home-section-title,
+html.dark .store-section-title,
+[data-theme="dark"] .pg-public-main h2,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .home-section-title,
+[data-theme="dark"] .store-section-title {
+  color: #ffffff !important;
+  text-shadow: 0 4px 14px rgba(0,0,0,.45) !important;
+}
+
+/* Quitar basura lateral si quedó */
+.pg-sidebar-toggle-btn,
+.pg-sidebar-toggle,
+.pg-sidebar-edge,
+.pg-sidebar-resizer,
+.pg-sidebar-hitbox,
+.pg-sidebar-handle,
+[class*="sidebar-toggle"],
+[class*="sidebar-resizer"],
+[class*="resize-handle"] {
+  display: none !important;
+}
