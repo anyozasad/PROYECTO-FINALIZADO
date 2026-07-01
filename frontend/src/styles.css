@@ -2516,3 +2516,417 @@ a.nav-link:active,
     padding: 7px 11px;
   }
 }
+
+/* =========================================================
+   DORADA MOTOR'S - VISUAL PRO V2
+   Corrige letras opacas, colores, cards y vista producto
+   PEGAR AL FINAL DE src/styles.css
+   ========================================================= */
+
+:root {
+  --dm-bg: #080914;
+  --dm-card: #15182a;
+  --dm-card-soft: #1d2138;
+  --dm-white: #ffffff;
+  --dm-text: #f8fafc;
+  --dm-muted: #cbd5e1;
+  --dm-gold: #fbbf24;
+  --dm-orange: #fb923c;
+  --dm-purple: #8b5cf6;
+  --dm-purple-2: #a855f7;
+  --dm-border: rgba(255, 255, 255, 0.12);
+  --dm-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Fondo general más elegante */
+.pg-public-main,
+.pg-app-main {
+  background:
+    radial-gradient(circle at top left, rgba(139, 92, 246, 0.22), transparent 34%),
+    radial-gradient(circle at top right, rgba(251, 191, 36, 0.14), transparent 30%),
+    linear-gradient(180deg, #090b18 0%, #0d1020 48%, #11152a 100%) !important;
+  color: var(--dm-text) !important;
+}
+
+/* Quitar textos opacos */
+.pg-public-main *,
+.pg-app-main * {
+  text-shadow: none;
+}
+
+/* Títulos principales visibles y pro */
+.pg-public-main h1,
+.pg-public-main h2,
+.pg-public-main h3,
+.pg-app-main h1,
+.pg-app-main h2,
+.pg-app-main h3 {
+  color: var(--dm-white) !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  font-family: "Segoe UI", Inter, system-ui, sans-serif !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Categorías populares / Productos destacados */
+.pg-public-main h2,
+.pg-app-main h2 {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-size: clamp(28px, 2.5vw, 42px) !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  color: #ffffff !important;
+  margin-bottom: 28px !important;
+  position: relative !important;
+}
+
+.pg-public-main h2::before,
+.pg-app-main h2::before {
+  content: "✦" !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, var(--dm-gold), var(--dm-orange)) !important;
+  color: #111827 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+  box-shadow: 0 12px 28px rgba(251, 191, 36, 0.38) !important;
+}
+
+.pg-public-main h2::after,
+.pg-app-main h2::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 46px !important;
+  bottom: -12px !important;
+  width: 120px !important;
+  height: 5px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, var(--dm-gold), var(--dm-purple)) !important;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.30) !important;
+}
+
+/* Párrafos y textos secundarios más claros */
+.pg-public-main p,
+.pg-app-main p,
+.pg-public-main span,
+.pg-app-main span,
+.pg-public-main small,
+.pg-app-main small {
+  color: inherit;
+}
+
+/* Links "Ver todos" más visibles */
+.pg-public-main a,
+.pg-app-main a {
+  color: #c4b5fd !important;
+  font-weight: 850 !important;
+  text-decoration: none !important;
+}
+
+.pg-public-main a:hover,
+.pg-app-main a:hover {
+  color: var(--dm-gold) !important;
+}
+
+/* Cards generales más premium */
+.pg-public-main [class*="card"],
+.pg-app-main [class*="card"],
+.pg-public-main [style*="border-radius"],
+.pg-app-main [style*="border-radius"] {
+  border-color: var(--dm-border) !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.26) !important;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    filter 0.28s ease !important;
+}
+
+/* Cards de categorías y productos */
+.pub-cat-card,
+.category-card,
+.cat-card,
+.product-card,
+.prod-card,
+.store-product-card,
+.producto-card {
+  background:
+    linear-gradient(180deg, rgba(28, 32, 55, 0.98), rgba(16, 19, 34, 0.98)) !important;
+  border: 1px solid rgba(167, 139, 250, 0.22) !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  color: #ffffff !important;
+}
+
+/* Parte blanca superior más suave, no quemada */
+.pub-cat-card img,
+.category-card img,
+.cat-card img,
+.product-card img,
+.prod-card img,
+.store-product-card img,
+.producto-card img {
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.30)) !important;
+  transition: transform 0.38s ease, filter 0.38s ease !important;
+}
+
+/* Hover premium */
+.pub-cat-card:hover,
+.category-card:hover,
+.cat-card:hover,
+.product-card:hover,
+.prod-card:hover,
+.store-product-card:hover,
+.producto-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  border-color: rgba(251, 191, 36, 0.45) !important;
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.40),
+    0 0 32px rgba(139, 92, 246, 0.22) !important;
+}
+
+.pub-cat-card:hover img,
+.category-card:hover img,
+.cat-card:hover img,
+.product-card:hover img,
+.prod-card:hover img,
+.store-product-card:hover img,
+.producto-card:hover img {
+  transform: scale(1.09) rotate(-1.5deg) !important;
+  filter:
+    drop-shadow(0 28px 35px rgba(0, 0, 0, 0.38))
+    drop-shadow(0 0 20px rgba(251, 191, 36, 0.20)) !important;
+}
+
+/* Textos dentro de cards */
+.pub-cat-card *,
+.category-card *,
+.cat-card *,
+.product-card *,
+.prod-card *,
+.store-product-card *,
+.producto-card * {
+  color: #ffffff !important;
+}
+
+.pub-cat-card small,
+.category-card small,
+.cat-card small,
+.product-card small,
+.prod-card small,
+.store-product-card small,
+.producto-card small,
+.pub-cat-card p,
+.category-card p,
+.cat-card p,
+.product-card p,
+.prod-card p,
+.store-product-card p,
+.producto-card p {
+  color: #cbd5e1 !important;
+}
+
+/* Precio más llamativo */
+.product-card strong,
+.prod-card strong,
+.store-product-card strong,
+.producto-card strong,
+.pg-public-main [class*="price"],
+.pg-app-main [class*="price"] {
+  color: var(--dm-gold) !important;
+  font-weight: 950 !important;
+  font-size: 1.15em !important;
+}
+
+/* Botones más modernos */
+.pg-public-main button,
+.pg-app-main button,
+.pg-public-main .btn,
+.pg-app-main .btn {
+  border-radius: 16px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease !important;
+}
+
+.pg-public-main button:hover,
+.pg-app-main button:hover,
+.pg-public-main .btn:hover,
+.pg-app-main .btn:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.08) !important;
+  box-shadow: 0 16px 34px rgba(139, 92, 246, 0.32) !important;
+}
+
+/* Hero menos apagado */
+.pg-public-main [class*="hero"],
+.pg-app-main [class*="hero"] {
+  filter: saturate(1.12) contrast(1.08) brightness(1.05) !important;
+}
+
+/* =========================================================
+   LIMPIEZA DEL 360° MAL PUESTO
+   Evita que salga 360 en categorías/productos del home
+   ========================================================= */
+
+.pg-public-main h2 + div::before,
+.pg-public-main h2 + section::before,
+.pg-public-main h2 + article::before,
+.pub-cat-card::before,
+.category-card::before,
+.cat-card::before,
+.product-card::before,
+.prod-card::before,
+.store-product-card::before,
+.producto-card::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* =========================================================
+   DETALLE PRODUCTO - EFECTO VITRINA 360 / 3D
+   ========================================================= */
+
+/* Card grande del detalle */
+.pg-public-main [style*="grid-template-columns"] > div:first-child {
+  position: relative !important;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(139, 92, 246, 0.20), transparent 42%),
+    linear-gradient(180deg, rgba(30, 34, 58, 0.96), rgba(15, 18, 34, 0.98)) !important;
+  border: 1px solid rgba(167, 139, 250, 0.28) !important;
+  border-radius: 30px !important;
+  box-shadow: var(--dm-shadow) !important;
+  overflow: hidden !important;
+}
+
+/* Badge 360 solo en detalle */
+.pg-public-main [style*="grid-template-columns"] > div:first-child::before {
+  content: "360° VIEW" !important;
+  position: absolute !important;
+  top: 22px !important;
+  right: 24px !important;
+  z-index: 20 !important;
+  padding: 10px 15px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--dm-gold), var(--dm-orange)) !important;
+  color: #111827 !important;
+  font-weight: 950 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.06em !important;
+  box-shadow: 0 15px 35px rgba(251, 191, 36, 0.32) !important;
+  display: inline-flex !important;
+}
+
+/* Brillo tipo vitrina */
+.pg-public-main [style*="grid-template-columns"] > div:first-child::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 18px !important;
+  border-radius: 28px !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(120deg, transparent 18%, rgba(255,255,255,0.20) 45%, transparent 72%) !important;
+  opacity: 0.45 !important;
+  animation: dm-shine-v2 4.2s ease-in-out infinite !important;
+  display: block !important;
+}
+
+@keyframes dm-shine-v2 {
+  0% {
+    transform: translateX(-18px);
+    opacity: 0.22;
+  }
+  50% {
+    transform: translateX(18px);
+    opacity: 0.60;
+  }
+  100% {
+    transform: translateX(-18px);
+    opacity: 0.22;
+  }
+}
+
+/* Imagen del producto con movimiento tipo 3D */
+.pg-public-main [style*="grid-template-columns"] > div:first-child img {
+  transition:
+    transform 0.65s cubic-bezier(.2,.8,.2,1),
+    filter 0.65s ease !important;
+  filter:
+    drop-shadow(0 28px 38px rgba(0, 0, 0, 0.36))
+    drop-shadow(0 0 22px rgba(139, 92, 246, 0.22)) !important;
+}
+
+.pg-public-main [style*="grid-template-columns"] > div:first-child:hover img {
+  transform:
+    perspective(950px)
+    rotateY(-16deg)
+    rotateX(6deg)
+    scale(1.10) !important;
+  filter:
+    drop-shadow(0 36px 48px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 32px rgba(251, 191, 36, 0.28)) !important;
+}
+
+/* Panel derecho del detalle */
+.pg-public-main [style*="grid-template-columns"] > div:last-child {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,247,255,0.98)) !important;
+  color: #071027 !important;
+  border: 1px solid rgba(139, 92, 246, 0.22) !important;
+  border-radius: 30px !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18) !important;
+}
+
+.pg-public-main [style*="grid-template-columns"] > div:last-child * {
+  color: inherit;
+}
+
+.pg-public-main [style*="grid-template-columns"] > div:last-child h1,
+.pg-public-main [style*="grid-template-columns"] > div:last-child h2,
+.pg-public-main [style*="grid-template-columns"] > div:last-child h3 {
+  color: #071027 !important;
+}
+
+/* Scrollbar premium */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--dm-gold), var(--dm-purple));
+  border-radius: 999px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .pg-public-main,
+  .pg-app-main {
+    background: linear-gradient(180deg, #090b18, #11152a) !important;
+  }
+
+  .pg-public-main h2,
+  .pg-app-main h2 {
+    font-size: 27px !important;
+  }
+
+  .pg-public-main [style*="grid-template-columns"] > div:first-child::before {
+    top: 14px !important;
+    right: 14px !important;
+    font-size: 10px !important;
+    padding: 8px 11px !important;
+  }
+}
