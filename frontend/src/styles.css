@@ -2930,3 +2930,499 @@ a.nav-link:active,
     padding: 8px 11px !important;
   }
 }
+
+/* =========================================================
+   DORADA MOTOR'S - ESTILO FINAL LIMPIO
+   Pegar al final de src/styles.css
+   ========================================================= */
+
+:root {
+  --dm-bg: #0b1020;
+  --dm-bg-2: #11172a;
+  --dm-surface: #151c31;
+  --dm-surface-2: #1b2440;
+  --dm-border: rgba(255,255,255,0.08);
+  --dm-text: #f8fafc;
+  --dm-text-soft: #cbd5e1;
+  --dm-text-muted: #94a3b8;
+  --dm-gold: #f59e0b;
+  --dm-gold-2: #fbbf24;
+  --dm-purple: #7c3aed;
+  --dm-purple-2: #a855f7;
+  --dm-danger: #ef4444;
+  --dm-success: #22c55e;
+  --dm-shadow: 0 16px 40px rgba(0,0,0,.28);
+  --dm-radius: 22px;
+}
+
+/* ====== FONDO GENERAL ====== */
+body,
+.pg-public-main,
+.pg-app-main,
+.pg-public-root,
+.pg-app-root {
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.10), transparent 28%),
+    linear-gradient(180deg, #0a0f1e 0%, #0c1323 48%, #0f172a 100%) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ====== TIPOGRAFÍA GENERAL ====== */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Segoe UI", Inter, system-ui, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dm-text) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+p, span, small, label, li {
+  color: var(--dm-text-soft);
+}
+
+/* ====== TÍTULOS DE SECCIÓN ====== */
+.section-title,
+.pg-section-title,
+h2 {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.section-title::after,
+.pg-section-title::after,
+h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 5px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--dm-gold), var(--dm-purple));
+}
+
+/* ====== NAVBAR / BARRA SUPERIOR ====== */
+header,
+nav,
+.navbar,
+.topbar,
+.pg-topbar {
+  background: rgba(10, 15, 30, 0.88) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+}
+
+.navbar a,
+nav a,
+.pg-topbar a {
+  color: #ffffff !important;
+}
+
+/* ====== SIDEBAR ====== */
+.pg-public-scroll,
+.pg-app-sidebar,
+.sidebar,
+aside {
+  background: linear-gradient(180deg, #0d1427 0%, #11182d 100%) !important;
+  border-right: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.pg-public-scroll a,
+.pg-app-sidebar a,
+.sidebar a,
+aside a {
+  color: #e2e8f0 !important;
+  border-radius: 14px !important;
+  transition: all .25s ease;
+}
+
+.pg-public-scroll a:hover,
+.pg-app-sidebar a:hover,
+.sidebar a:hover,
+aside a:hover {
+  background: rgba(124,58,237,.18) !important;
+  color: #fff !important;
+}
+
+.pg-public-scroll .active,
+.pg-app-sidebar .active,
+.sidebar .active,
+aside .active {
+  background: linear-gradient(90deg, var(--dm-purple), var(--dm-purple-2)) !important;
+  color: #fff !important;
+  box-shadow: 0 12px 28px rgba(124,58,237,.32);
+}
+
+/* ====== INPUTS / SEARCH ====== */
+input,
+select,
+textarea,
+.search-input,
+.form-control {
+  background: #121a2f !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+}
+
+input::placeholder,
+textarea::placeholder,
+.search-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus {
+  border-color: rgba(168,85,247,.7) !important;
+  box-shadow: 0 0 0 4px rgba(168,85,247,.14) !important;
+  outline: none !important;
+}
+
+/* ====== BOTONES ====== */
+button,
+.btn {
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+  transition: all .25s ease !important;
+}
+
+.btn-primary,
+button[type="submit"],
+.pg-btn-primary {
+  background: linear-gradient(135deg, var(--dm-purple), var(--dm-purple-2)) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 14px 28px rgba(124,58,237,.30);
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover,
+.pg-btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.btn-outline,
+.btn-secondary,
+.pg-btn-secondary {
+  background: rgba(255,255,255,.03) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+}
+
+/* ====== HERO ====== */
+.hero,
+.home-hero,
+.pg-hero,
+.banner {
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  box-shadow: var(--dm-shadow) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+}
+
+.hero::before,
+.home-hero::before,
+.pg-hero::before,
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10,15,30,.82) 0%, rgba(10,15,30,.48) 44%, rgba(10,15,30,.15) 100%);
+  pointer-events: none;
+}
+
+/* ====== TARJETAS GENERALES ====== */
+.card,
+.pub-cat-card,
+.category-card,
+.cat-card,
+.product-card,
+.store-product-card,
+.producto-card {
+  background: linear-gradient(180deg, #171f36 0%, #12192d 100%) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: var(--dm-radius) !important;
+  box-shadow: var(--dm-shadow) !important;
+  overflow: hidden !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+  color: #fff !important;
+}
+
+.card:hover,
+.pub-cat-card:hover,
+.category-card:hover,
+.cat-card:hover,
+.product-card:hover,
+.store-product-card:hover,
+.producto-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(245,158,11,.35) !important;
+  box-shadow: 0 22px 48px rgba(0,0,0,.35), 0 0 0 1px rgba(168,85,247,.08) !important;
+}
+
+/* ====== IMÁGENES EN TARJETAS ====== */
+.card img,
+.pub-cat-card img,
+.category-card img,
+.cat-card img,
+.product-card img,
+.store-product-card img,
+.producto-card img {
+  background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%) !important;
+  border-radius: 18px !important;
+  padding: 10px !important;
+  object-fit: contain !important;
+}
+
+/* ====== TEXTO EN TARJETAS ====== */
+.card h3,
+.card h4,
+.card h5,
+.pub-cat-card h3,
+.category-card h3,
+.product-card h3,
+.store-product-card h3,
+.producto-card h3 {
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+.card p,
+.card small,
+.pub-cat-card p,
+.category-card p,
+.product-card p,
+.store-product-card p,
+.producto-card p {
+  color: var(--dm-text-soft) !important;
+}
+
+.price,
+.precio,
+[class*="price"] {
+  color: var(--dm-gold-2) !important;
+  font-weight: 900 !important;
+  font-size: 1.25rem !important;
+}
+
+/* ====== BADGES ====== */
+.badge,
+.tag,
+[class*="badge"] {
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+}
+
+.badge-new,
+.nuevo,
+[class*="nuevo"] {
+  background: #2563eb !important;
+  color: #fff !important;
+}
+
+.badge-offer,
+.oferta,
+[class*="oferta"] {
+  background: #dc2626 !important;
+  color: #fff !important;
+}
+
+.badge-360,
+.view-360,
+[class*="360"] {
+  background: linear-gradient(135deg, var(--dm-gold), var(--dm-gold-2)) !important;
+  color: #111827 !important;
+  font-weight: 900 !important;
+  border-radius: 999px !important;
+  padding: 8px 14px !important;
+  box-shadow: 0 10px 24px rgba(245,158,11,.28) !important;
+}
+
+/* ====== OFERTAS ESPECIALES ====== */
+.offer-banner,
+.special-offer,
+.ofertas-especiales,
+[class*="oferta"] .banner,
+[class*="offer"] {
+  background:
+    radial-gradient(circle at left, rgba(124,58,237,.25), transparent 32%),
+    linear-gradient(135deg, #181f35 0%, #12182b 100%) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 28px !important;
+  box-shadow: var(--dm-shadow) !important;
+}
+
+.offer-banner h2,
+.special-offer h2,
+.ofertas-especiales h2,
+.offer-banner h3,
+.special-offer h3,
+.ofertas-especiales h3 {
+  color: #fff !important;
+}
+
+.offer-banner p,
+.special-offer p,
+.ofertas-especiales p {
+  color: var(--dm-text-soft) !important;
+}
+
+/* Si el texto se puso blanco sobre fondo claro, lo corregimos */
+.offer-banner *,
+.special-offer *,
+.ofertas-especiales * {
+  text-shadow: none !important;
+}
+
+/* ====== DETALLE DEL PRODUCTO ====== */
+.product-detail,
+.product-view,
+.product-page,
+[class*="detalle-producto"] {
+  color: #fff !important;
+}
+
+.product-gallery,
+.product-images,
+.product-detail-left {
+  background: linear-gradient(180deg, #171f36 0%, #12192d 100%) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 28px !important;
+  box-shadow: var(--dm-shadow) !important;
+  padding: 18px !important;
+}
+
+.product-gallery img,
+.product-images img,
+.product-detail-left img {
+  background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%) !important;
+  border-radius: 22px !important;
+  padding: 14px !important;
+  transition: transform .35s ease !important;
+}
+
+.product-gallery img:hover,
+.product-images img:hover,
+.product-detail-left img:hover {
+  transform: scale(1.04) rotate(-1deg);
+}
+
+/* Panel derecho detalle */
+.product-info,
+.product-detail-right,
+.product-summary {
+  background: linear-gradient(180deg, #171f36 0%, #12192d 100%) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 28px !important;
+  box-shadow: var(--dm-shadow) !important;
+  padding: 20px !important;
+}
+
+.product-info h1,
+.product-detail-right h1,
+.product-summary h1 {
+  color: #fff !important;
+  font-weight: 900 !important;
+}
+
+.product-info .price,
+.product-detail-right .price,
+.product-summary .price {
+  color: var(--dm-gold-2) !important;
+  font-size: 2rem !important;
+}
+
+/* ====== TABLAS / ADMIN ====== */
+table,
+.table {
+  background: #131a2d !important;
+  color: #fff !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+table thead,
+.table thead {
+  background: #1b2440 !important;
+}
+
+table th,
+.table th {
+  color: #fff !important;
+  font-weight: 800 !important;
+  border-color: rgba(255,255,255,.06) !important;
+}
+
+table td,
+.table td {
+  color: var(--dm-text-soft) !important;
+  border-color: rgba(255,255,255,.05) !important;
+}
+
+/* ====== CONTADORES / CAJAS ====== */
+.counter-box,
+.kpi-card,
+.stat-card {
+  background: linear-gradient(180deg, #171f36 0%, #12192d 100%) !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: var(--dm-shadow) !important;
+}
+
+/* ====== LINKS ====== */
+a {
+  color: #c4b5fd;
+}
+
+a:hover {
+  color: var(--dm-gold-2);
+}
+
+/* ====== SCROLL ====== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--dm-purple), var(--dm-gold));
+  border-radius: 999px;
+}
+
+/* ====== MOBILE ====== */
+@media (max-width: 768px) {
+  .card,
+  .pub-cat-card,
+  .category-card,
+  .cat-card,
+  .product-card,
+  .store-product-card,
+  .producto-card,
+  .product-gallery,
+  .product-info,
+  .product-detail-right {
+    border-radius: 18px !important;
+  }
+
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.7rem !important; }
+  h3 { font-size: 1.2rem !important; }
+}
