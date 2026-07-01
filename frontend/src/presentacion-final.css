@@ -1,0 +1,331 @@
+﻿/* =====================================================
+   DORADA MOTOR'S - PRESENTACIÓN FINAL
+   Letras visibles en claro/oscuro + sidebar correcto
+===================================================== */
+
+/* =========================
+   BASE
+========================= */
+html,
+body,
+#root {
+  overflow-x: hidden !important;
+}
+
+body {
+  font-family: "Segoe UI", Inter, system-ui, sans-serif !important;
+}
+
+/* =========================
+   HERO PRINCIPAL
+   Texto blanco sobre imagen oscura
+========================= */
+.hero h1,
+.home-hero h1,
+.pg-hero h1,
+.banner h1,
+[class*="hero"] h1,
+[class*="Hero"] h1,
+.pg-public-main > section:first-of-type h1,
+.pg-public-main > div:first-of-type h1 {
+  color: #ffffff !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.02 !important;
+  text-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.75),
+    0 12px 28px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Palabras resaltadas del hero */
+.hero h1 span,
+.home-hero h1 span,
+.pg-hero h1 span,
+.banner h1 span,
+[class*="hero"] h1 span,
+[class*="Hero"] h1 span,
+.pg-public-main > section:first-of-type h1 span,
+.pg-public-main > div:first-of-type h1 span {
+  color: #a78bfa !important;
+  text-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.65),
+    0 0 18px rgba(167, 139, 250, 0.35) !important;
+}
+
+/* Texto pequeño del hero */
+.hero p,
+.home-hero p,
+.pg-hero p,
+.banner p,
+[class*="hero"] p,
+[class*="Hero"] p,
+.pg-public-main > section:first-of-type p,
+.pg-public-main > div:first-of-type p {
+  color: #e5e7eb !important;
+  font-weight: 500 !important;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.55) !important;
+}
+
+/* Etiqueta superior del hero */
+.hero .badge,
+.home-hero .badge,
+.pg-hero .badge,
+.banner .badge,
+[class*="hero"] .badge,
+[class*="Hero"] .badge {
+  color: #fbbf24 !important;
+  background: rgba(251, 191, 36, 0.12) !important;
+  border: 1px solid rgba(251, 191, 36, 0.65) !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* =========================
+   TÍTULOS DE SECCIÓN
+   Categorías populares / Productos destacados
+========================= */
+.pg-public-main h2,
+.pg-app-main h2,
+.section-title,
+.home-section-title,
+.store-section-title,
+.pg-section-title {
+  color: #111827 !important;
+  font-size: clamp(28px, 2.4vw, 40px) !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.05 !important;
+  text-shadow: none !important;
+  margin-bottom: 22px !important;
+}
+
+/* En modo oscuro los títulos deben ser blancos */
+body.dark .pg-public-main h2,
+body.dark .pg-app-main h2,
+body.dark .section-title,
+body.dark .home-section-title,
+body.dark .store-section-title,
+body.dark .pg-section-title {
+  color: #ffffff !important;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.45) !important;
+}
+
+/* Línea bonita debajo del título */
+.pg-public-main h2::after,
+.pg-app-main h2::after,
+.section-title::after,
+.home-section-title::after,
+.store-section-title::after,
+.pg-section-title::after {
+  content: "" !important;
+  display: block !important;
+  width: 120px !important;
+  height: 5px !important;
+  margin-top: 10px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #fbbf24, #8b5cf6) !important;
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.25) !important;
+}
+
+/* Quitar iconos raros antes de títulos */
+.pg-public-main h2::before,
+.pg-app-main h2::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* =========================
+   SIDEBAR
+   Evita selección blanca fea
+========================= */
+.pg-public-scroll,
+.pg-app-sidebar,
+.sidebar,
+aside {
+  background: #0b1020 !important;
+}
+
+.pg-public-scroll a,
+.pg-app-sidebar a,
+.sidebar a,
+aside a {
+  color: #dbe4f0 !important;
+  font-weight: 750 !important;
+  border-radius: 14px !important;
+}
+
+/* Activo / hover / focus siempre morado */
+.pg-public-scroll a:hover,
+.pg-public-scroll a:focus,
+.pg-public-scroll a:focus-visible,
+.pg-public-scroll .active,
+.pg-public-scroll a.active,
+.pg-app-sidebar a:hover,
+.pg-app-sidebar a:focus,
+.pg-app-sidebar a:focus-visible,
+.pg-app-sidebar .active,
+.pg-app-sidebar a.active,
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar .active,
+aside a:hover,
+aside a:focus,
+aside .active {
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.30) !important;
+}
+
+/* Quitar raya/flecha basura */
+.pg-sidebar-toggle-btn,
+.pg-sidebar-toggle,
+.pg-sidebar-edge,
+.pg-sidebar-resizer,
+.pg-sidebar-hitbox,
+.pg-sidebar-handle,
+[class*="sidebar-toggle"],
+[class*="sidebar-resizer"],
+[class*="resize-handle"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* =========================
+   CARDS EN MODO CLARO
+   Texto oscuro visible
+========================= */
+body:not(.dark) .product-card,
+body:not(.dark) .store-product-card,
+body:not(.dark) .producto-card,
+body:not(.dark) .category-card,
+body:not(.dark) .store-category-card,
+body:not(.dark) .categoria-card,
+body:not(.dark) .pub-cat-card,
+body:not(.dark) .cat-card,
+body:not(.dark) .card {
+  color: #111827 !important;
+}
+
+body:not(.dark) .product-card h3,
+body:not(.dark) .product-card h4,
+body:not(.dark) .product-card h5,
+body:not(.dark) .store-product-card h3,
+body:not(.dark) .store-product-card h4,
+body:not(.dark) .store-product-card h5,
+body:not(.dark) .producto-card h3,
+body:not(.dark) .producto-card h4,
+body:not(.dark) .producto-card h5,
+body:not(.dark) .category-card h3,
+body:not(.dark) .category-card h4,
+body:not(.dark) .category-card h5,
+body:not(.dark) .card-title {
+  color: #111827 !important;
+  font-weight: 850 !important;
+}
+
+body:not(.dark) .product-card p,
+body:not(.dark) .product-card small,
+body:not(.dark) .store-product-card p,
+body:not(.dark) .store-product-card small,
+body:not(.dark) .producto-card p,
+body:not(.dark) .producto-card small,
+body:not(.dark) .category-card p,
+body:not(.dark) .category-card small,
+body:not(.dark) .card-text {
+  color: #64748b !important;
+}
+
+/* =========================
+   CARDS EN MODO OSCURO
+   Texto blanco visible
+========================= */
+body.dark .product-card,
+body.dark .store-product-card,
+body.dark .producto-card,
+body.dark .category-card,
+body.dark .store-category-card,
+body.dark .categoria-card,
+body.dark .pub-cat-card,
+body.dark .cat-card,
+body.dark .card {
+  color: #ffffff !important;
+}
+
+body.dark .product-card h3,
+body.dark .product-card h4,
+body.dark .product-card h5,
+body.dark .store-product-card h3,
+body.dark .store-product-card h4,
+body.dark .store-product-card h5,
+body.dark .producto-card h3,
+body.dark .producto-card h4,
+body.dark .producto-card h5,
+body.dark .category-card h3,
+body.dark .category-card h4,
+body.dark .category-card h5,
+body.dark .card-title {
+  color: #ffffff !important;
+}
+
+body.dark .product-card p,
+body.dark .product-card small,
+body.dark .store-product-card p,
+body.dark .store-product-card small,
+body.dark .producto-card p,
+body.dark .producto-card small,
+body.dark .category-card p,
+body.dark .category-card small,
+body.dark .card-text {
+  color: #cbd5e1 !important;
+}
+
+/* Precio visible */
+.price,
+.precio,
+.product-price,
+.store-price,
+.current-price {
+  color: #7c3aed !important;
+  font-weight: 950 !important;
+}
+
+/* En oscuro el precio un poco más claro */
+body.dark .price,
+body.dark .precio,
+body.dark .product-price,
+body.dark .store-price,
+body.dark .current-price {
+  color: #a78bfa !important;
+}
+
+/* Botones */
+.btn-primary,
+button[type="submit"],
+.pg-btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .pg-public-main h2,
+  .pg-app-main h2,
+  .section-title,
+  .home-section-title,
+  .store-section-title,
+  .pg-section-title {
+    font-size: 25px !important;
+  }
+
+  .hero h1,
+  .home-hero h1,
+  .pg-hero h1,
+  .banner h1,
+  [class*="hero"] h1,
+  [class*="Hero"] h1 {
+    font-size: 34px !important;
+  }
+}
