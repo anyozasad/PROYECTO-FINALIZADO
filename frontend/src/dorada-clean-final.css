@@ -1,0 +1,420 @@
+﻿/* =========================================================
+   DORADA MOTOR'S - CLEAN FINAL UI
+   Arregla contraste, tarjetas, letras, 360 raro y flecha mala
+========================================================= */
+
+:root {
+  --dm-bg: #070913;
+  --dm-bg-2: #0c1222;
+  --dm-card: #141827;
+  --dm-card-2: #171b2d;
+  --dm-border: rgba(255, 255, 255, 0.10);
+  --dm-text: #ffffff;
+  --dm-soft: #cbd5e1;
+  --dm-muted: #94a3b8;
+  --dm-purple: #8b5cf6;
+  --dm-purple-2: #a855f7;
+  --dm-gold: #fbbf24;
+  --dm-orange: #fb923c;
+  --dm-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+/* BASE */
+html,
+body,
+#root {
+  background: var(--dm-bg) !important;
+  color: var(--dm-text) !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  font-family: "Segoe UI", Inter, system-ui, sans-serif !important;
+}
+
+/* FONDO GENERAL */
+.pg-public-root,
+.pg-public-main,
+.pg-app-root,
+.pg-app-main {
+  background:
+    radial-gradient(circle at top left, rgba(139, 92, 246, 0.14), transparent 30%),
+    linear-gradient(180deg, #070913 0%, #0b1020 48%, #0e1424 100%) !important;
+  color: var(--dm-text) !important;
+}
+
+/* QUITAR ESPACIOS FEOS */
+.pg-public-main {
+  min-height: 100vh !important;
+  padding-bottom: 32px !important;
+}
+
+.pg-public-main > section,
+.pg-public-main > div {
+  background: transparent !important;
+}
+
+/* LETRAS */
+.pg-public-main h1,
+.pg-public-main h2,
+.pg-public-main h3,
+.pg-public-main h4,
+.pg-public-main h5,
+.pg-public-main h6,
+.pg-app-main h1,
+.pg-app-main h2,
+.pg-app-main h3,
+.pg-app-main h4,
+.pg-app-main h5,
+.pg-app-main h6 {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.38) !important;
+}
+
+.pg-public-main p,
+.pg-public-main small,
+.pg-public-main span,
+.pg-public-main label,
+.pg-app-main p,
+.pg-app-main small,
+.pg-app-main span,
+.pg-app-main label {
+  color: var(--dm-soft) !important;
+}
+
+/* TITULOS DE SECCIÓN */
+.pg-public-main h2,
+.pg-app-main h2,
+.section-title,
+.home-section-title,
+.store-section-title,
+.pg-section-title {
+  color: #ffffff !important;
+  font-size: clamp(26px, 2.4vw, 38px) !important;
+  line-height: 1.08 !important;
+  font-weight: 950 !important;
+  margin-bottom: 22px !important;
+}
+
+.pg-public-main h2::before,
+.pg-public-main h2::after,
+.pg-app-main h2::before,
+.pg-app-main h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* LINKS */
+.pg-public-main a,
+.pg-app-main a {
+  color: #bfa7ff !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+.pg-public-main a:hover,
+.pg-app-main a:hover {
+  color: var(--dm-gold) !important;
+}
+
+/* SIDEBAR */
+.pg-public-scroll,
+.pg-app-sidebar,
+.sidebar,
+aside {
+  background: linear-gradient(180deg, #0a0f1d 0%, #101728 100%) !important;
+  border-right: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.pg-public-scroll a,
+.pg-app-sidebar a,
+.sidebar a,
+aside a {
+  color: #dbe4f0 !important;
+  font-weight: 750 !important;
+}
+
+.pg-public-scroll a:hover,
+.pg-app-sidebar a:hover,
+.sidebar a:hover,
+aside a:hover {
+  color: #ffffff !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* ARREGLAR FLECHA RARA â€ */
+.pg-sidebar-toggle-btn {
+  font-size: 0 !important;
+  color: transparent !important;
+  width: 38px !important;
+  height: 72px !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.28) !important;
+}
+
+.pg-sidebar-toggle-btn::after {
+  content: "<" !important;
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+}
+
+.pg-sidebar-is-collapsed .pg-sidebar-toggle-btn::after,
+.pg-sidebar-minimized .pg-sidebar-toggle-btn::after {
+  content: ">" !important;
+}
+
+/* HERO */
+.hero,
+.home-hero,
+.pg-hero,
+.banner,
+[class*="hero"],
+[class*="Hero"] {
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  box-shadow: var(--dm-shadow) !important;
+}
+
+.hero h1,
+.home-hero h1,
+.pg-hero h1,
+.banner h1,
+[class*="hero"] h1,
+[class*="Hero"] h1 {
+  color: #ffffff !important;
+}
+
+.hero p,
+.home-hero p,
+.pg-hero p,
+.banner p,
+[class*="hero"] p,
+[class*="Hero"] p {
+  color: #e2e8f0 !important;
+}
+
+/* CARDS PRODUCTO / CATEGORÍA */
+.product-card,
+.store-product-card,
+.producto-card,
+.category-card,
+.store-category-card,
+.categoria-card,
+.pub-cat-card,
+.cat-card {
+  background: linear-gradient(180deg, #171b2d 0%, #101522 100%) !important;
+  border: 1px solid rgba(168, 85, 247, 0.24) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.30) !important;
+  color: #ffffff !important;
+  overflow: hidden !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+}
+
+.product-card:hover,
+.store-product-card:hover,
+.producto-card:hover,
+.category-card:hover,
+.store-category-card:hover,
+.categoria-card:hover,
+.pub-cat-card:hover,
+.cat-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(251, 191, 36, 0.42) !important;
+  box-shadow: 0 22px 52px rgba(0,0,0,0.42) !important;
+}
+
+/* EVITAR PARTE BLANCA FEA EN BODY DE PRODUCTO */
+.product-card > div,
+.store-product-card > div,
+.producto-card > div,
+.category-card > div,
+.store-category-card > div,
+.categoria-card > div,
+.pub-cat-card > div,
+.cat-card > div {
+  background-color: transparent !important;
+}
+
+/* Zona de texto de cards */
+.product-card h3,
+.product-card h4,
+.product-card h5,
+.store-product-card h3,
+.store-product-card h4,
+.store-product-card h5,
+.producto-card h3,
+.producto-card h4,
+.producto-card h5,
+.category-card h3,
+.category-card h4,
+.category-card h5,
+.store-category-card h3,
+.store-category-card h4,
+.store-category-card h5,
+.pub-cat-card h3,
+.pub-cat-card h4,
+.pub-cat-card h5,
+.cat-card h3,
+.cat-card h4,
+.cat-card h5 {
+  color: #ffffff !important;
+  font-weight: 850 !important;
+}
+
+.product-card p,
+.product-card small,
+.store-product-card p,
+.store-product-card small,
+.producto-card p,
+.producto-card small,
+.category-card p,
+.category-card small,
+.store-category-card p,
+.store-category-card small,
+.pub-cat-card p,
+.pub-cat-card small,
+.cat-card p,
+.cat-card small {
+  color: var(--dm-soft) !important;
+}
+
+/* Imágenes limpias */
+.product-card img,
+.store-product-card img,
+.producto-card img,
+.category-card img,
+.store-category-card img,
+.categoria-card img,
+.pub-cat-card img,
+.cat-card img {
+  background: #ffffff !important;
+  border-radius: 14px !important;
+  padding: 8px !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 12px 20px rgba(0,0,0,.24)) !important;
+}
+
+/* PRECIOS */
+.price,
+.precio,
+.product-price,
+.store-price,
+[class*="price"],
+[class*="Precio"] {
+  color: #a78bfa !important;
+  font-weight: 950 !important;
+  font-size: 1.35rem !important;
+}
+
+/* BOTONES */
+button,
+.btn {
+  border-radius: 14px !important;
+  font-weight: 850 !important;
+}
+
+.btn-primary,
+button[type="submit"],
+.pg-btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 26px rgba(124, 58, 237, 0.30) !important;
+}
+
+/* OFERTAS */
+.offer-banner,
+.special-offer,
+.ofertas-especiales {
+  background: linear-gradient(135deg, #1a1033 0%, #101522 100%) !important;
+  border: 1px solid rgba(168, 85, 247, 0.26) !important;
+  color: #ffffff !important;
+  border-radius: 26px !important;
+  box-shadow: var(--dm-shadow) !important;
+}
+
+.offer-banner *,
+.special-offer *,
+.ofertas-especiales * {
+  color: #ffffff !important;
+}
+
+/* QUITAR 360 FEO DEL HOME */
+.view-360,
+.badge-360,
+.tag-360,
+[class*="360"] {
+  display: none !important;
+}
+
+.product-card::before,
+.store-product-card::before,
+.producto-card::before,
+.category-card::before,
+.store-category-card::before,
+.categoria-card::before,
+.pub-cat-card::before,
+.cat-card::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* FORMULARIOS */
+input,
+select,
+textarea,
+.form-control {
+  background: #121827 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 14px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* TABLAS ADMIN */
+table,
+.table {
+  background: #121827 !important;
+  color: #ffffff !important;
+}
+
+table th,
+.table th {
+  color: #ffffff !important;
+}
+
+table td,
+.table td {
+  color: #dbe4f0 !important;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .pg-public-main h2,
+  .pg-app-main h2 {
+    font-size: 25px !important;
+  }
+
+  .product-card,
+  .store-product-card,
+  .producto-card,
+  .category-card,
+  .store-category-card,
+  .categoria-card,
+  .pub-cat-card,
+  .cat-card {
+    border-radius: 18px !important;
+  }
+}
