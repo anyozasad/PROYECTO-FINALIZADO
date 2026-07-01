@@ -1,0 +1,500 @@
+﻿/* =========================================================
+   DORADA MOTORS - UI PROFESIONAL FINAL
+   Archivo: src/dorada-profesional.css
+   ========================================================= */
+
+:root {
+  --dm-bg: #070a13;
+  --dm-bg-soft: #0d1324;
+  --dm-panel: #12192b;
+  --dm-panel-2: #182137;
+  --dm-card: #151c31;
+  --dm-card-2: #101728;
+  --dm-border: rgba(255, 255, 255, 0.10);
+  --dm-text: #f8fafc;
+  --dm-soft: #cbd5e1;
+  --dm-muted: #94a3b8;
+  --dm-gold: #fbbf24;
+  --dm-orange: #fb923c;
+  --dm-purple: #7c3aed;
+  --dm-purple-2: #a855f7;
+  --dm-blue: #2563eb;
+  --dm-green: #22c55e;
+  --dm-shadow: 0 22px 55px rgba(0, 0, 0, 0.35);
+}
+
+/* ====== BASE GENERAL ====== */
+html,
+body,
+#root {
+  background: var(--dm-bg) !important;
+  color: var(--dm-text) !important;
+}
+
+body {
+  font-family: "Segoe UI", Inter, system-ui, sans-serif !important;
+}
+
+.pg-public-root,
+.pg-public-main,
+.pg-app-root,
+.pg-app-main {
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(251, 191, 36, 0.12), transparent 28%),
+    linear-gradient(180deg, #070a13 0%, #0b1020 45%, #101827 100%) !important;
+  color: var(--dm-text) !important;
+}
+
+/* Quitar efectos anteriores feos */
+.pg-public-main h1::before,
+.pg-public-main h1::after,
+.pg-public-main h2::before,
+.pg-public-main h2::after,
+.pg-public-main h3::before,
+.pg-public-main h3::after,
+.pg-app-main h1::before,
+.pg-app-main h1::after,
+.pg-app-main h2::before,
+.pg-app-main h2::after,
+.pg-app-main h3::before,
+.pg-app-main h3::after,
+.pub-cat-card::before,
+.category-card::before,
+.cat-card::before,
+.product-card::before,
+.prod-card::before,
+.store-product-card::before,
+.producto-card::before,
+.card::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* ====== TITULOS PROFESIONALES ====== */
+.pg-public-main h1,
+.pg-public-main h2,
+.pg-public-main h3,
+.pg-public-main h4,
+.pg-app-main h1,
+.pg-app-main h2,
+.pg-app-main h3,
+.pg-app-main h4 {
+  color: #ffffff !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.035em !important;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.35) !important;
+}
+
+.pg-public-main h2,
+.pg-app-main h2 {
+  font-size: clamp(30px, 2.5vw, 44px) !important;
+  line-height: 1.05 !important;
+  margin: 36px 0 28px !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.pg-public-main h2::after,
+.pg-app-main h2::after {
+  content: "" !important;
+  display: block !important;
+  width: 135px !important;
+  height: 5px !important;
+  margin-top: 12px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, var(--dm-gold), var(--dm-purple-2)) !important;
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.28) !important;
+}
+
+/* ====== TEXTOS ====== */
+.pg-public-main p,
+.pg-public-main small,
+.pg-public-main label,
+.pg-public-main li,
+.pg-app-main p,
+.pg-app-main small,
+.pg-app-main label,
+.pg-app-main li {
+  color: var(--dm-soft) !important;
+}
+
+.pg-public-main a,
+.pg-app-main a {
+  color: #c4b5fd !important;
+  font-weight: 850 !important;
+  text-decoration: none !important;
+}
+
+.pg-public-main a:hover,
+.pg-app-main a:hover {
+  color: var(--dm-gold) !important;
+}
+
+/* ====== HEADER / NAVBAR ====== */
+header,
+nav,
+.navbar,
+.topbar,
+.pg-topbar {
+  background: rgba(7, 10, 19, 0.92) !important;
+  border-bottom: 1px solid var(--dm-border) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+header *,
+nav *,
+.navbar *,
+.topbar *,
+.pg-topbar * {
+  color: #ffffff !important;
+}
+
+/* ====== SIDEBAR ====== */
+.pg-public-scroll,
+.pg-app-sidebar,
+.sidebar,
+aside {
+  background: linear-gradient(180deg, #0b1020 0%, #101728 100%) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.pg-public-scroll a,
+.pg-app-sidebar a,
+.sidebar a,
+aside a {
+  color: #e2e8f0 !important;
+  border-radius: 14px !important;
+  transition: all 0.22s ease !important;
+}
+
+.pg-public-scroll a:hover,
+.pg-app-sidebar a:hover,
+.sidebar a:hover,
+aside a:hover {
+  background: rgba(124, 58, 237, 0.22) !important;
+  color: #ffffff !important;
+}
+
+.pg-public-scroll .active,
+.pg-app-sidebar .active,
+.sidebar .active,
+aside .active {
+  background: linear-gradient(135deg, var(--dm-purple), var(--dm-purple-2)) !important;
+  color: #ffffff !important;
+  box-shadow: 0 14px 32px rgba(124, 58, 237, 0.34) !important;
+}
+
+/* ====== HERO ====== */
+.hero,
+.home-hero,
+.pg-hero,
+.banner,
+[class*="hero"],
+[class*="Hero"] {
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--dm-border) !important;
+  box-shadow: var(--dm-shadow) !important;
+  filter: saturate(1.08) contrast(1.08) brightness(0.95) !important;
+}
+
+/* ====== CARDS PROFESIONALES ====== */
+.pg-public-main .card,
+.pg-public-main .pub-cat-card,
+.pg-public-main .category-card,
+.pg-public-main .cat-card,
+.pg-public-main .product-card,
+.pg-public-main .prod-card,
+.pg-public-main .store-product-card,
+.pg-public-main .producto-card,
+.pg-public-main [class*="Card"],
+.pg-public-main [class*="card"],
+.pg-app-main .card,
+.pg-app-main .admin-card,
+.pg-app-main .content-card,
+.pg-app-main .metric-card,
+.pg-app-main [class*="Card"],
+.pg-app-main [class*="card"] {
+  background: linear-gradient(180deg, var(--dm-card) 0%, var(--dm-card-2) 100%) !important;
+  border: 1px solid var(--dm-border) !important;
+  border-radius: 24px !important;
+  color: #ffffff !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.32) !important;
+  overflow: hidden !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease !important;
+}
+
+.pg-public-main .card:hover,
+.pg-public-main .pub-cat-card:hover,
+.pg-public-main .category-card:hover,
+.pg-public-main .cat-card:hover,
+.pg-public-main .product-card:hover,
+.pg-public-main .prod-card:hover,
+.pg-public-main .store-product-card:hover,
+.pg-public-main .producto-card:hover,
+.pg-public-main [class*="Card"]:hover,
+.pg-public-main [class*="card"]:hover,
+.pg-app-main .card:hover,
+.pg-app-main .admin-card:hover,
+.pg-app-main .content-card:hover,
+.pg-app-main .metric-card:hover,
+.pg-app-main [class*="Card"]:hover,
+.pg-app-main [class*="card"]:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(251, 191, 36, 0.42) !important;
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.42),
+    0 0 28px rgba(124, 58, 237, 0.18) !important;
+}
+
+/* ====== IMAGENES EN CARDS ====== */
+.pg-public-main .card img,
+.pg-public-main .pub-cat-card img,
+.pg-public-main .category-card img,
+.pg-public-main .cat-card img,
+.pg-public-main .product-card img,
+.pg-public-main .prod-card img,
+.pg-public-main .store-product-card img,
+.pg-public-main .producto-card img,
+.pg-public-main [class*="Card"] img,
+.pg-public-main [class*="card"] img {
+  background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%) !important;
+  border-radius: 18px !important;
+  padding: 12px !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.24)) !important;
+  transition: transform 0.35s ease, filter 0.35s ease !important;
+}
+
+.pg-public-main .card:hover img,
+.pg-public-main .pub-cat-card:hover img,
+.pg-public-main .category-card:hover img,
+.pg-public-main .cat-card:hover img,
+.pg-public-main .product-card:hover img,
+.pg-public-main .prod-card:hover img,
+.pg-public-main .store-product-card:hover img,
+.pg-public-main .producto-card:hover img,
+.pg-public-main [class*="Card"]:hover img,
+.pg-public-main [class*="card"]:hover img {
+  transform: scale(1.06) rotate(-1deg) !important;
+  filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.34)) !important;
+}
+
+/* ====== TEXTO DENTRO DE CARDS ====== */
+.pg-public-main .card h3,
+.pg-public-main .card h4,
+.pg-public-main .card h5,
+.pg-public-main .product-card h3,
+.pg-public-main .store-product-card h3,
+.pg-public-main .producto-card h3,
+.pg-public-main .category-card h3,
+.pg-public-main [class*="card"] h3,
+.pg-public-main [class*="Card"] h3 {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+.pg-public-main .card p,
+.pg-public-main .card small,
+.pg-public-main .product-card p,
+.pg-public-main .product-card small,
+.pg-public-main .store-product-card p,
+.pg-public-main .store-product-card small,
+.pg-public-main .producto-card p,
+.pg-public-main .producto-card small,
+.pg-public-main .category-card p,
+.pg-public-main .category-card small {
+  color: var(--dm-soft) !important;
+}
+
+/* ====== PRECIO ====== */
+.price,
+.precio,
+[class*="price"],
+[class*="Precio"] {
+  color: var(--dm-gold) !important;
+  font-weight: 950 !important;
+  font-size: 1.25rem !important;
+}
+
+/* ====== BOTONES ====== */
+button,
+.btn {
+  border-radius: 16px !important;
+  font-weight: 900 !important;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease !important;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.06) !important;
+}
+
+.btn-primary,
+button[type="submit"],
+.pg-btn-primary {
+  background: linear-gradient(135deg, var(--dm-purple), var(--dm-purple-2)) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 16px 32px rgba(124, 58, 237, 0.35) !important;
+}
+
+.btn-secondary,
+.btn-outline,
+.pg-btn-secondary {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--dm-border) !important;
+}
+
+/* ====== OFERTAS ====== */
+.offer-banner,
+.special-offer,
+.ofertas-especiales,
+[class*="offer"],
+[class*="Offer"] {
+  background:
+    radial-gradient(circle at left, rgba(124, 58, 237, 0.30), transparent 35%),
+    linear-gradient(135deg, #151b2e 0%, #0f172a 100%) !important;
+  border: 1px solid var(--dm-border) !important;
+  border-radius: 28px !important;
+  color: #ffffff !important;
+  box-shadow: var(--dm-shadow) !important;
+}
+
+.offer-banner *,
+.special-offer *,
+.ofertas-especiales *,
+[class*="offer"] *,
+[class*="Offer"] * {
+  color: #ffffff !important;
+}
+
+/* ====== DETALLE PRODUCTO TIPO VITRINA ====== */
+.product-gallery,
+.product-images,
+.product-detail-left,
+.product-info,
+.product-detail-right,
+.product-summary {
+  background: linear-gradient(180deg, var(--dm-card) 0%, var(--dm-card-2) 100%) !important;
+  border: 1px solid var(--dm-border) !important;
+  border-radius: 28px !important;
+  color: #ffffff !important;
+  box-shadow: var(--dm-shadow) !important;
+}
+
+.product-gallery img,
+.product-images img,
+.product-detail-left img {
+  background: linear-gradient(180deg, #ffffff, #eef2ff) !important;
+  border-radius: 24px !important;
+  padding: 16px !important;
+  transition: transform 0.55s ease, filter 0.55s ease !important;
+}
+
+.product-gallery:hover img,
+.product-images:hover img,
+.product-detail-left:hover img {
+  transform: perspective(900px) rotateY(-13deg) rotateX(5deg) scale(1.06) !important;
+  filter: drop-shadow(0 34px 42px rgba(0, 0, 0, 0.40)) !important;
+}
+
+/* ====== INPUTS ====== */
+input,
+select,
+textarea,
+.form-control {
+  background: #121a2f !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-radius: 14px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus {
+  border-color: rgba(168, 85, 247, 0.75) !important;
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.16) !important;
+  outline: none !important;
+}
+
+/* ====== TABLAS ADMIN ====== */
+table,
+.table {
+  background: #12192b !important;
+  color: #ffffff !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+table thead,
+.table thead {
+  background: #1a2238 !important;
+}
+
+table th,
+.table th {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+table td,
+.table td {
+  color: var(--dm-soft) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* ====== SCROLLBAR ====== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--dm-purple), var(--dm-gold));
+  border-radius: 999px;
+}
+
+/* ====== MOBILE ====== */
+@media (max-width: 768px) {
+  .pg-public-main h1,
+  .pg-app-main h1 {
+    font-size: 2rem !important;
+  }
+
+  .pg-public-main h2,
+  .pg-app-main h2 {
+    font-size: 1.7rem !important;
+  }
+
+  .card,
+  .pub-cat-card,
+  .category-card,
+  .cat-card,
+  .product-card,
+  .prod-card,
+  .store-product-card,
+  .producto-card {
+    border-radius: 18px !important;
+  }
+}

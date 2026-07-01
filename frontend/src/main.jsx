@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
@@ -8,9 +8,10 @@ import { PreferenciasProvider } from './context/PreferenciasContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './styles.css';
+import './dorada-profesional.css';
 
 // ===============================
-// Toggle sidebar Dorada Motor’s
+// Toggle sidebar Dorada Motorâ€™s
 // Usuario + Admin
 // ===============================
 function setupPartGoSidebarToggle() {
@@ -38,11 +39,11 @@ function setupPartGoSidebarToggle() {
       if (saved) {
         sidebar.classList.add("pg-sidebar-minimized");
         root?.classList.add("pg-sidebar-is-collapsed");
-        btn.innerHTML = "›";
-        btn.title = "Expandir menú";
+        btn.innerHTML = "â€º";
+        btn.title = "Expandir menÃº";
       } else {
-        btn.innerHTML = "‹";
-        btn.title = "Minimizar menú";
+        btn.innerHTML = "â€¹";
+        btn.title = "Minimizar menÃº";
       }
 
       btn.addEventListener("click", () => {
@@ -50,8 +51,8 @@ function setupPartGoSidebarToggle() {
 
         root?.classList.toggle("pg-sidebar-is-collapsed", minimized);
 
-        btn.innerHTML = minimized ? "›" : "‹";
-        btn.title = minimized ? "Expandir menú" : "Minimizar menú";
+        btn.innerHTML = minimized ? "â€º" : "â€¹";
+        btn.title = minimized ? "Expandir menÃº" : "Minimizar menÃº";
 
         localStorage.setItem(storageKey, minimized ? "1" : "0");
       });
@@ -91,3 +92,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AuthProvider>
   </BrowserRouter>
 );
+
