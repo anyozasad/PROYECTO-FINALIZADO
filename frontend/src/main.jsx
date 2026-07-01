@@ -9,77 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './styles.css';
 
-// ===============================
-// Toggle sidebar Dorada Motorâ€™s
-// Usuario + Admin
-// ===============================
-function setupPartGoSidebarToggle() {
-  const SIDEBAR_SELECTOR = ".pg-public-scroll, .pg-app-sidebar";
-
-  const addToggle = () => {
-    document.querySelectorAll(SIDEBAR_SELECTOR).forEach((sidebar) => {
-      if (sidebar.querySelector(".pg-sidebar-toggle-btn")) return;
-
-      const root = sidebar.closest(".pg-public-root, .pg-app-root");
-
-      sidebar.classList.add("pg-sidebar-with-toggle");
-
-      const isAdmin = sidebar.classList.contains("pg-app-sidebar");
-      const storageKey = isAdmin
-        ? "partgo_admin_sidebar_min"
-        : "partgo_user_sidebar_min";
-
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "pg-sidebar-toggle-btn";
-
-      const saved = localStorage.getItem(storageKey) === "1";
-
-      if (saved) {
-        sidebar.classList.add("pg-sidebar-minimized");
-        root?.classList.add("pg-sidebar-is-collapsed");
-        btn.innerHTML = "â€º";
-        btn.title = "Expandir menÃº";
-      } else {
-        btn.innerHTML = "â€¹";
-        btn.title = "Minimizar menÃº";
-      }
-
-      btn.addEventListener("click", () => {
-        const minimized = sidebar.classList.toggle("pg-sidebar-minimized");
-
-        root?.classList.toggle("pg-sidebar-is-collapsed", minimized);
-
-        btn.innerHTML = minimized ? "â€º" : "â€¹";
-        btn.title = minimized ? "Expandir menÃº" : "Minimizar menÃº";
-
-        localStorage.setItem(storageKey, minimized ? "1" : "0");
-      });
-
-      sidebar.appendChild(btn);
-    });
-  };
-
-  addToggle();
-  setTimeout(addToggle, 300);
-  setTimeout(addToggle, 1000);
-
-  const observer = new MutationObserver(addToggle);
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
-}
-
-if (typeof window !== "undefined") {
-  if (document.readyState === "loading") {
-    window.addEventListener("DOMContentLoaded", setupPartGoSidebarToggle);
-  } else {
-    setupPartGoSidebarToggle();
-  }
-}
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <AuthProvider>
@@ -91,9 +20,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AuthProvider>
   </BrowserRouter>
 );
-
-
-
-
-
-

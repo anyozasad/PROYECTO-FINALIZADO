@@ -1126,3 +1126,133 @@ a.nav-link:active,
   opacity: .85 !important;
 }
 
+
+/* =====================================================
+   FIX TESIS FINAL - DORADA MOTOR'S
+   ===================================================== */
+
+/* Quitar botón/toggle/resizer basura del sidebar */
+.pg-sidebar-toggle-btn,
+.pg-sidebar-toggle,
+.pg-sidebar-edge,
+.pg-sidebar-resizer,
+.pg-sidebar-hitbox,
+.pg-sidebar-handle,
+[class*="sidebar-toggle"],
+[class*="resize-handle"],
+[class*="sidebar-resizer"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Quitar pseudo elementos raros del costado */
+.pg-public-scroll::before,
+.pg-public-scroll::after,
+.pg-app-sidebar::before,
+.pg-app-sidebar::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Evitar scroll lateral raro */
+html,
+body,
+#root {
+  overflow-x: hidden !important;
+}
+
+/* Sidebar limpio */
+.pg-public-scroll,
+.pg-app-sidebar,
+aside,
+.sidebar {
+  border-right: 1px solid rgba(255,255,255,0.06) !important;
+  box-shadow: none !important;
+}
+
+/* Corregir hueco negro debajo de secciones */
+main,
+.pg-public-main,
+.pg-home-main,
+.home-content,
+.store-home,
+.page-content,
+.section-wrapper {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: auto !important;
+}
+
+/* Sección de ofertas / contador */
+.ofertas-especiales,
+.discount-section,
+.discount-banner,
+.home-offers,
+.offer-banner,
+.offer-countdown,
+.promo-section {
+  margin-bottom: 24px !important;
+  padding-bottom: 20px !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* Si hay un contenedor vacío después, lo compacta */
+.ofertas-especiales + div,
+.discount-section + div,
+.discount-banner + div,
+.home-offers + div,
+.offer-banner + div,
+.promo-section + div {
+  margin-top: 0 !important;
+}
+
+/* Tarjetas limpias */
+.product-card,
+.category-card,
+.store-product-card {
+  overflow: hidden !important;
+}
+
+/* Letras más legibles en oscuro/claro */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.card-title,
+.product-title,
+.category-title {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+p,
+span,
+small,
+.section-subtitle,
+.card-text,
+.product-meta {
+  color: rgba(255,255,255,0.82) !important;
+}
+
+/* Precios visibles */
+.price,
+.product-price,
+.current-price {
+  color: #a855f7 !important;
+  font-weight: 800 !important;
+}
+
+/* Badges bien visibles */
+.badge,
+.tag,
+.offer-badge,
+.new-badge {
+  font-weight: 700 !important;
+}
+
+/* Fondo general profesional */
+body {
+  background: linear-gradient(180deg, #070b17 0%, #050816 100%) !important;
+}
