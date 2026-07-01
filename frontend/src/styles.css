@@ -1128,10 +1128,10 @@ a.nav-link:active,
 
 
 /* =====================================================
-   FIX TESIS FINAL - DORADA MOTOR'S
+   FIX FINAL CONTRASTE CLARO / OSCURO - DORADA MOTOR'S
    ===================================================== */
 
-/* Quitar botón/toggle/resizer basura del sidebar */
+/* Quitar botón basura lateral que muestra â€ */
 .pg-sidebar-toggle-btn,
 .pg-sidebar-toggle,
 .pg-sidebar-edge,
@@ -1139,20 +1139,19 @@ a.nav-link:active,
 .pg-sidebar-hitbox,
 .pg-sidebar-handle,
 [class*="sidebar-toggle"],
-[class*="resize-handle"],
-[class*="sidebar-resizer"] {
+[class*="sidebar-resizer"],
+[class*="resize-handle"] {
   display: none !important;
-  opacity: 0 !important;
   visibility: hidden !important;
+  opacity: 0 !important;
   pointer-events: none !important;
 }
 
-/* Quitar pseudo elementos raros del costado */
-.pg-public-scroll::before,
-.pg-public-scroll::after,
-.pg-app-sidebar::before,
-.pg-app-sidebar::after {
-  content: none !important;
+/* Quitar textos raros tipo 360 o símbolos dañados */
+.view-360,
+.badge-360,
+.tag-360,
+[class*="360"] {
   display: none !important;
 }
 
@@ -1163,96 +1162,246 @@ body,
   overflow-x: hidden !important;
 }
 
-/* Sidebar limpio */
-.pg-public-scroll,
-.pg-app-sidebar,
-aside,
-.sidebar {
-  border-right: 1px solid rgba(255,255,255,0.06) !important;
-  box-shadow: none !important;
+/* ==============================
+   MODO CLARO: texto oscuro
+   ============================== */
+body:not(.dark) .pg-public-main,
+body:not(.dark) .pg-app-main,
+body:not(.dark) main {
+  color: #111827 !important;
 }
 
-/* Corregir hueco negro debajo de secciones */
-main,
-.pg-public-main,
-.pg-home-main,
-.home-content,
-.store-home,
-.page-content,
-.section-wrapper {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-  min-height: auto !important;
+body:not(.dark) .pg-public-main h1,
+body:not(.dark) .pg-public-main h2,
+body:not(.dark) .pg-public-main h3,
+body:not(.dark) .pg-public-main h4,
+body:not(.dark) .pg-public-main h5,
+body:not(.dark) .pg-public-main h6,
+body:not(.dark) .pg-app-main h1,
+body:not(.dark) .pg-app-main h2,
+body:not(.dark) .pg-app-main h3,
+body:not(.dark) .pg-app-main h4,
+body:not(.dark) .pg-app-main h5,
+body:not(.dark) .pg-app-main h6 {
+  color: #111827 !important;
+  text-shadow: none !important;
 }
 
-/* Sección de ofertas / contador */
+body:not(.dark) .pg-public-main p,
+body:not(.dark) .pg-public-main span,
+body:not(.dark) .pg-public-main small,
+body:not(.dark) .pg-public-main label,
+body:not(.dark) .pg-app-main p,
+body:not(.dark) .pg-app-main span,
+body:not(.dark) .pg-app-main small,
+body:not(.dark) .pg-app-main label {
+  color: #475569 !important;
+}
+
+/* Cards en modo claro */
+body:not(.dark) .product-card,
+body:not(.dark) .store-product-card,
+body:not(.dark) .producto-card,
+body:not(.dark) .category-card,
+body:not(.dark) .store-category-card,
+body:not(.dark) .categoria-card,
+body:not(.dark) .pub-cat-card,
+body:not(.dark) .cat-card,
+body:not(.dark) .card {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #dbe3f5 !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+}
+
+body:not(.dark) .product-card *,
+body:not(.dark) .store-product-card *,
+body:not(.dark) .producto-card *,
+body:not(.dark) .category-card *,
+body:not(.dark) .store-category-card *,
+body:not(.dark) .categoria-card *,
+body:not(.dark) .pub-cat-card *,
+body:not(.dark) .cat-card *,
+body:not(.dark) .card * {
+  color: inherit !important;
+}
+
+body:not(.dark) .product-card h3,
+body:not(.dark) .product-card h4,
+body:not(.dark) .product-card h5,
+body:not(.dark) .store-product-card h3,
+body:not(.dark) .store-product-card h4,
+body:not(.dark) .store-product-card h5,
+body:not(.dark) .producto-card h3,
+body:not(.dark) .producto-card h4,
+body:not(.dark) .producto-card h5,
+body:not(.dark) .category-card h3,
+body:not(.dark) .category-card h4,
+body:not(.dark) .category-card h5,
+body:not(.dark) .store-category-card h3,
+body:not(.dark) .store-category-card h4,
+body:not(.dark) .store-category-card h5,
+body:not(.dark) .card-title {
+  color: #111827 !important;
+  font-weight: 800 !important;
+}
+
+body:not(.dark) .product-card p,
+body:not(.dark) .product-card small,
+body:not(.dark) .store-product-card p,
+body:not(.dark) .store-product-card small,
+body:not(.dark) .producto-card p,
+body:not(.dark) .producto-card small,
+body:not(.dark) .category-card p,
+body:not(.dark) .category-card small,
+body:not(.dark) .store-category-card p,
+body:not(.dark) .store-category-card small,
+body:not(.dark) .card-text {
+  color: #64748b !important;
+}
+
+/* ==============================
+   MODO OSCURO: texto blanco
+   ============================== */
+body.dark .pg-public-main,
+body.dark .pg-app-main,
+body.dark main {
+  background: #070b17 !important;
+  color: #ffffff !important;
+}
+
+body.dark .pg-public-main h1,
+body.dark .pg-public-main h2,
+body.dark .pg-public-main h3,
+body.dark .pg-public-main h4,
+body.dark .pg-public-main h5,
+body.dark .pg-public-main h6,
+body.dark .pg-app-main h1,
+body.dark .pg-app-main h2,
+body.dark .pg-app-main h3,
+body.dark .pg-app-main h4,
+body.dark .pg-app-main h5,
+body.dark .pg-app-main h6 {
+  color: #ffffff !important;
+}
+
+body.dark .pg-public-main p,
+body.dark .pg-public-main span,
+body.dark .pg-public-main small,
+body.dark .pg-public-main label,
+body.dark .pg-app-main p,
+body.dark .pg-app-main span,
+body.dark .pg-app-main small,
+body.dark .pg-app-main label {
+  color: #cbd5e1 !important;
+}
+
+body.dark .product-card,
+body.dark .store-product-card,
+body.dark .producto-card,
+body.dark .category-card,
+body.dark .store-category-card,
+body.dark .categoria-card,
+body.dark .pub-cat-card,
+body.dark .cat-card,
+body.dark .card {
+  background: #151827 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(168, 85, 247, 0.22) !important;
+}
+
+body.dark .product-card h3,
+body.dark .product-card h4,
+body.dark .product-card h5,
+body.dark .store-product-card h3,
+body.dark .store-product-card h4,
+body.dark .store-product-card h5,
+body.dark .producto-card h3,
+body.dark .producto-card h4,
+body.dark .producto-card h5,
+body.dark .category-card h3,
+body.dark .category-card h4,
+body.dark .category-card h5,
+body.dark .store-category-card h3,
+body.dark .store-category-card h4,
+body.dark .store-category-card h5,
+body.dark .card-title {
+  color: #ffffff !important;
+}
+
+/* Imágenes controladas para ambos modos */
+.product-card img,
+.store-product-card img,
+.producto-card img,
+.category-card img,
+.store-category-card img,
+.categoria-card img,
+.pub-cat-card img,
+.cat-card img {
+  background: #ffffff !important;
+  object-fit: contain !important;
+}
+
+/* Precio visible en ambos modos */
+.price,
+.precio,
+.product-price,
+.store-price,
+.current-price {
+  color: #7c3aed !important;
+  font-weight: 900 !important;
+}
+
+/* Ofertas con buen contraste */
+.offer-banner,
+.special-offer,
 .ofertas-especiales,
-.discount-section,
 .discount-banner,
 .home-offers,
-.offer-banner,
-.offer-countdown,
 .promo-section {
-  margin-bottom: 24px !important;
-  padding-bottom: 20px !important;
-  min-height: auto !important;
-  height: auto !important;
-}
-
-/* Si hay un contenedor vacío después, lo compacta */
-.ofertas-especiales + div,
-.discount-section + div,
-.discount-banner + div,
-.home-offers + div,
-.offer-banner + div,
-.promo-section + div {
-  margin-top: 0 !important;
-}
-
-/* Tarjetas limpias */
-.product-card,
-.category-card,
-.store-product-card {
-  overflow: hidden !important;
-}
-
-/* Letras más legibles en oscuro/claro */
-h1, h2, h3, h4, h5, h6,
-.section-title,
-.card-title,
-.product-title,
-.category-title {
+  background: linear-gradient(135deg, #1e1238, #101827) !important;
   color: #ffffff !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.02em !important;
+  border-radius: 24px !important;
 }
 
-p,
-span,
-small,
-.section-subtitle,
-.card-text,
-.product-meta {
-  color: rgba(255,255,255,0.82) !important;
+.offer-banner *,
+.special-offer *,
+.ofertas-especiales *,
+.discount-banner *,
+.home-offers *,
+.promo-section * {
+  color: #ffffff !important;
 }
 
-/* Precios visibles */
-.price,
-.product-price,
-.current-price {
-  color: #a855f7 !important;
-  font-weight: 800 !important;
+/* Sidebar conserva contraste */
+.pg-public-scroll,
+.pg-app-sidebar,
+.sidebar,
+aside {
+  background: #0b1020 !important;
 }
 
-/* Badges bien visibles */
+.pg-public-scroll *,
+.pg-app-sidebar *,
+.sidebar *,
+aside * {
+  color: #e2e8f0 !important;
+}
+
+.pg-public-scroll .active,
+.pg-app-sidebar .active,
+.sidebar .active,
+aside .active {
+  background: #7c3aed !important;
+  color: #ffffff !important;
+}
+
+/* Badges */
 .badge,
 .tag,
-.offer-badge,
-.new-badge {
-  font-weight: 700 !important;
+.nuevo,
+.oferta {
+  color: #ffffff !important;
+  font-weight: 800 !important;
 }
 
-/* Fondo general profesional */
-body {
-  background: linear-gradient(180deg, #070b17 0%, #050816 100%) !important;
-}
