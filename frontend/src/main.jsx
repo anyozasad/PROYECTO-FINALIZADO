@@ -8,7 +8,7 @@ import { PreferenciasProvider } from './context/PreferenciasContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './styles.css';
-import './dorada-profesional.css';
+import './dorada-ui-final.css';
 
 // ===============================
 // Toggle sidebar Dorada Motorâ€™s
@@ -92,4 +92,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AuthProvider>
   </BrowserRouter>
 );
+
 
