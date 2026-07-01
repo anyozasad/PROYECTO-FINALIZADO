@@ -2461,4 +2461,403 @@ a.nav-link:active,
   }
 }
 
+/* =========================================================
+   DORADA MOTOR'S - FIX DE LETRAS / CONTRASTE / VISUAL
+   Pegar al final de src/styles.css
+========================================================= */
 
+:root {
+  --dm-bg-main: #070b16;
+  --dm-bg-soft: #0f1729;
+  --dm-bg-card: #11182b;
+  --dm-bg-card-2: #161f36;
+
+  --dm-text-strong: #ffffff;
+  --dm-text-soft: #cbd5e1;
+  --dm-text-muted: #94a3b8;
+  --dm-text-dark: #0f172a;
+
+  --dm-accent: #8b5cf6;
+  --dm-accent-2: #a855f7;
+  --dm-gold: #f59e0b;
+  --dm-border: rgba(255, 255, 255, 0.08);
+  --dm-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Fondo general */
+body,
+#root,
+.app,
+main {
+  background: linear-gradient(180deg, #060913 0%, #0a1020 100%) !important;
+  color: var(--dm-text-strong) !important;
+}
+
+/* =========================================
+   TITULOS DE SECCIONES
+========================================= */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dm-text-strong);
+  letter-spacing: -0.02em;
+}
+
+.section-title,
+.section-heading,
+.home-section-title,
+.store-section-title,
+.pg-section-title,
+.categorias-title,
+.productos-title,
+h2.section-title,
+h2.section-heading {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: clamp(28px, 3vw, 42px) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.03em !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35) !important;
+  margin-bottom: 10px !important;
+}
+
+/* Subtitulos / textos secundarios */
+.section-subtitle,
+.section-text,
+.section-description,
+.hero p,
+.banner p,
+.subtitle,
+small,
+p {
+  color: var(--dm-text-soft);
+}
+
+/* =========================================
+   ENCABEZADOS PEQUEÑOS tipo:
+   "Categorías populares" / "Productos destacados"
+========================================= */
+.home-section-header,
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.home-section-header h2,
+.section-header h2 {
+  color: #ffffff !important;
+  font-size: clamp(28px, 2.7vw, 40px) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+  margin: 0 !important;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.home-section-header a,
+.section-header a {
+  color: #b68cff !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+.home-section-header a:hover,
+.section-header a:hover {
+  color: #ffffff !important;
+}
+
+/* =========================================
+   CARDS CATEGORIAS / PRODUCTOS
+========================================= */
+.product-card,
+.store-product-card,
+.producto-card,
+.category-card,
+.store-category-card,
+.categoria-card,
+.card {
+  background: linear-gradient(180deg, #11172a 0%, #0c1222 100%) !important;
+  border: 1px solid rgba(139, 92, 246, 0.22) !important;
+  border-radius: 22px !important;
+  box-shadow: var(--dm-shadow) !important;
+  overflow: hidden !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.product-card:hover,
+.store-product-card:hover,
+.producto-card:hover,
+.category-card:hover,
+.store-category-card:hover,
+.categoria-card:hover,
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168, 85, 247, 0.48) !important;
+  box-shadow: 0 16px 36px rgba(88, 28, 135, 0.30) !important;
+}
+
+/* Contenido textual dentro de tarjetas */
+.product-card h3,
+.store-product-card h3,
+.producto-card h3,
+.product-card h4,
+.store-product-card h4,
+.producto-card h4,
+.category-card h3,
+.store-category-card h3,
+.categoria-card h3,
+.card-title {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+}
+
+.product-card p,
+.store-product-card p,
+.producto-card p,
+.category-card p,
+.store-category-card p,
+.categoria-card p,
+.card-text {
+  color: var(--dm-text-soft) !important;
+}
+
+/* Precio */
+.price,
+.product-price,
+.store-price,
+.precio {
+  color: #b78cff !important;
+  font-size: 1.8rem !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.18);
+}
+
+/* Precio anterior */
+.old-price,
+.product-old-price,
+.precio-anterior {
+  color: #94a3b8 !important;
+  text-decoration: line-through !important;
+}
+
+/* Estrellas / rating */
+.rating,
+.stars,
+.product-rating {
+  color: #fbbf24 !important;
+}
+
+/* Etiquetas */
+.badge,
+.tag,
+.label,
+.nuevo,
+.oferta,
+.destacado {
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  padding: 6px 12px !important;
+}
+
+.badge-primary,
+.nuevo {
+  background: linear-gradient(135deg, #3b82f6, #6366f1) !important;
+  color: #ffffff !important;
+}
+
+.badge-danger,
+.oferta {
+  background: linear-gradient(135deg, #ef4444, #f97316) !important;
+  color: #ffffff !important;
+}
+
+.badge-warning,
+.destacado {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24) !important;
+  color: #1f2937 !important;
+}
+
+/* =========================================
+   HERO / BANNER PRINCIPAL
+========================================= */
+.hero,
+.hero-section,
+.home-hero,
+.banner-principal {
+  background:
+    linear-gradient(90deg, rgba(7, 11, 22, 0.92) 0%, rgba(44, 16, 88, 0.72) 35%, rgba(7, 11, 22, 0.28) 100%) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+}
+
+.hero h1,
+.hero-title,
+.banner-title {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+  font-size: clamp(40px, 5vw, 76px) !important;
+  text-shadow: 0 6px 24px rgba(0,0,0,0.35) !important;
+}
+
+.hero p,
+.hero-subtitle,
+.banner-subtitle {
+  color: #e2e8f0 !important;
+  font-size: clamp(15px, 1.2vw, 19px) !important;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+.btn,
+button,
+a.btn {
+  border-radius: 14px !important;
+  font-weight: 800 !important;
+}
+
+.btn-primary,
+.button-primary,
+.cta-primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35) !important;
+}
+
+.btn-primary:hover,
+.button-primary:hover,
+.cta-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-outline,
+.button-secondary,
+.cta-secondary {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  color: #ffffff !important;
+}
+
+/* =========================================
+   PANEL DE OFERTA ESPECIAL
+========================================= */
+.special-offer,
+.oferta-especial,
+.offer-banner {
+  background: linear-gradient(135deg, #1e1b4b 0%, #2e1065 45%, #0b1223 100%) !important;
+  color: #ffffff !important;
+  border-radius: 28px !important;
+  border: 1px solid rgba(168, 85, 247, 0.22) !important;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.30) !important;
+}
+
+.special-offer h2,
+.oferta-especial h2,
+.offer-banner h2 {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  font-size: clamp(32px, 3vw, 52px) !important;
+  line-height: 1.05 !important;
+}
+
+.special-offer p,
+.oferta-especial p,
+.offer-banner p {
+  color: #e2e8f0 !important;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+.pg-public-scroll,
+.pg-app-sidebar,
+.sidebar {
+  background: linear-gradient(180deg, #0a1020 0%, #0c1224 100%) !important;
+  border-right: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.pg-public-scroll a,
+.pg-app-sidebar a,
+.sidebar a {
+  color: #dbe4f0 !important;
+  font-weight: 700 !important;
+}
+
+.pg-public-scroll a:hover,
+.pg-app-sidebar a:hover,
+.sidebar a:hover {
+  color: #ffffff !important;
+}
+
+/* =========================================
+   BLOQUES CLAROS QUE ESTABAN QUEMANDO TEXTO
+========================================= */
+.light-card,
+.bg-light,
+.bg-white,
+.card-light {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.light-card h3,
+.bg-light h3,
+.bg-white h3,
+.card-light h3,
+.light-card h4,
+.bg-light h4,
+.bg-white h4,
+.card-light h4 {
+  color: #0f172a !important;
+}
+
+.light-card p,
+.bg-light p,
+.bg-white p,
+.card-light p {
+  color: #475569 !important;
+}
+
+/* =========================================
+   CORRECCION DE TEXTO RARO 360Â° VIEW
+   si el HTML tiene texto bien escrito, esto lo deja legible
+========================================= */
+.view-360,
+.badge-360,
+.tag-360 {
+  color: #111827 !important;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24) !important;
+  font-weight: 900 !important;
+  border-radius: 999px !important;
+  padding: 8px 14px !important;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.25) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-section-header h2,
+  .section-header h2,
+  .section-title,
+  .section-heading {
+    font-size: 26px !important;
+  }
+
+  .hero h1,
+  .hero-title,
+  .banner-title {
+    font-size: 34px !important;
+  }
+
+  .price,
+  .product-price,
+  .store-price,
+  .precio {
+    font-size: 1.45rem !important;
+  }
+}
