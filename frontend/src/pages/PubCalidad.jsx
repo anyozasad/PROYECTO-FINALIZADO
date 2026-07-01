@@ -94,7 +94,7 @@ export default function PubCalidad(){
         <div style={{background:'linear-gradient(135deg,#13131f,#1a0835)',border:'1px solid rgba(124,58,237,.2)',borderRadius:'14px',padding:'20px',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',textAlign:'center',minWidth:'180px'}}>
           <div style={{width:'56px',height:'56px',background:'rgba(124,58,237,.2)',borderRadius:'16px',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'26px',marginBottom:'14px'}}>🛡️</div>
           <h4 style={{margin:'0 0 8px',fontSize:'14px',fontWeight:'700'}}>Tu feedback nos ayuda</h4>
-          <p style={{margin:'0 0 16px',fontSize:'11px',color:'var(--pg-muted2)',lineHeight:1.5}}>¿Encontraste algún problema? Ayúdanos a mejorar PartGo</p>
+          <p style={{margin:'0 0 16px',fontSize:'11px',color:'var(--pg-muted2)',lineHeight:1.5}}>¿Encontraste algún problema? Ayúdanos a mejorar Dorada Motor’s</p>
           <button style={{width:'100%',padding:'10px',background:'linear-gradient(135deg,#7c3aed,#9333ea)',border:'none',borderRadius:'9px',color:'var(--pg-text)',fontSize:'12px',fontWeight:'700',cursor:'pointer',fontFamily:"'Inter',sans-serif"}}>
             Enviar feedback
           </button>

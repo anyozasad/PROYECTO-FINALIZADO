@@ -26,8 +26,8 @@ export function leerEmpresaBoleta() {
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem('partgo_empresa_config') || '{}'); } catch { saved = {}; }
   return {
-    razonSocial: saved.razonSocial || saved.nombreLegal || 'PARTGO REPUESTOS E.I.R.L.',
-    nombreComercial: saved.nombre || 'PartGo Repuestos de Moto',
+    razonSocial: saved.razonSocial || saved.nombreLegal || 'DORADA MOTOR’S REPUESTOS E.I.R.L.',
+    nombreComercial: saved.nombre || 'Dorada Motor’s Repuestos de Moto',
     ruc: String(saved.ruc || '20609999994').replace(/\D/g, '').padStart(11, '0').slice(0, 11),
     direccion: saved.direccion || 'Av. Los Próceres 123, San Miguel, Lima - Perú',
     telefono: saved.telefono || '922 859 170',
@@ -106,8 +106,8 @@ export function normalizarProducto(producto = {}) {
   return {
     ...producto,
     id: Number(producto.id ?? producto.producto_id ?? producto.id_producto ?? Date.now()),
-    nombre: producto.nombre ?? producto.n ?? producto.producto_nombre ?? 'Producto PartGo',
-    marca: producto.marca ?? producto.brand ?? 'PartGo',
+    nombre: producto.nombre ?? producto.n ?? producto.producto_nombre ?? 'Producto Dorada Motor’s',
+    marca: producto.marca ?? producto.brand ?? 'Dorada Motor’s',
     categoria: producto.categoria ?? producto.categoria_nombre ?? 'Repuestos',
     precio,
     precio_regular: precioRegular,
@@ -154,13 +154,13 @@ export function vaciarCarrito() { return guardarCarrito([]); }
 export function resumenCarrito(items = obtenerCarrito()) {
   const subtotal = items.reduce((s, p) => s + Number(p.precio || 0) * Number(p.cantidad || 1), 0);
   const cupon = localStorage.getItem('partgo_cupon') || '';
-  const descuento = cupon === 'PARTGO10' ? subtotal * 0.10 : 0;
+  const descuento = cupon === 'DORADA MOTOR’S10' ? subtotal * 0.10 : 0;
   const envio = subtotal - descuento >= 250 || subtotal === 0 ? 0 : 10;
   const total = Math.max(0, subtotal - descuento + envio);
   return { subtotal, descuento, envio, total, cupon };
 }
 
-export function guardarCupon(codigo = 'PARTGO10') {
+export function guardarCupon(codigo = 'DORADA MOTOR’S10') {
   localStorage.setItem('partgo_cupon', codigo);
   window.dispatchEvent(new Event('partgo_coupon_changed'));
   return codigo;

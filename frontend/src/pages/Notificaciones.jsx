@@ -14,7 +14,7 @@ const DEMO_ADMIN = [
 const DEMO_USER = [
   { id:1, titulo:'Tu pedido está en camino 🚚', mensaje:'El pedido #PG001243 ha sido enviado. Llegará en 24-48h.', creado_en:new Date(Date.now()-1*3600000).toISOString(), leido:false, tipo:'pedido' },
   { id:2, titulo:'Pago confirmado ✅',           mensaje:'Hemos recibido tu pago de S/ 89.50 para el pedido #PG001243.', creado_en:new Date(Date.now()-3*3600000).toISOString(), leido:true, tipo:'pago' },
-  { id:3, titulo:'¡10% de descuento disponible!', mensaje:'Usa el código PARTGO10 en tu próxima compra antes del 30 de junio.', creado_en:new Date(Date.now()-24*3600000).toISOString(), leido:true, tipo:'oferta' },
+  { id:3, titulo:'¡10% de descuento disponible!', mensaje:'Usa el código DORADA MOTOR’S10 en tu próxima compra antes del 30 de junio.', creado_en:new Date(Date.now()-24*3600000).toISOString(), leido:true, tipo:'oferta' },
 ];
 
 const TIPO_ICON  = { pedido:'🛒', pago:'💳', stock:'⚠️', cliente:'👤', reclamo:'📢', oferta:'🎁', default:'🔔' };

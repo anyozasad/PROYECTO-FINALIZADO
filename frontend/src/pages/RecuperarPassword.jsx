@@ -90,9 +90,9 @@ export default function RecuperarPassword() {
           {/* Logo */}
           <Link to="/" style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'32px', textDecoration:'none' }}>
             <div style={{ width:'40px', height:'40px', background:'linear-gradient(135deg,#7c3aed,#4c1d95)', borderRadius:'11px', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:'20px', fontWeight:'900', boxShadow:'0 4px 14px rgba(124,58,237,.4)', overflow:'hidden' }}>
-              {adminLogoRecuperar ? <img src={adminLogoRecuperar} alt="Logo PartGo" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}
+              {adminLogoRecuperar ? <img src={adminLogoRecuperar} alt="Logo Dorada Motor’s" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}
             </div>
-            <span style={{ color:'var(--rg-heading)', fontWeight:'800', fontSize:'22px', letterSpacing:'-0.4px' }}>PartGo</span>
+            <span style={{ color:'var(--rg-heading)', fontWeight:'800', fontSize:'22px', letterSpacing:'-0.4px' }}>Dorada Motor’s</span>
           </Link>
 
           <h2 style={{ color:'var(--rg-heading)', fontWeight:'800', fontSize:'26px', margin:'0 0 6px', letterSpacing:'-0.4px' }}>Recuperar contraseña</h2>

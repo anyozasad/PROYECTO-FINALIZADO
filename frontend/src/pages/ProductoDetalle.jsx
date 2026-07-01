@@ -7,15 +7,15 @@ import { obtenerCatalogo } from '../utils/catalogoStore';
 import '../productoDetalle.css';
 
 const productosFallback = [
-  { id: 1, nombre: 'Kit de arrastre DID 428H', marca: 'PartGo', modelo: '428H', precio: 150, precio_oferta: 0, stock: 12, categoria: 'Transmisión', descripcion: 'Kit de arrastre reforzado para motocicleta.', imagen: '/IMAGENES/CADENA 428-114L.jpg' },
+  { id: 1, nombre: 'Kit de arrastre DID 428H', marca: 'Dorada Motor’s', modelo: '428H', precio: 150, precio_oferta: 0, stock: 12, categoria: 'Transmisión', descripcion: 'Kit de arrastre reforzado para motocicleta.', imagen: '/IMAGENES/CADENA 428-114L.jpg' },
   { id: 2, nombre: 'Pastillas de freno Brembo', marca: 'Brembo', modelo: 'Universal', precio: 59.9, precio_oferta: 0, stock: 24, categoria: 'Frenos', descripcion: 'Pastillas de freno con excelente respuesta.', imagen: '/IMAGENES/ZAPATA FRENO ROJA.jpg' },
   { id: 3, nombre: 'Amortiguador trasero YSS', marca: 'YSS', modelo: 'Trasero', precio: 299.9, precio_oferta: 0, stock: 6, categoria: 'Suspensión', descripcion: 'Amortiguador para manejo suave y seguro.', imagen: '/IMAGENES/BARRA TELESCOPICA CARGUERO.jpg' },
   { id: 4, nombre: 'Batería 12V 7Ah Yuasa', marca: 'Yuasa', modelo: '12V', precio: 85.9, precio_oferta: 0, stock: 9, categoria: 'Eléctricos', descripcion: 'Batería sellada para motocicleta.', imagen: '/IMAGENES/BOBINA 12V.jpg' },
   { id: 5, nombre: 'Faro delantero LED', marca: 'Duno', modelo: 'LED', precio: 189.9, precio_oferta: 0, stock: 16, categoria: 'Iluminación', descripcion: 'Faro delantero LED de alta potencia.', imagen: '/IMAGENES/FARO DELANTERO REDONDO.jpg' },
-  { id: 6, nombre: 'Disco de freno trasero', marca: 'PartGo', modelo: 'Trasero', precio: 170, precio_oferta: 0, stock: 8, categoria: 'Frenos', descripcion: 'Disco de freno trasero resistente.', imagen: '/IMAGENES/ALTERNADOR 4P CGL.jpg' },
+  { id: 6, nombre: 'Disco de freno trasero', marca: 'Dorada Motor’s', modelo: 'Trasero', precio: 170, precio_oferta: 0, stock: 8, categoria: 'Frenos', descripcion: 'Disco de freno trasero resistente.', imagen: '/IMAGENES/ALTERNADOR 4P CGL.jpg' },
   { id: 7, nombre: 'Bujía NGK CR7HSA', marca: 'NGK', modelo: 'CR7HSA', precio: 15.9, precio_oferta: 0, stock: 18, categoria: 'Eléctricos', descripcion: 'Bujía original NGK.', imagen: '/IMAGENES/CAPUCHON DE BUJIA.jpg' },
   { id: 8, nombre: 'Filtro de aceite K&N', marca: 'K&N', modelo: 'Filtro', precio: 65, precio_oferta: 0, stock: 14, categoria: 'Filtros', descripcion: 'Filtro de aceite para protección del motor.', imagen: '/IMAGENES/ACEITE LUBRICANTE 4T25W-50 1LT.jpg' },
-  { id: 91, nombre: 'Aro con Llanta 5.00-12', marca: 'PartGo', modelo: '5.00-12', precio: 150, precio_oferta: 0, stock: 7, categoria: 'Llantas', descripcion: 'Aro con llanta para moto carguera.', imagen: '/IMAGENES/ARO CON LLANTA 5.00-12 (4H).jpg' },
+  { id: 91, nombre: 'Aro con Llanta 5.00-12', marca: 'Dorada Motor’s', modelo: '5.00-12', precio: 150, precio_oferta: 0, stock: 7, categoria: 'Llantas', descripcion: 'Aro con llanta para moto carguera.', imagen: '/IMAGENES/ARO CON LLANTA 5.00-12 (4H).jpg' },
 ];
 
 function normalizarProductoDetalle(producto) {
@@ -26,7 +26,7 @@ function normalizarProductoDetalle(producto) {
   return {
     ...producto,
     id: Number(producto.id || producto.producto_id || producto.id_producto || 1),
-    nombre: producto.nombre || producto.n || 'Producto PartGo',
+    nombre: producto.nombre || producto.n || 'Producto Dorada Motor’s',
     precio: precioFinal > 0 ? precioFinal : precioBase,
     precio_regular: precioBase,
     en_oferta: tieneOferta,
@@ -188,13 +188,13 @@ export default function ProductoDetalle() {
             <div><b>🏷️ Categoría:</b><span>{producto.categoria || 'Repuesto'}</span></div>
             <div><b>📦 Presentación:</b><span>{producto.presentacion || 'Caja x 05'}</span></div>
             <div><b>✅ Stock disponible:</b><span>{producto.stock} unidades</span></div>
-            <div><b>🏁 Marca:</b><span>{producto.marca || 'PartGo'}</span></div>
+            <div><b>🏁 Marca:</b><span>{producto.marca || 'Dorada Motor’s'}</span></div>
             <div><b>🔗 SKU:</b><span>PG-{String(producto.id).padStart(5, '0')}</span></div>
           </div>
 
           <a className="detalle-whatsapp-pro" href={whatsappUrl} target="_blank" rel="noreferrer">
             <span>🟢</span>
-            <div><small>PartGo Online</small><strong>Consulta por WhatsApp</strong></div>
+            <div><small>Dorada Motor’s Online</small><strong>Consulta por WhatsApp</strong></div>
             <b>›</b>
           </a>
 

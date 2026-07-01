@@ -58,7 +58,7 @@ export default function Registro() {
       localStorage.removeItem('partgo_return_after_login');
       sessionStorage.removeItem('partgo_return_after_login');
 
-      await Swal.fire({ icon:'success', title:'¡Cuenta creada! 🎉', text:'Bienvenido a PartGo.', timer:1100, showConfirmButton:false, background:swalBg, color:swalColor });
+      await Swal.fire({ icon:'success', title:'¡Cuenta creada! 🎉', text:'Bienvenido a Dorada Motor’s.', timer:1100, showConfirmButton:false, background:swalBg, color:swalColor });
       navigate(returnTo || '/inicio', { replace:true });
     } catch (err) {
       Swal.fire({ icon:'error', title:'Error al registrar', text:err.message, confirmButtonColor:'#7c3aed', background:swalBg, color:swalColor });
@@ -109,8 +109,8 @@ export default function Registro() {
         <div style={{ animation:'regSlide .65s cubic-bezier(.22,1,.36,1)', width:'100%', maxWidth:'520px', background:'var(--rg-card-bg)', border:'1px solid var(--rg-card-border)', borderRadius:'20px', padding:'44px 44px', boxShadow:'var(--rg-card-shadow)' }}>
           {/* Logo */}
           <Link to="/" style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'32px', textDecoration:'none' }}>
-            <div style={{ width:'40px', height:'40px', background:'linear-gradient(135deg,#7c3aed,#4c1d95)', borderRadius:'11px', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:'20px', fontWeight:'900', boxShadow:'0 4px 14px rgba(124,58,237,.4)', overflow:'hidden' }}>{adminLogoRegistro ? <img src={adminLogoRegistro} alt="Logo PartGo" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}</div>
-            <span style={{ color:'var(--rg-heading)', fontWeight:'800', fontSize:'22px', letterSpacing:'-0.4px' }}>PartGo</span>
+            <div style={{ width:'40px', height:'40px', background:'linear-gradient(135deg,#7c3aed,#4c1d95)', borderRadius:'11px', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:'20px', fontWeight:'900', boxShadow:'0 4px 14px rgba(124,58,237,.4)', overflow:'hidden' }}>{adminLogoRegistro ? <img src={adminLogoRegistro} alt="Logo Dorada Motor’s" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}</div>
+            <span style={{ color:'var(--rg-heading)', fontWeight:'800', fontSize:'22px', letterSpacing:'-0.4px' }}>Dorada Motor’s</span>
           </Link>
 
           <h2 style={{ color:'var(--rg-heading)', fontWeight:'800', fontSize:'26px', margin:'0 0 6px', letterSpacing:'-0.4px' }}>Crea tu cuenta</h2>

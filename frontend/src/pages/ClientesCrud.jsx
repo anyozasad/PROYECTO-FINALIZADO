@@ -23,7 +23,7 @@ function leerClientesRegistrados() {
 function normalizarClienteLocal(c = {}) {
   return {
     id: c.id || c.email || Date.now(),
-    nombre: c.nombre || c.name || 'Cliente PartGo',
+    nombre: c.nombre || c.name || 'Cliente Dorada Motor’s',
     email: c.email || c.correo || '',
     telefono: c.telefono || c.phone || '',
     dni: c.dni || c.documento || c.ruc || '—',

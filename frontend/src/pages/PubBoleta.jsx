@@ -40,7 +40,7 @@ const solesEnLetras = (total) => {
 };
 
 function QRVisual({ value }) {
-  const text = String(value || 'PARTGO');
+  const text = String(value || 'DORADA MOTOR’S');
   let seed = 0;
   for (let i = 0; i < text.length; i++) seed = (seed * 31 + text.charCodeAt(i)) >>> 0;
   const cells = [];
@@ -63,7 +63,7 @@ function QRVisual({ value }) {
 }
 
 function BarCode({ value }) {
-  const text = String(value || 'PARTGO');
+  const text = String(value || 'DORADA MOTOR’S');
   let seed = 7;
   for (let i = 0; i < text.length; i++) seed = (seed * 33 + text.charCodeAt(i)) >>> 0;
   const bars = Array.from({ length: 58 }, () => {
@@ -128,8 +128,8 @@ export default function PubBoleta() {
 
       <section className="cpe-ticket">
         <div className="cpe-center">
-          <div className="cpe-logo">{(empresa.nombreComercial || 'PartGo').toUpperCase()}</div>
-          <p className="cpe-small cpe-strong">{empresa.razonSocial || 'PARTGO REPUESTOS E.I.R.L.'}</p>
+          <div className="cpe-logo">{(empresa.nombreComercial || 'Dorada Motor’s').toUpperCase()}</div>
+          <p className="cpe-small cpe-strong">{empresa.razonSocial || 'DORADA MOTOR’S REPUESTOS E.I.R.L.'}</p>
           <p className="cpe-small">RUC: {ruc}</p>
           <p className="cpe-small">{empresa.direccion || 'Av. Los Próceres 123, Lima - Perú'}</p>
           <p className="cpe-small">Tel: {empresa.telefono || '922 859 170'}</p>
@@ -146,7 +146,7 @@ export default function PubBoleta() {
         <div className="cpe-row"><span>Forma de Pago:</span><span>{pedido.formaPago || 'Contado'}</span></div>
         <div className="cpe-row"><span>Medio de Pago:</span><span>{pedido.pago?.metodo || 'Efectivo'}</span></div>
         <div className="cpe-row"><span>Entrega:</span><span>{direccionEntrega || '-'}</span></div>
-        <div className="cpe-row"><span>Vendedor:</span><span>PARTGO</span></div>
+        <div className="cpe-row"><span>Vendedor:</span><span>DORADA MOTOR’S</span></div>
 
         <table className="cpe-table">
           <thead>
@@ -197,9 +197,9 @@ export default function PubBoleta() {
         <p className="cpe-hash">{hash}</p>
         <p className="cpe-mini"><b>Emisión:</b> {fechaEmision} {horaEmision}</p>
         <p className="cpe-mini"><b>Expedición:</b> {fechaEmision} {horaEmision}</p>
-        <p className="cpe-mini"><b>Emisor:</b> {empresa.razonSocial || 'PARTGO REPUESTOS E.I.R.L.'} - RUC {ruc}</p>
+        <p className="cpe-mini"><b>Emisor:</b> {empresa.razonSocial || 'DORADA MOTOR’S REPUESTOS E.I.R.L.'} - RUC {ruc}</p>
         <p className="cpe-note">Consulte el comprobante con el RUC, tipo, serie, número, IGV, total y fecha de emisión.</p>
-        <div className="cpe-footer">Software PartGo 2.0<br />www.partgo.pe<br />RUC: {ruc}</div>
+        <div className="cpe-footer">Software Dorada Motor’s 2.0<br />www.partgo.pe<br />RUC: {ruc}</div>
       </section>
     </div>
   );

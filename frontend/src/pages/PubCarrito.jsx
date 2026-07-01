@@ -49,7 +49,7 @@ export default function PubCarrito() {
     else if (r.dismiss === Swal.DismissReason.cancel) navigate('/s/checkout?modo=invitado');
   };
 
-  const aplicar = () => { guardarCupon('PARTGO10'); setItems(obtenerCarrito()); Swal.fire({icon:'success',title:'Cupón PARTGO10 aplicado',timer:1200,showConfirmButton:false,background:'var(--pg-surface)',color:'var(--pg-text)'}); };
+  const aplicar = () => { guardarCupon('DORADA MOTOR’S10'); setItems(obtenerCarrito()); Swal.fire({icon:'success',title:'Cupón DORADA MOTOR’S10 aplicado',timer:1200,showConfirmButton:false,background:'var(--pg-surface)',color:'var(--pg-text)'}); };
 
   return (
     <>
@@ -79,7 +79,7 @@ export default function PubCarrito() {
             <p style={{display:'flex',justifyContent:'space-between',color:'var(--pg-muted2)'}}><span>Subtotal</span><b style={{color:'var(--pg-text)'}}>S/ {resumen.subtotal.toFixed(2)}</b></p>
             <p style={{display:'flex',justifyContent:'space-between',color:'var(--pg-muted2)'}}><span>Descuento</span><b style={{color:'#10b981'}}>- S/ {resumen.descuento.toFixed(2)}</b></p>
             <p style={{display:'flex',justifyContent:'space-between',color:'var(--pg-muted2)'}}><span>Envío</span><b style={{color:'var(--pg-text)'}}>S/ {resumen.envio.toFixed(2)}</b></p>
-            <button className="pg-anim-btn" onClick={aplicar} style={{width:'100%',background:'transparent',border:'1px dashed #7c3aed',borderRadius:'10px',padding:'10px',color:'#a78bfa',fontWeight:'800',cursor:'pointer',marginTop:'6px'}}>Aplicar PARTGO10</button>
+            <button className="pg-anim-btn" onClick={aplicar} style={{width:'100%',background:'transparent',border:'1px dashed #7c3aed',borderRadius:'10px',padding:'10px',color:'#a78bfa',fontWeight:'800',cursor:'pointer',marginTop:'6px'}}>Aplicar DORADA MOTOR’S10</button>
             <div style={{height:'1px',background:'var(--pg-border)',margin:'14px 0'}}/>
             <p style={{display:'flex',justifyContent:'space-between',fontSize:'20px',fontWeight:'900'}}><span>Total</span><span style={{color:'#a78bfa'}}>S/ {resumen.total.toFixed(2)}</span></p>
             <button className="pg-anim-btn" onClick={irCheckout} style={{width:'100%',background:'linear-gradient(135deg,#7c3aed,#9333ea)',border:'none',borderRadius:'11px',padding:'13px',color:'white',fontWeight:'900',cursor:'pointer',marginTop:'10px'}}>Comprar ahora</button>

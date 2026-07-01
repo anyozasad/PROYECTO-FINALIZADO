@@ -8,7 +8,7 @@ function normalizarUsuario(usuario = {}) {
   return {
     ...usuario,
     id: usuario.id || usuario.sub || Date.now(),
-    nombre: usuario.nombre || usuario.name || usuario.displayName || usuario.email?.split('@')?.[0] || 'Cliente PartGo',
+    nombre: usuario.nombre || usuario.name || usuario.displayName || usuario.email?.split('@')?.[0] || 'Cliente Dorada Motor’s',
     email: usuario.email || usuario.correo || '',
     foto: usuario.foto || usuario.picture || usuario.avatar || '',
     telefono: usuario.telefono || usuario.phone || '',
@@ -42,7 +42,7 @@ function registrarUsuarioParaAdmin(usuario = {}) {
 
   const item = {
     id: limpio.id || Date.now(),
-    nombre: limpio.nombre || 'Cliente PartGo',
+    nombre: limpio.nombre || 'Cliente Dorada Motor’s',
     email: limpio.email || '',
     rol: limpio.rol || 'Cliente',
     rol_id: limpio.rol_id,
@@ -67,7 +67,7 @@ function registrarClienteParaAdmin(usuario = {}) {
   const ahora = new Date().toISOString();
   const cliente = {
     id: limpio.id || Date.now(),
-    nombre: limpio.nombre || 'Cliente PartGo',
+    nombre: limpio.nombre || 'Cliente Dorada Motor’s',
     email: limpio.email || '',
     telefono: limpio.telefono || '',
     dni: limpio.documento || limpio.dni || limpio.ruc || '',
@@ -145,7 +145,7 @@ export function AuthProvider({ children }) {
       const usuariosDemo = [
         { id: 1, nombre: 'Administrador', email: 'admin@gmail.com', password: '123456', rol_id: 1, rol: 'Administrador' },
         { id: 2, nombre: 'Vendedor', email: 'vendedor@gmail.com', password: '123456', rol_id: 2, rol: 'Vendedor' },
-        { id: 3, nombre: 'Cliente PartGo', email: 'cliente@gmail.com', password: '123456', rol_id: 3, rol: 'Cliente', telefono:'+51 987 654 321' }
+        { id: 3, nombre: 'Cliente Dorada Motor’s', email: 'cliente@gmail.com', password: '123456', rol_id: 3, rol: 'Cliente', telefono:'+51 987 654 321' }
       ];
       const demo = usuariosDemo.find((u) => u.email === email && u.password === password);
       if (!demo) throw error;

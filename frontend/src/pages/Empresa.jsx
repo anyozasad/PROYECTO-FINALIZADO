@@ -14,7 +14,7 @@ const tabs = [
 ];
 
 const DEFAULT_EMPRESA = {
-  nombre:'PartGo Repuestos',
+  nombre:'Dorada Motor’s Repuestos',
   email:'hola@partgo.com',
   telefono:'987 654 321',
   direccion:'Av. Los Próceres 123, San Miguel, Lima - Perú',
@@ -22,12 +22,12 @@ const DEFAULT_EMPRESA = {
   zona:'(GMT-05:00) Lima',
   descripcion:'Los mejores repuestos para tu moto, al mejor precio.',
   ruc:'20609999994',
-  razonSocial:'PARTGO REPUESTOS E.I.R.L.'
+  razonSocial:'DORADA MOTOR’S REPUESTOS E.I.R.L.'
 };
 
 const DEFAULT_ADMIN = {
   nombres:'Admin',
-  apellidos:'PartGo',
+  apellidos:'Dorada Motor’s',
   correo:'admin@gmail.com',
   telefono:'999 888 777',
   password:'',
@@ -339,7 +339,7 @@ export default function Empresa() {
       logo: localStorage.getItem('partgo_admin_logo') || '',
       fotoAdmin: localStorage.getItem('partgo_admin_foto') || '',
       generado: new Date().toISOString(),
-      version:'PartGo Admin Config 1.0'
+      version:'Dorada Motor’s Admin Config 1.0'
     };
     const contenido = JSON.stringify(backup, null, 2);
     const blob = new Blob([contenido], { type:'application/json' });
@@ -365,7 +365,7 @@ export default function Empresa() {
     Swal.fire({
       icon:'question',
       title:'Restaurar copia',
-      text:'Selecciona un archivo JSON de respaldo de PartGo.',
+      text:'Selecciona un archivo JSON de respaldo de Dorada Motor’s.',
       showCancelButton:true,
       confirmButtonText:'Seleccionar archivo',
       cancelButtonText:'Cancelar',
@@ -509,7 +509,7 @@ export default function Empresa() {
                   <div style={{color:'var(--muted2)', fontSize:'12px', fontWeight:'700', marginBottom:'10px', textTransform:'uppercase'}}>Logo de la tienda</div>
                   <div className="pg-logo-box" onClick={cambiarLogo} style={{background:'linear-gradient(135deg,#7c3aed,#4c1d95)', borderRadius:'18px', width:'110px', height:'110px', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 12px', boxShadow:'0 10px 26px rgba(124,58,237,0.35)', cursor:'pointer', overflow:'hidden'}}>
                     {logoPreview ? (
-                      <img src={logoPreview} alt="Logo PartGo" style={{width:'100%', height:'100%', objectFit:'cover'}} />
+                      <img src={logoPreview} alt="Logo Dorada Motor’s" style={{width:'100%', height:'100%', objectFit:'cover'}} />
                     ) : (
                       <span style={{fontSize:'44px', fontWeight:'900', color:'white'}}>⚡</span>
                     )}

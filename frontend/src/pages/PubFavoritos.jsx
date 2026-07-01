@@ -21,7 +21,7 @@ function leerFavoritosGuardados(){
     if (Array.isArray(saved) && saved.length) {
       return saved.map(x => ({
         id: x.id,
-        n: x.n || x.nombre || 'Producto PartGo',
+        n: x.n || x.nombre || 'Producto Dorada Motor’s',
         p: Number(x.p ?? x.precio ?? 0),
         img: x.img || x.imagen || '/IMAGENES/ACEITE LUBRICANTE 4T25W-50 1LT.jpg',
         liked: true

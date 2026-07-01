@@ -58,7 +58,7 @@ export default function PubAjustes(){
     <div style={{padding:'26px 28px',fontFamily:"'Inter',sans-serif",color:'var(--pg-text)',background:'var(--pg-bg)',minHeight:'100%'}}>
       <div style={{marginBottom:'24px'}}>
         <h1 style={{margin:'0 0 4px',fontSize:'22px',fontWeight:'800'}}>Configuración de cuenta</h1>
-        <p style={{margin:0,color:'var(--pg-muted)',fontSize:'13px'}}>Personaliza tu experiencia en PartGo</p>
+        <p style={{margin:0,color:'var(--pg-muted)',fontSize:'13px'}}>Personaliza tu experiencia en Dorada Motor’s</p>
       </div>
 
       <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'18px'}}>

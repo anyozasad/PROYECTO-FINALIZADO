@@ -160,7 +160,7 @@ export default function Dashboard() {
     const sync = () => {
       const locales = obtenerPedidosLocales().slice(0, 5).map((p) => ({
         id: `${p.serie}-${p.numero}`,
-        cli: p.cliente?.nombre || 'Cliente PartGo',
+        cli: p.cliente?.nombre || 'Cliente Dorada Motor’s',
         f: new Date(p.fecha).toLocaleString('es-PE', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' }),
         total: `S/ ${Number(p.resumen?.total||0).toFixed(2)}`,
         e: p.estado,
@@ -355,7 +355,7 @@ export default function Dashboard() {
 
       {/* FOOTER */}
       <p style={{textAlign:'center',color:'var(--muted)',fontSize:'12px',marginTop:'28px',paddingTop:'18px',borderTop:'1px solid var(--border)'}}>
-        © 2026 <strong style={{color:'#7c3aed'}}>PartGo</strong> · Panel de administración
+        © 2026 <strong style={{color:'#7c3aed'}}>Dorada Motor’s</strong> · Panel de administración
       </p>
     </div>
   );

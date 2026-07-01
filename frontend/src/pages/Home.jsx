@@ -19,9 +19,9 @@ const CATS = [
 
 const PRODS_DEMO = [
   { id:1, nombre:'Bujía Iridium CR8EIX',    marca:'NGK',    precio:28.00,  imagen:'/IMAGENES/CAPUCHON DE BUJIA.jpg',                oferta:false, rating:4, rev:77  },
-  { id:2, nombre:'Aro con Llanta 5.00-12',  marca:'PartGo', precio:150.00, imagen:'/IMAGENES/ARO CON LLANTA 5.00-12 (4H).jpg',     oferta:true,  rating:5, rev:84  },
-  { id:3, nombre:'Alternador 4P CG 125',    marca:'PartGo', precio:120.00, imagen:'/IMAGENES/ALTERNADOR 4P CGL.jpg',                oferta:false, rating:4, rev:89  },
-  { id:4, nombre:'Faro delantero redondo',  marca:'PartGo', precio:65.00,  imagen:'/IMAGENES/FARO DELANTERO REDONDO.jpg',          oferta:true,  rating:5, rev:92  },
+  { id:2, nombre:'Aro con Llanta 5.00-12',  marca:'Dorada Motor’s', precio:150.00, imagen:'/IMAGENES/ARO CON LLANTA 5.00-12 (4H).jpg',     oferta:true,  rating:5, rev:84  },
+  { id:3, nombre:'Alternador 4P CG 125',    marca:'Dorada Motor’s', precio:120.00, imagen:'/IMAGENES/ALTERNADOR 4P CGL.jpg',                oferta:false, rating:4, rev:89  },
+  { id:4, nombre:'Faro delantero redondo',  marca:'Dorada Motor’s', precio:65.00,  imagen:'/IMAGENES/FARO DELANTERO REDONDO.jpg',          oferta:true,  rating:5, rev:92  },
   { id:5, nombre:'Cadena 428-114L',         marca:'DID',    precio:45.00,  imagen:'/IMAGENES/CADENA 428-114L.jpg',                  oferta:false, rating:4, rev:63  },
   { id:6, nombre:'Aceite 4T 25W-50 1L',    marca:'Motul',  precio:32.00,  imagen:'/IMAGENES/ACEITE LUBRICANTE 4T25W-50 1LT.jpg',  oferta:false, rating:5, rev:51  },
   { id:7, nombre:'Zapata freno roja',       marca:'EBC',    precio:38.00,  imagen:'/IMAGENES/ZAPATA FRENO ROJA.jpg',               oferta:true,  rating:4, rev:44  },
@@ -35,7 +35,7 @@ function construirCatalogoCompleto() {
   return obtenerCatalogo().filter(p => !p.eliminado).map((p) => ({
     id: p.id,
     nombre: p.nombre,
-    marca: p.marca || 'PartGo',
+    marca: p.marca || 'Dorada Motor’s',
     categoria: p.categoria,
     precio: Number(p.precio || 0),
     precioOferta: Number(p.precio_oferta || 0),
@@ -130,7 +130,7 @@ export default function Home() {
     agregarAlCarrito({
       id: p.id,
       nombre: p.nombre,
-      marca: p.marca || 'PartGo',
+      marca: p.marca || 'Dorada Motor’s',
       categoria: p.categoria || p.categoria_nombre || 'Repuestos',
       precio: tieneOferta ? p.precioOferta : p.precio,
       img: p.imagen || p.img,
@@ -151,7 +151,7 @@ export default function Home() {
       precio: Number(p.precio || 0),
       img: p.imagen || p.img,
       imagen: p.imagen || p.img,
-      marca: p.marca || 'PartGo',
+      marca: p.marca || 'Dorada Motor’s',
       categoria: p.categoria || p.categoria_nombre || 'Repuestos',
     };
 
@@ -455,7 +455,7 @@ export default function Home() {
                     </div>
                     {/* Info */}
                     <div style={{padding:'12px',flex:1,display:'flex',flexDirection:'column',gap:'4px'}}>
-                      <p style={{margin:0,fontSize:'10px',color:'var(--muted)',fontWeight:'700',textTransform:'uppercase',letterSpacing:'.05em'}}>{p.marca||'PartGo'}</p>
+                      <p style={{margin:0,fontSize:'10px',color:'var(--muted)',fontWeight:'700',textTransform:'uppercase',letterSpacing:'.05em'}}>{p.marca||'Dorada Motor’s'}</p>
                       <p style={{margin:0,fontSize:'12px',fontWeight:'700',lineHeight:1.3,color:'var(--text)',display:'-webkit-box',WebkitLineClamp:2,WebkitBoxOrient:'vertical',overflow:'hidden'}}>{p.nombre}</p>
                       <div style={{display:'flex',gap:'1px',alignItems:'center'}}>
                         {Array(5).fill(0).map((_,j)=>(
@@ -489,7 +489,7 @@ export default function Home() {
             </div>
             <div>
               <p style={{margin:'0 0 2px',fontSize:'13px',fontWeight:'700',color:'white'}}>Hola, {usuario?.nombre?.split(' ')[0]||'Cliente'} 👋</p>
-              <p style={{margin:0,fontSize:'11px',color:'rgba(255,255,255,.7)'}}>Bienvenido a PartGo</p>
+              <p style={{margin:0,fontSize:'11px',color:'rgba(255,255,255,.7)'}}>Bienvenido a Dorada Motor’s</p>
             </div>
           </div>
 
@@ -520,7 +520,7 @@ export default function Home() {
             <p style={{margin:'0 0 4px',fontSize:'12px',fontWeight:'700',color:'#c4b5fd'}}>DE DESCUENTO</p>
             <p style={{margin:'0 0 6px',fontSize:'10px',color:'#e9d5ff'}}>En tu primera compra. Código:</p>
             <div style={{background:'rgba(0,0,0,.25)',borderRadius:'6px',padding:'5px 10px',display:'inline-block',marginBottom:'12px'}}>
-              <span style={{color:'white',fontWeight:'900',fontSize:'14px',letterSpacing:'.1em'}}>PARTGO10</span>
+              <span style={{color:'white',fontWeight:'900',fontSize:'14px',letterSpacing:'.1em'}}>DORADA MOTOR’S10</span>
             </div>
             <button onClick={()=>navigate('/ofertas')} style={{display:'block',width:'100%',padding:'9px',background:'white',color:'#7c3aed',border:'none',borderRadius:'8px',fontWeight:'800',fontSize:'13px',cursor:'pointer',fontFamily:"'Inter',sans-serif",transition:'transform .15s'}}
               onMouseOver={e=>e.currentTarget.style.transform='translateY(-1px)'}

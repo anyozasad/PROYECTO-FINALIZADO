@@ -24,7 +24,7 @@ export function crearReclamo({ tipo, pedido, breve, detallada, cliente, email, t
     pedido: pedido || '-',
     asunto: breve || (tipo ? `Reclamo: ${tipo}` : 'Reclamo de cliente'),
     descripcion: detallada,
-    cliente: cliente || 'Cliente PartGo',
+    cliente: cliente || 'Cliente Dorada Motor’s',
     email: email || '',
     telefono: telefono || '',
     estado: 'PENDIENTE',

@@ -88,8 +88,8 @@ export default function PublicLayout() {
   };
 
   const aplicarCupon = () => {
-    guardarCupon('PARTGO10');
-    Swal.fire({ icon:'success', title:'Cupón aplicado', text:'PARTGO10 quedó guardado para tu compra.', timer:1300, showConfirmButton:false, background:'var(--pg-surface)', color:'var(--pg-text)' });
+    guardarCupon('DORADA MOTOR’S10');
+    Swal.fire({ icon:'success', title:'Cupón aplicado', text:'DORADA MOTOR’S10 quedó guardado para tu compra.', timer:1300, showConfirmButton:false, background:'var(--pg-surface)', color:'var(--pg-text)' });
     navigate('/s/carrito');
   };
 
@@ -156,9 +156,9 @@ export default function PublicLayout() {
         <aside className="pg-public-scroll" style={{ width:'208px', background:'var(--pg-surface)', borderRight:'1px solid var(--pg-border)', display:'flex', flexDirection:'column', position:'fixed', top:0, left:0, bottom:0, zIndex:300, overflowY:'auto' }}>
           <button type="button" onClick={()=>navigate('/')} style={{ display:'flex', alignItems:'center', gap:'10px', padding:'20px 16px 14px', textDecoration:'none', flexShrink:0, background:'transparent', border:'none', cursor:'pointer', textAlign:'left', fontFamily:"'Inter',sans-serif" }}>
             <div style={{ width:'36px', height:'36px', background:'linear-gradient(135deg,#7c3aed,#4c1d95)', borderRadius:'10px', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:'18px', fontWeight:'900', boxShadow:'0 4px 14px rgba(124,58,237,.45)', animation:'plGlow 3s ease-in-out infinite', flexShrink:0, overflow:'hidden' }}>
-              {adminLogoPublic ? <img src={adminLogoPublic} alt="Logo PartGo" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}
+              {adminLogoPublic ? <img src={adminLogoPublic} alt="Logo Dorada Motor’s" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}
             </div>
-            <span className="pg-public-logo-text" style={{ color:'var(--pg-text)', fontWeight:'800', fontSize:'18px', letterSpacing:'-0.4px' }}>PartGo</span>
+            <span className="pg-public-logo-text" style={{ color:'var(--pg-text)', fontWeight:'800', fontSize:'18px', letterSpacing:'-0.4px' }}>Dorada Motor’s</span>
           </button>
 
           <nav style={{ flex:1, padding:'0 10px' }}>
@@ -191,9 +191,9 @@ export default function PublicLayout() {
           <header className="pg-public-header" style={{ background:'var(--pg-surface)', borderBottom:'1px solid var(--pg-border)', padding:'0 24px', height:'64px', display:'flex', alignItems:'center', gap:'16px', position:'sticky', top:0, zIndex:200 }}>
             <button type="button" onClick={()=>navigate('/')} style={{ display:'flex', alignItems:'center', gap:'8px', textDecoration:'none', flexShrink:0, background:'transparent', border:'none', cursor:'pointer', fontFamily:"'Inter',sans-serif" }}>
               <span style={{ width:'22px', height:'22px', borderRadius:'7px', background:'linear-gradient(135deg,#7c3aed,#4c1d95)', color:'white', display:'inline-flex', alignItems:'center', justifyContent:'center', overflow:'hidden', fontSize:'14px' }}>
-                {adminLogoPublic ? <img src={adminLogoPublic} alt="Logo PartGo" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}
+                {adminLogoPublic ? <img src={adminLogoPublic} alt="Logo Dorada Motor’s" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}
               </span>
-              <span style={{ fontWeight:'800', fontSize:'16px', color:'var(--pg-text)' }}>PartGo</span>
+              <span style={{ fontWeight:'800', fontSize:'16px', color:'var(--pg-text)' }}>Dorada Motor’s</span>
             </button>
             <div className="pg-public-header-search" style={{ display:'flex', flex:1, maxWidth:'520px' }}>
               <input value={buscar} onChange={e=>setBuscar(e.target.value)} onKeyDown={e=>{ if(e.key==='Enter') buscarAhora(); }} type="text" placeholder="Buscar repuestos, categorías, marcas..."

@@ -424,7 +424,7 @@ html { scroll-behavior: smooth; }
   border-radius: 6px;
   cursor: pointer;
 }
-/* Login moderno PartGo */
+/* Login moderno Dorada Motor’s */
 .login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#070707!important}.login-gold-orb{position:absolute;right:-260px;top:-140px;width:850px;height:850px;border-radius:50%;background:radial-gradient(circle,rgba(245,180,22,.95) 0%,rgba(245,180,22,.55) 38%,rgba(245,180,22,.18) 62%,transparent 74%);box-shadow:0 0 50px rgba(245,180,22,.75)}.login-gold-orb:before{content:"";position:absolute;inset:0;border-radius:50%;border-left:4px solid rgba(255,205,60,.95)}.login-card{position:relative;z-index:2;width:520px;max-width:calc(100% - 40px);background:#f8f8f8!important;border-radius:28px!important;padding:44px!important;box-shadow:0 28px 80px rgba(0,0,0,.45)!important}.login-card h2{margin:0!important;font-size:68px!important;line-height:1!important;font-weight:900!important;color:#0b111c!important;letter-spacing:-3px!important}.login-card .form-label{font-weight:800;color:#0f172a}.login-card .form-control{height:56px;border-radius:14px;border:2px solid #d1d5db}.login-main-btn{height:60px;border-radius:14px!important;font-size:20px;font-weight:900;box-shadow:0 16px 35px rgba(0,0,0,.28)}.login-footer-link{display:flex;justify-content:center;gap:8px;margin-top:18px}.login-footer-link a{font-weight:800;color:#111827}.registro-page{min-height:100vh;display:grid;place-items:center;background:#0b0f19}.registro-card{width:430px;max-width:calc(100% - 30px);background:#fff;border-radius:24px;padding:34px;display:grid;gap:12px;box-shadow:0 28px 80px rgba(0,0,0,.45)}.registro-card h2{font-weight:900}.registro-card input{height:44px;border:1px solid #d1d5db;border-radius:10px;padding:0 12px}.registro-card button{height:48px;border:none;border-radius:12px;background:#111827;color:#fff;font-weight:900}
 
 .admin-card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}.stock-row{display:grid;grid-template-columns:55px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid #e5e7eb;padding:10px 0}.stock-row img{width:55px;height:55px;object-fit:cover;border-radius:10px}.stock-row small{display:block;color:#6b7280}.best-card{background:#f9fafb;border-radius:14px;padding:16px;display:grid;gap:5px}.best-card span{color:#111827}.best-card small{color:#6b7280}.notification-card{background:#fff;border-radius:16px;padding:18px;border:1px solid #e5e7eb;box-shadow:0 8px 20px rgba(0,0,0,.04)}.notification-card.unread{border-color:#facc15;background:#fffbeb}.notification-card p{margin:8px 0;color:#4b5563}
@@ -1126,7 +1126,7 @@ a.nav-link:active,
   opacity: .85 !important;
 }
 /* =========================================================
-   PARTGO MOBILE FIX LIMPIO
+   DORADA MOTOR’S MOBILE FIX LIMPIO
    Login + Home usuario + Admin tablas
    ========================================================= */
 
@@ -1508,7 +1508,7 @@ a.nav-link:active,
   }
 }
 /* =========================================================
-   SIDEBAR COLAPSABLE PARTGO
+   SIDEBAR COLAPSABLE DORADA MOTOR’S
    Flecha para minimizar usuario/admin
    ========================================================= */
 
@@ -1716,7 +1716,7 @@ a.nav-link:active,
 }
 
 /* =========================================================
-   SIDEBAR PARTGO - CERRADO COMPLETO + PESTAÑA BONITA
+   SIDEBAR DORADA MOTOR’S - CERRADO COMPLETO + PESTAÑA BONITA
    Cuando se minimiza, desaparece completo el menú
    ========================================================= */
 
@@ -1894,7 +1894,7 @@ a.nav-link:active,
 }
 
 /* =========================================================
-   PARTGO MOBILE SCROLL FINO
+   DORADA MOTOR’S MOBILE SCROLL FINO
    Sin rayas visibles + deslizar izquierda/derecha
    Usuario + Admin + Formularios + Tablas
    ========================================================= */

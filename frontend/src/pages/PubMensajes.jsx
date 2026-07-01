@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { obtenerPedidos } from '../utils/shopCore';
 
 const baseMsgs = [
-  {de:'bot',txt:'Hola 👋 Soy la IA de PartGo. Puedo ayudarte con pedidos, envíos, boletas, pagos, devoluciones y repuestos.',h:'Ahora'},
+  {de:'bot',txt:'Hola 👋 Soy la IA de Dorada Motor’s. Puedo ayudarte con pedidos, envíos, boletas, pagos, devoluciones y repuestos.',h:'Ahora'},
 ];
 const conversaciones = [
-  { id:1, n:'IA Soporte PartGo', icon:'🤖', badge:'IA', online:true },
+  { id:1, n:'IA Soporte Dorada Motor’s', icon:'🤖', badge:'IA', online:true },
   { id:2, n:'Ventas', icon:'🛒', badge:'', online:true },
   { id:3, n:'Envíos', icon:'🚚', badge:'', online:true },
   { id:4, n:'Boletas', icon:'📑', badge:'', online:true },

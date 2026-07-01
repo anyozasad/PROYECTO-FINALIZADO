@@ -10,7 +10,7 @@ import './index.css';
 import './styles.css';
 
 // ===============================
-// Toggle sidebar PartGo
+// Toggle sidebar Dorada Motor’s
 // Usuario + Admin
 // ===============================
 function setupPartGoSidebarToggle() {

@@ -495,8 +495,8 @@ export default function Login() {
         </button>
         <section className="login-panel">
           <div className="login-brand">
-            <div className="login-logo">{adminLogoLogin ? <img src={adminLogoLogin} alt="Logo PartGo" style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:'11px'}} /> : '⚡'}</div>
-            <span style={{fontSize:'22px',fontWeight:'900',letterSpacing:'-.4px'}}>PartGo</span>
+            <div className="login-logo">{adminLogoLogin ? <img src={adminLogoLogin} alt="Logo Dorada Motor’s" style={{width:'100%',height:'100%',objectFit:'cover',borderRadius:'11px'}} /> : '⚡'}</div>
+            <span style={{fontSize:'22px',fontWeight:'900',letterSpacing:'-.4px'}}>Dorada Motor’s</span>
           </div>
 
           <div style={{textAlign:'center',marginBottom:'28px',position:'relative',zIndex:1}}>
@@ -602,7 +602,7 @@ export default function Login() {
               <span style={{background:'linear-gradient(135deg,#ffffff,#c4b5fd,#8b5cf6)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>motocicleta</span>
             </h2>
             <p style={{color:'#cbd5e1',fontSize:'15px',lineHeight:1.7,maxWidth:'490px',margin:'0 0 26px'}}>
-              Ingresa a PartGo y gestiona tus compras, pedidos, favoritos y boletas con una experiencia rápida y segura.
+              Ingresa a Dorada Motor’s y gestiona tus compras, pedidos, favoritos y boletas con una experiencia rápida y segura.
             </p>
 
             <div style={{display:'grid',gap:'11px',maxWidth:'430px'}}>

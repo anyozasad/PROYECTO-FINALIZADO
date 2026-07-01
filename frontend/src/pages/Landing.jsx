@@ -248,11 +248,11 @@ export default function Landing() {
           <div onClick={e=>e.stopPropagation()} style={{background:'var(--pg-card)',border:'1px solid var(--pg-border)',borderRadius:'18px',maxWidth:'620px',width:'100%',maxHeight:'88vh',overflowY:'auto',padding:'28px',position:'relative',boxShadow:'0 30px 70px rgba(0,0,0,.4)'}}>
             <button onClick={()=>setComoFunciona(false)} style={{position:'absolute',top:'16px',right:'16px',width:'30px',height:'30px',borderRadius:'50%',border:'1px solid var(--pg-border2)',background:'var(--pg-card2)',color:'var(--pg-muted2)',cursor:'pointer',fontSize:'15px',display:'flex',alignItems:'center',justifyContent:'center'}}>✕</button>
             <p style={{margin:'0 0 6px',color:'#8b5cf6',fontSize:'11px',fontWeight:'800',textTransform:'uppercase',letterSpacing:'.08em'}}>🎬 Video demo</p>
-            <h2 style={{margin:'0 0 14px',fontSize:'22px',fontWeight:'900',color:'var(--pg-text)'}}>Así funciona comprar en PartGo</h2>
+            <h2 style={{margin:'0 0 14px',fontSize:'22px',fontWeight:'900',color:'var(--pg-text)'}}>Así funciona comprar en Dorada Motor’s</h2>
             <div className="landing-demo-screen" style={{marginBottom:'18px'}}>
               <div className="landing-demo-play">▶</div>
               <div style={{position:'absolute',left:'22px',top:'22px',color:'white'}}>
-                <p style={{margin:0,fontSize:'11px',fontWeight:'900',color:'#c4b5fd',letterSpacing:'.08em'}}>PARTGO DEMO</p>
+                <p style={{margin:0,fontSize:'11px',fontWeight:'900',color:'#c4b5fd',letterSpacing:'.08em'}}>DORADA MOTOR’S DEMO</p>
                 <h3 style={{margin:'8px 0 0',fontSize:'26px',lineHeight:1.05}}>Busca, compra<br/>y recibe rápido</h3>
               </div>
               <div className="landing-demo-pill"><span>1. Repuesto</span><span>2. Checkout</span><span>3. Boleta</span></div>

@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { useAuth } from '../context/AuthContext';
 
 const perfilVacio = {
-  nombre: 'Cliente PartGo',
+  nombre: 'Cliente Dorada Motor’s',
   email: 'cliente@partgo.com',
   telefono: '',
   direccion: '',

@@ -90,7 +90,7 @@ export default function LogoutConfirmModal({ open, onConfirm, onCancel }) {
       <section className="pg-logout-card" onMouseDown={(event) => event.stopPropagation()}>
         <div className="pg-logout-icon">🚪</div>
         <h2 id="pg-logout-title" className="pg-logout-title">¿Deseas salir de tu cuenta?</h2>
-        <p className="pg-logout-text">Volverás a la pantalla principal de PartGo.</p>
+        <p className="pg-logout-text">Volverás a la pantalla principal de Dorada Motor’s.</p>
         <div className="pg-logout-actions">
           <button type="button" className="pg-logout-cancel" onClick={onCancel}>Cancelar</button>
           <button type="button" className="pg-logout-confirm" onClick={onConfirm}>Sí, salir</button>

@@ -236,7 +236,7 @@ export default function ProductosCrud() {
                 <td style={{padding:'12px 16px'}}>
                   <div style={{color:'var(--text)', fontWeight:'600', fontSize:'13px', maxWidth:'240px', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>{p.nombre}</div>
                   <div style={{display:'flex', gap:'5px', marginTop:'3px'}}>
-                    <span style={{color:'#6b7280', fontSize:'11px'}}>PartGo</span>
+                    <span style={{color:'#6b7280', fontSize:'11px'}}>Dorada Motor’s</span>
                     {!!p.en_oferta && <span style={{background:'#ef444418', color:'#ef4444', padding:'1px 7px', borderRadius:'10px', fontSize:'9px', fontWeight:'800'}}>OFERTA</span>}
                     {!!p.es_nuevo && <span style={{background:'#3b82f618', color:'#3b82f6', padding:'1px 7px', borderRadius:'10px', fontSize:'9px', fontWeight:'800'}}>NUEVO</span>}
                   </div>

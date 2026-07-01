@@ -361,7 +361,7 @@ export default function Cliente() {
       `;
     }).join('');
 
-    const qrTexto = encodeURIComponent(`PARTGO|${tipo}|${numero}|${documento}|${total.toFixed(2)}`);
+    const qrTexto = encodeURIComponent(`DORADA MOTOR’S|${tipo}|${numero}|${documento}|${total.toFixed(2)}`);
     const qr = `https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=${qrTexto}`;
 
     const ticket = window.open('', '_blank', 'width=540,height=820');
@@ -373,7 +373,7 @@ export default function Cliente() {
       <html lang="es">
       <head>
         <meta charset="UTF-8" />
-        <title>${tipo} ${numero} - PartGo</title>
+        <title>${tipo} ${numero} - Dorada Motor’s</title>
         <style>
           *{box-sizing:border-box}
           body{margin:0;padding:24px;background:#e5e7eb;font-family:Arial,Helvetica,sans-serif;color:#111827}
@@ -395,7 +395,7 @@ export default function Cliente() {
       <body>
         <main class="boleta">
           <section class="empresa">
-            <div class="logo">PG</div><h1>PartGo</h1><p>Repuestos de Moto</p><p class="ruc">RUC: 20601234567</p><span class="badge">${tipo} ELECTRÓNICA</span><div class="numero">${numero}</div>
+            <div class="logo">PG</div><h1>Dorada Motor’s</h1><p>Repuestos de Moto</p><p class="ruc">RUC: 20601234567</p><span class="badge">${tipo} ELECTRÓNICA</span><div class="numero">${numero}</div>
           </section>
           <section class="datos">
             <div><strong>Cliente:</strong><span>${clienteNombre}</span></div><div><strong>DNI/RUC:</strong><span>${documento}</span></div><div><strong>Teléfono:</strong><span>${telefono}</span></div><div><strong>Correo:</strong><span>${email}</span></div><div><strong>Dirección:</strong><span>${direccion}</span></div><div><strong>Fecha:</strong><span>${fecha}</span></div><div><strong>Hora:</strong><span>${hora}</span></div><div><strong>Pago:</strong><span>${pagoTexto}</span></div>
@@ -404,8 +404,8 @@ export default function Cliente() {
           <table><thead><tr><th>Producto</th><th>Cant.</th><th>P.U.</th><th>Importe</th></tr></thead><tbody>${productosHTML}</tbody></table>
           <section class="totales"><div class="fila"><span>Op. gravada</span><strong>S/ ${opGravada.toFixed(2)}</strong></div><div class="fila"><span>IGV 18%</span><strong>S/ ${igv.toFixed(2)}</strong></div><div class="fila"><span>Envío</span><strong>S/ ${envio.toFixed(2)}</strong></div><div class="final"><span>Total</span><span>S/ ${total.toFixed(2)}</span></div></section>
           <section class="qr"><img src="${qr}" alt="QR comprobante" /><p>Consulta referencial del comprobante electrónico</p></section>
-          <section class="gracias"><h2>Gracias por su compra</h2><p>PartGo - Pedido registrado correctamente.</p></section>
-          <p class="legal">Representación impresa de la ${tipo} electrónica.<br/>Este comprobante fue generado por el sistema PartGo.</p>
+          <section class="gracias"><h2>Gracias por su compra</h2><p>Dorada Motor’s - Pedido registrado correctamente.</p></section>
+          <p class="legal">Representación impresa de la ${tipo} electrónica.<br/>Este comprobante fue generado por el sistema Dorada Motor’s.</p>
           <section class="acciones"><button class="pdf" onclick="window.print()">Guardar PDF</button><button class="cerrar" onclick="window.close()">Cerrar</button></section>
         </main>
       </body>
@@ -464,7 +464,7 @@ export default function Cliente() {
       <header className="shop-header">
         <button type="button" className="shop-brand shop-brand-button" onClick={irInicioCliente}>
           <span>PG</span>
-          <div><h1>PartGo</h1><p>Repuestos de Moto</p></div>
+          <div><h1>Dorada Motor’s</h1><p>Repuestos de Moto</p></div>
         </button>
         <nav className="shop-nav">
           <a href="#" onClick={(e) => { e.preventDefault(); irInicioCliente(); }}>Inicio</a>

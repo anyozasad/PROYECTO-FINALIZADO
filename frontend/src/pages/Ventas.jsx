@@ -21,7 +21,7 @@ function normalizarVentaLocal(p) {
   return {
     id: p.id,
     numero_comprobante: `${p.serie}-${p.numero}`,
-    cliente: p.cliente?.nombre || 'Cliente PartGo',
+    cliente: p.cliente?.nombre || 'Cliente Dorada Motor’s',
     documento: p.cliente?.documento || '-',
     metodo_pago: p.pago?.metodo || '-',
     total: Number(p.resumen?.total || 0),

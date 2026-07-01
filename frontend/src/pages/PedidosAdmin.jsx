@@ -30,7 +30,7 @@ function normalizarPedidoLocal(p) {
   return {
     id: p.id,
     numero_comprobante: `${p.serie}-${p.numero}`,
-    cliente: p.cliente?.nombre || 'Cliente PartGo',
+    cliente: p.cliente?.nombre || 'Cliente Dorada Motor’s',
     documento: p.cliente?.documento || '-',
     telefono: p.cliente?.telefono || '-',
     direccion: p.entrega?.direccion || (p.entrega?.tipo === 'RECOJO' ? 'Recojo en tienda' : '-'),
@@ -124,7 +124,7 @@ export default function PedidosAdmin() {
             {esAdmin ? '📋 Pedidos de clientes' : '📋 Mis pedidos'}
           </h1>
           <p style={{ margin:0, color:'var(--muted)', fontSize:'13px' }}>
-            {esAdmin ? 'Gestiona y actualiza el estado de los pedidos.' : 'Historial de tus compras en PartGo.'}
+            {esAdmin ? 'Gestiona y actualiza el estado de los pedidos.' : 'Historial de tus compras en Dorada Motor’s.'}
           </p>
         </div>
         {esAdmin && (

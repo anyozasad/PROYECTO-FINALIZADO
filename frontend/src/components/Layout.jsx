@@ -176,11 +176,11 @@ export default function Layout() {
   }, []);
 
   const usarCupon = () => {
-    guardarCupon('PARTGO10');
+    guardarCupon('DORADA MOTOR’S10');
     Swal.fire({
       icon: 'success',
       title: 'Cupón aplicado',
-      text: 'Se guardó el cupón PARTGO10 para tu compra.',
+      text: 'Se guardó el cupón DORADA MOTOR’S10 para tu compra.',
       timer: 1400,
       showConfirmButton: false,
       background: '#0e0e1a',
@@ -192,7 +192,7 @@ export default function Layout() {
   const contactarSoporte = () => {
     Swal.fire({
       icon: 'info',
-      title: 'Soporte PartGo',
+      title: 'Soporte Dorada Motor’s',
       text: 'Te llevamos al centro de mensajes.',
       timer: 900,
       showConfirmButton: false,
@@ -233,7 +233,7 @@ export default function Layout() {
     setTimeout(() => setTemaSpin(false), 450);
   };
 
-  const currentPage = Object.entries(PAGE_NAMES).find(([k]) => loc.pathname === k || loc.pathname.startsWith(k + '/'))?.[1] || 'PartGo';
+  const currentPage = Object.entries(PAGE_NAMES).find(([k]) => loc.pathname === k || loc.pathname.startsWith(k + '/'))?.[1] || 'Dorada Motor’s';
 
   const salir = () => setLogoutOpen(true);
 
@@ -329,7 +329,7 @@ export default function Layout() {
           <div style={{ width:'34px', height:'34px', background:'linear-gradient(135deg,#7c3aed,#4c1d95)', borderRadius:'9px', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontSize:'17px', fontWeight:'900', boxShadow:'0 4px 12px rgba(124,58,237,.4)', flexShrink:0, overflow:'hidden' }}>
             {adminLogo ? <img src={adminLogo} alt="Logo" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : '⚡'}
           </div>
-          <span style={{ color:'var(--text)', fontWeight:'800', fontSize:'18px', letterSpacing:'-0.3px' }}>PartGo</span>
+          <span style={{ color:'var(--text)', fontWeight:'800', fontSize:'18px', letterSpacing:'-0.3px' }}>Dorada Motor’s</span>
         </Link>
 
         {/* ─ ADMIN ─ */}
@@ -340,7 +340,7 @@ export default function Layout() {
               {adminFoto ? <img src={adminFoto} alt="Admin" style={{width:'100%',height:'100%',objectFit:'cover'}} /> : (usuario?.nombre?.[0]?.toUpperCase() || 'A')}
             </div>
             <div style={{ minWidth:0 }}>
-              <p style={{ margin:0, fontSize:'13px', fontWeight:'700', color:'var(--text)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{usuario?.nombre || 'Admin PartGo'}</p>
+              <p style={{ margin:0, fontSize:'13px', fontWeight:'700', color:'var(--text)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{usuario?.nombre || 'Admin Dorada Motor’s'}</p>
               <div style={{ display:'flex', alignItems:'center', gap:'4px', marginTop:'2px' }}>
                 <span style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#10b981', display:'inline-block' }} />
                 <span style={{ fontSize:'11px', color:'#10b981', fontWeight:'600' }}>Administrador</span>
@@ -384,7 +384,7 @@ export default function Layout() {
             <p style={{ margin:'0 0 2px', fontSize:'28px', fontWeight:'900', color:'white', lineHeight:1 }}>10%</p>
             <p style={{ margin:'0 0 8px', fontSize:'12px', color:'#c4b5fd', fontWeight:'600' }}>DE DESCUENTO</p>
             <button onClick={usarCupon} style={{ width:'100%', padding:'7px', background:'white', color:'#7c3aed', border:'none', borderRadius:'7px', fontWeight:'800', fontSize:'12px', cursor:'pointer', fontFamily:"'Inter',sans-serif" }}>
-              Usar cupón PARTGO10
+              Usar cupón DORADA MOTOR’S10
             </button>
           </div>
 

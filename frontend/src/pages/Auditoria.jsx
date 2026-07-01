@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { apiFetch } from '../services/api';
 
 const DEMO = [
-  { id:1, usuario_id:1, usuario_nombre:'Admin PartGo', accion:'CREATE', tabla_afectada:'productos', descripcion:'Creó el producto "Filtro de aceite HF303"', fecha:new Date(Date.now()-30*60000).toISOString() },
-  { id:2, usuario_id:1, usuario_nombre:'Admin PartGo', accion:'UPDATE', tabla_afectada:'pedidos',   descripcion:'Actualizó el estado del pedido #PG001560 a ENTREGADO', fecha:new Date(Date.now()-1*3600000).toISOString() },
-  { id:3, usuario_id:1, usuario_nombre:'Admin PartGo', accion:'DELETE', tabla_afectada:'ofertas',   descripcion:'Eliminó la oferta "5% OFF en todo"', fecha:new Date(Date.now()-3*3600000).toISOString() },
-  { id:4, usuario_id:1, usuario_nombre:'Admin PartGo', accion:'LOGIN',  tabla_afectada:'usuarios',  descripcion:'Inicio de sesión desde 192.168.1.1', fecha:new Date(Date.now()-6*3600000).toISOString() },
-  { id:5, usuario_id:1, usuario_nombre:'Admin PartGo', accion:'UPDATE', tabla_afectada:'clientes',  descripcion:'Actualizó datos del cliente Carlos Ramírez', fecha:new Date(Date.now()-8*3600000).toISOString() },
+  { id:1, usuario_id:1, usuario_nombre:'Admin Dorada Motor’s', accion:'CREATE', tabla_afectada:'productos', descripcion:'Creó el producto "Filtro de aceite HF303"', fecha:new Date(Date.now()-30*60000).toISOString() },
+  { id:2, usuario_id:1, usuario_nombre:'Admin Dorada Motor’s', accion:'UPDATE', tabla_afectada:'pedidos',   descripcion:'Actualizó el estado del pedido #PG001560 a ENTREGADO', fecha:new Date(Date.now()-1*3600000).toISOString() },
+  { id:3, usuario_id:1, usuario_nombre:'Admin Dorada Motor’s', accion:'DELETE', tabla_afectada:'ofertas',   descripcion:'Eliminó la oferta "5% OFF en todo"', fecha:new Date(Date.now()-3*3600000).toISOString() },
+  { id:4, usuario_id:1, usuario_nombre:'Admin Dorada Motor’s', accion:'LOGIN',  tabla_afectada:'usuarios',  descripcion:'Inicio de sesión desde 192.168.1.1', fecha:new Date(Date.now()-6*3600000).toISOString() },
+  { id:5, usuario_id:1, usuario_nombre:'Admin Dorada Motor’s', accion:'UPDATE', tabla_afectada:'clientes',  descripcion:'Actualizó datos del cliente Carlos Ramírez', fecha:new Date(Date.now()-8*3600000).toISOString() },
 ];
 const AC = { CREATE:'#10b981', UPDATE:'#3b82f6', DELETE:'#ef4444', LOGIN:'#7c3aed', LOGOUT:'#6b7280' };
 const AI = { CREATE:'➕', UPDATE:'✏️', DELETE:'🗑️', LOGIN:'🔑', LOGOUT:'🚪' };
