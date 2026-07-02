@@ -209,9 +209,94 @@ const volver = () => {
    Arrastra para girar
   </div>
  </div>
- </section>
+ <div className="detalle-beneficios-pro">
+  <div className="detalle-beneficios-head">
+    <span className="detalle-beneficios-label">
+      ✦ COMPRA CON CONFIANZA
+    </span>
 
- <section className="detalle-info-pro">
+    <h3>Todo lo que obtienes con este producto</h3>
+
+    <p>
+      Calidad, respaldo y atención personalizada para que realices
+      tu compra con total seguridad.
+    </p>
+  </div>
+
+  <div className="detalle-beneficios-grid">
+    <article className="detalle-beneficio-item">
+      <div className="detalle-beneficio-icon detalle-beneficio-morado">
+        ✓
+      </div>
+
+      <div>
+        <strong>Calidad garantizada</strong>
+        <small>
+          Producto seleccionado para ofrecer buen rendimiento,
+          resistencia y durabilidad.
+        </small>
+      </div>
+    </article>
+
+    <article className="detalle-beneficio-item">
+      <div className="detalle-beneficio-icon detalle-beneficio-azul">
+        ⚙
+      </div>
+
+      <div>
+        <strong>Compatibilidad verificada</strong>
+        <small>
+          Modelo {producto.modelo || 'Universal'} · Categoría{' '}
+          {producto.categoria || 'Repuestos'}.
+        </small>
+      </div>
+    </article>
+
+    <article className="detalle-beneficio-item">
+      <div className="detalle-beneficio-icon detalle-beneficio-verde">
+        📦
+      </div>
+
+      <div>
+        <strong>Disponible para despacho</strong>
+        <small>
+          {producto.stock > 0
+            ? `${producto.stock} unidades disponibles para tu compra.`
+            : 'Consulta la disponibilidad mediante WhatsApp.'}
+        </small>
+      </div>
+    </article>
+
+    <article className="detalle-beneficio-item">
+      <div className="detalle-beneficio-icon detalle-beneficio-naranja">
+        💬
+      </div>
+
+      <div>
+        <strong>Atención personalizada</strong>
+        <small>
+          Resolvemos tus consultas antes y después de realizar
+          tu pedido.
+        </small>
+      </div>
+    </article>
+  </div>
+
+  <div className="detalle-beneficios-footer">
+    <div className="detalle-beneficios-footer-icon">🛡️</div>
+
+    <div>
+      <strong>Compra protegida por Dorada Motor’s</strong>
+      <small>
+        Envíos rápidos, seguimiento de tu pedido y soporte directo
+        mediante WhatsApp.
+      </small>
+    </div>
+  </div>
+</div>
+</section>
+
+<section className="detalle-info-pro">
           <div style={{display:'flex',gap:'8px',flexWrap:'wrap'}}>
             <span className="detalle-badge-pro">⭐ DESTACADO</span>
             {producto.es_nuevo&&<span className="detalle-badge-pro" style={{background:'rgba(59,130,246,.16)',color:'#3b82f6',borderColor:'rgba(59,130,246,.35)'}}>✨ NUEVO</span>}
@@ -288,4 +373,5 @@ const volver = () => {
     </div>
   );
 }
+
 
