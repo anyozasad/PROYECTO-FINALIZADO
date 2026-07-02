@@ -1,0 +1,214 @@
+﻿/* =====================================================
+   DORADA MOTOR'S - FUENTE PRO + SIDEBAR TOGGLE
+   No modifica layout principal ni hero.
+===================================================== */
+
+/* Fuente más moderna para cliente */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Poppins", "Montserrat", "Segoe UI", Arial, sans-serif !important;
+}
+
+/* Títulos más profesionales */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.home-section-title,
+.store-section-title,
+.pg-section-title,
+.card-title,
+.product-title,
+.category-title {
+  font-family: "Poppins", "Montserrat", "Segoe UI", Arial, sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Hero: solo mejora letras, NO mueve fondo */
+.hero h1,
+.home-hero h1,
+.pg-hero h1,
+.banner h1,
+.hero-title,
+.banner-title,
+[class*="hero"] h1,
+[class*="Hero"] h1 {
+  color: #ffffff !important;
+  font-weight: 950 !important;
+  text-shadow:
+    0 4px 12px rgba(0,0,0,.85),
+    0 12px 28px rgba(0,0,0,.65) !important;
+}
+
+.hero h1 span,
+.home-hero h1 span,
+.pg-hero h1 span,
+.banner h1 span,
+.hero-title span,
+.banner-title span,
+[class*="hero"] h1 span,
+[class*="Hero"] h1 span {
+  color: #a78bfa !important;
+}
+
+/* Títulos de secciones en modo claro */
+body:not(.dark) .pg-public-main h2,
+body:not(.dark) .section-title,
+body:not(.dark) .home-section-title,
+body:not(.dark) .store-section-title,
+body:not(.dark) .pg-section-title {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+/* Títulos en oscuro */
+body.dark .pg-public-main h2,
+html.dark .pg-public-main h2,
+[data-theme="dark"] .pg-public-main h2,
+body.dark .section-title,
+html.dark .section-title,
+[data-theme="dark"] .section-title,
+body.dark .home-section-title,
+html.dark .home-section-title,
+[data-theme="dark"] .home-section-title {
+  color: #ffffff !important;
+  text-shadow: 0 4px 14px rgba(0,0,0,.55) !important;
+}
+
+/* Línea elegante debajo de títulos */
+.pg-public-main h2::after,
+.section-title::after,
+.home-section-title::after,
+.store-section-title::after,
+.pg-section-title::after {
+  content: "" !important;
+  display: block !important;
+  width: 118px !important;
+  height: 5px !important;
+  margin-top: 10px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #f59e0b, #8b5cf6) !important;
+}
+
+/* Sidebar listo para botón */
+.pg-public-scroll.dm-sidebar-ready,
+.pg-app-sidebar.dm-sidebar-ready,
+.sidebar.dm-sidebar-ready,
+aside.dm-sidebar-ready {
+  position: relative !important;
+  transition: width .28s ease, min-width .28s ease, max-width .28s ease !important;
+}
+
+/* Botón bonito en la raya */
+.dm-sidebar-toggle {
+  position: absolute !important;
+  top: 50% !important;
+  right: -17px !important;
+  transform: translateY(-50%) !important;
+  z-index: 9999 !important;
+
+  width: 34px !important;
+  height: 64px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,.35) !important;
+
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  color: #ffffff !important;
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  cursor: pointer !important;
+  box-shadow:
+    0 14px 28px rgba(124,58,237,.35),
+    0 0 0 5px rgba(124,58,237,.12) !important;
+
+  opacity: .82 !important;
+  transition: all .22s ease !important;
+}
+
+.dm-sidebar-toggle:hover {
+  opacity: 1 !important;
+  transform: translateY(-50%) scale(1.07) !important;
+  box-shadow:
+    0 18px 34px rgba(124,58,237,.45),
+    0 0 0 7px rgba(124,58,237,.16) !important;
+}
+
+/* Sidebar minimizado bonito */
+.dm-sidebar-collapsed {
+  width: 76px !important;
+  min-width: 76px !important;
+  max-width: 76px !important;
+  overflow: visible !important;
+}
+
+/* Ocultar textos cuando se minimiza, dejar iconos */
+.dm-sidebar-collapsed a,
+.dm-sidebar-collapsed button:not(.dm-sidebar-toggle) {
+  justify-content: center !important;
+}
+
+.dm-sidebar-collapsed a span,
+.dm-sidebar-collapsed a strong,
+.dm-sidebar-collapsed a small,
+.dm-sidebar-collapsed .menu-text,
+.dm-sidebar-collapsed .nav-text,
+.dm-sidebar-collapsed .sidebar-text,
+.dm-sidebar-collapsed h1,
+.dm-sidebar-collapsed h2,
+.dm-sidebar-collapsed h3,
+.dm-sidebar-collapsed p,
+.dm-sidebar-collapsed .brand-text {
+  opacity: 0 !important;
+  width: 0 !important;
+  max-width: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+/* Si el logo queda con texto, lo reduce sin romper */
+.dm-sidebar-collapsed img {
+  max-width: 38px !important;
+}
+
+/* Activo del menú siempre morado, nunca blanco */
+.pg-public-scroll a:hover,
+.pg-public-scroll a:focus,
+.pg-public-scroll a.active,
+.pg-public-scroll .active,
+.pg-app-sidebar a:hover,
+.pg-app-sidebar a:focus,
+.pg-app-sidebar a.active,
+.pg-app-sidebar .active,
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a.active,
+.sidebar .active,
+aside a:hover,
+aside a:focus,
+aside a.active,
+aside .active {
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(124,58,237,.28) !important;
+}
+
+/* Evitar basura vieja */
+.pg-sidebar-toggle-btn,
+.pg-sidebar-toggle,
+.pg-sidebar-edge,
+.pg-sidebar-resizer,
+.pg-sidebar-hitbox,
+.pg-sidebar-handle,
+[class*="sidebar-resizer"],
+[class*="resize-handle"] {
+  display: none !important;
+}

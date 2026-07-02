@@ -8,6 +8,8 @@ import { PreferenciasProvider } from './context/PreferenciasContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './styles.css';
+import './sidebar-pro-toggle.js';
+import './fuente-pro-dorada.css';
 import './theme-auto-class.js';
 import './texto-presentacion-fix.css';
 
@@ -22,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AuthProvider>
   </BrowserRouter>
 );
+
 
 
 
