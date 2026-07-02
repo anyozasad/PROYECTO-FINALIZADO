@@ -61,7 +61,35 @@ const SLIDES = [
   { titulo:'Llantas y aros',             sub:'Agarre garantizado siempre',     img:'/IMAGENES/banner/banner-llantas.png', color:'#f59e0b', aspect:450/207 },
 ];
 
-const imgUrl = img => img?.startsWith('http') ? img : `http://localhost:3000${img}`;
+const imgUrl = (img) => {
+  if (!img) return '';
+
+  const ruta = String(img).trim();
+
+  // URL completa, Data URL o Blob
+  if (/^(https?:|data:|blob:)/i.test(ruta)) {
+    return ruta;
+  }
+
+  // Imágenes guardadas en frontend/public/IMAGENES
+  if (
+    ruta.startsWith('/IMAGENES/') ||
+    ruta.startsWith('/assets/')
+  ) {
+    return encodeURI(ruta);
+  }
+
+  // Imágenes subidas al backend, por ejemplo: /uploads/productos/...
+  const apiBase = (import.meta.env.VITE_API_URL || '')
+    .replace(/\/api\/v1\/?$/, '')
+    .replace(/\/$/, '');
+
+  if (apiBase) {
+    return `${apiBase}${ruta.startsWith('/') ? '' : '/'}${ruta}`;
+  }
+
+  return encodeURI(ruta.startsWith('/') ? ruta : `/${ruta}`);
+};
 
 export default function Home() {
   const { usuario } = useAuth();
