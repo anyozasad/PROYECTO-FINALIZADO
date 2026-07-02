@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { apiFetch } from '../services/api';
 import Swal from 'sweetalert2';
@@ -45,7 +45,9 @@ export default function ProductoDetalle() {
   const [producto, setProducto] = useState(null);
   const [cantidad, setCantidad] = useState(1);
   const [relacionados, setRelacionados] = useState([]);
-  const [fotoActiva, setFotoActiva] = useState(0);
+  const [rotacion360, setRotacion360] = useState(0);
+ const [arrastrando360, setArrastrando360] = useState(false);
+ const [ultimoX360, setUltimoX360] = useState(0);
 
   useEffect(() => {
     async function cargar() {
@@ -135,14 +137,7 @@ export default function ProductoDetalle() {
   const precio = Number(producto.precio_final || producto.precio || 0);
   const whatsappMensaje = encodeURIComponent(`Hola, quiero consultar por el producto ${producto.nombre} - cantidad ${cantidad}`);
   const whatsappUrl = `https://wa.me/51922859170?text=${whatsappMensaje}`;
-  const imagenes = [
-    producto.imagen,
-    producto.imagen,
-    producto.imagen,
-    producto.imagen,
-  ];
-
-  const volver = () => {
+const volver = () => {
     if (location.key && location.key !== 'default') navigate(-1);
     else navigate('/s/categorias');
   };
@@ -153,22 +148,70 @@ export default function ProductoDetalle() {
 
       <div className="detalle-public-grid">
         <section className="detalle-gallery-pro">
-          <div className="detalle-main-pro">
-            <button className="detalle-arrow left" onClick={() => setFotoActiva((fotoActiva + 3) % 4)}>‹</button>
-            <img src={imagenes[fotoActiva]} alt={producto.nombre} />
-            <button className="detalle-arrow right" onClick={() => setFotoActiva((fotoActiva + 1) % 4)}>›</button>
-          </div>
+ <div
+  className={`detalle-main-pro detalle-main-360 ${arrastrando360 ? 'is-dragging' : ''}`}
+  role="button"
+  tabIndex={0}
+  aria-label="Vista interactiva 360 grados del producto"
+  title="Arrastra horizontalmente para girar el producto"
+  onPointerDown={(e) => {
+   e.preventDefault();
+   setArrastrando360(true);
+   setUltimoX360(e.clientX);
+   e.currentTarget.setPointerCapture?.(e.pointerId);
+  }}
+  onPointerMove={(e) => {
+   if (!arrastrando360) return;
 
-          <div className="detalle-thumbs">
-            {imagenes.map((img, i) => (
-              <button key={i} className={fotoActiva === i ? 'active' : ''} onClick={() => setFotoActiva(i)}>
-                <img src={img} alt={`${producto.nombre} ${i + 1}`} />
-              </button>
-            ))}
-          </div>
-        </section>
+   const desplazamiento = e.clientX - ultimoX360;
 
-        <section className="detalle-info-pro">
+   setRotacion360((rotacion) => rotacion + desplazamiento * 0.7);
+   setUltimoX360(e.clientX);
+  }}
+  onPointerUp={(e) => {
+   setArrastrando360(false);
+   e.currentTarget.releasePointerCapture?.(e.pointerId);
+  }}
+  onPointerCancel={() => setArrastrando360(false)}
+  onKeyDown={(e) => {
+   if (e.key === 'ArrowLeft') {
+    setRotacion360((rotacion) => rotacion - 20);
+   }
+
+   if (e.key === 'ArrowRight') {
+    setRotacion360((rotacion) => rotacion + 20);
+   }
+
+   if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    setRotacion360((rotacion) => rotacion + 90);
+   }
+  }}
+  onDoubleClick={() => setRotacion360(0)}
+ >
+  <span className="detalle-360-badge">
+   <span>↻</span>
+   Vista 360°
+  </span>
+
+  <img
+   className="detalle-producto-360"
+   src={producto.imagen}
+   alt={producto.nombre}
+   draggable="false"
+   style={{
+    transform: `perspective(900px) rotateY(${rotacion360}deg)`
+   }}
+  />
+
+  <div className="detalle-360-ayuda">
+   <span>↔</span>
+   Arrastra para girar
+  </div>
+ </div>
+ </section>
+
+ <section className="detalle-info-pro">
           <div style={{display:'flex',gap:'8px',flexWrap:'wrap'}}>
             <span className="detalle-badge-pro">⭐ DESTACADO</span>
             {producto.es_nuevo&&<span className="detalle-badge-pro" style={{background:'rgba(59,130,246,.16)',color:'#3b82f6',borderColor:'rgba(59,130,246,.35)'}}>✨ NUEVO</span>}
@@ -245,3 +288,4 @@ export default function ProductoDetalle() {
     </div>
   );
 }
+
