@@ -877,3 +877,75 @@
 }
 
 /* === DM_COMPACTAR_BENEFICIOS_FIN === */
+
+/* === DM_ALINEAR_DETALLE_INICIO === */
+
+/*
+   Alineación final de ProductoDetalle.
+   No modifica el 360°, colores, textos, botones ni sidebar.
+*/
+
+/* Los cuadros izquierdo y derecho terminan a la misma altura */
+@media (min-width: 1151px) {
+  .detalle-public-grid {
+    align-items: stretch !important;
+  }
+
+  .detalle-gallery-pro,
+  .detalle-info-pro {
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .detalle-gallery-pro {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /*
+    El cuadro de beneficios ocupa el espacio faltante.
+    La franja verde queda alineada con la parte inferior
+    del cuadro derecho.
+  */
+  .detalle-beneficios-pro {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .detalle-beneficios-footer {
+    margin-top: auto !important;
+  }
+}
+
+/* Quitar el espacio inferior innecesario de 120px */
+.detalle-public-page {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-bottom: 24px !important;
+}
+
+/* Acercar correctamente los productos relacionados */
+.detalle-relacionados-pro {
+  margin-top: 18px !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.detalle-rel-grid-pro {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Mantener un espacio pequeño y correcto en celular */
+@media (max-width: 700px) {
+  .detalle-public-page {
+    padding-bottom: 24px !important;
+  }
+
+  .detalle-relacionados-pro {
+    margin-top: 16px !important;
+  }
+}
+
+/* === DM_ALINEAR_DETALLE_FIN === */
