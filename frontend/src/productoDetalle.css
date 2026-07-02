@@ -758,3 +758,122 @@
 }
 
 /* === DM_BENEFICIOS_PRODUCTO_FIN === */
+
+/* === DM_COMPACTAR_BENEFICIOS_INICIO === */
+
+/*
+   Compacta únicamente la sección de beneficios.
+   No modifica la imagen 360°, ficha derecha, colores ni menú.
+*/
+
+.detalle-beneficios-pro {
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  margin-top: 12px !important;
+  padding: 14px 16px !important;
+}
+
+.detalle-beneficios-head {
+  margin-bottom: 10px !important;
+}
+
+.detalle-beneficios-label {
+  margin-bottom: 5px !important;
+  font-size: 10px !important;
+}
+
+.detalle-beneficios-head h3 {
+  margin: 0 0 4px !important;
+  font-size: 18px !important;
+  line-height: 1.15 !important;
+}
+
+.detalle-beneficios-head p {
+  margin: 0 !important;
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+}
+
+.detalle-beneficios-grid {
+  gap: 8px !important;
+}
+
+.detalle-beneficio-item {
+  min-height: 56px !important;
+  padding: 9px 10px !important;
+  gap: 8px !important;
+}
+
+.detalle-beneficio-icon {
+  width: 31px !important;
+  min-width: 31px !important;
+  height: 31px !important;
+
+  border-radius: 9px !important;
+  font-size: 14px !important;
+}
+
+.detalle-beneficio-item strong {
+  margin-bottom: 2px !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+}
+
+.detalle-beneficio-item small {
+  font-size: 9.5px !important;
+  line-height: 1.3 !important;
+}
+
+/* Franja verde señalada */
+.detalle-beneficios-footer {
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  margin-top: 8px !important;
+  padding: 9px 11px !important;
+  gap: 9px !important;
+
+  border-radius: 11px !important;
+}
+
+.detalle-beneficios-footer-icon {
+  width: 31px !important;
+  min-width: 31px !important;
+  height: 31px !important;
+
+  font-size: 15px !important;
+}
+
+.detalle-beneficios-footer strong {
+  margin-bottom: 1px !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+}
+
+.detalle-beneficios-footer small {
+  font-size: 9.5px !important;
+  line-height: 1.3 !important;
+}
+
+/* Acerca los productos relacionados al cuadro */
+.detalle-gallery-pro {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .detalle-beneficios-pro {
+    padding: 13px !important;
+  }
+
+  .detalle-beneficios-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .detalle-beneficio-item {
+    min-height: auto !important;
+  }
+}
+
+/* === DM_COMPACTAR_BENEFICIOS_FIN === */
