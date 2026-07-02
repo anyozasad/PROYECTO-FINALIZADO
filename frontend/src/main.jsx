@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
@@ -8,6 +8,7 @@ import { PreferenciasProvider } from './context/PreferenciasContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './styles.css';
+import './tipografia-tesis.css';
 
 // ===============================
 // Toggle sidebar Dorada Motor’s
@@ -91,3 +92,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AuthProvider>
   </BrowserRouter>
 );
+

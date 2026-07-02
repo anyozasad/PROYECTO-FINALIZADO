@@ -1,0 +1,211 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap");
+
+/* =========================================================
+   DORADA MOTOR'S — TIPOGRAFÍA PARA PRESENTACIÓN DE TESIS
+
+   Este archivo NO modifica:
+   - fondos
+   - colores
+   - posiciones
+   - tamaños de contenedores
+   - sidebar
+   - grid
+   - imágenes
+========================================================= */
+
+/* Texto general */
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Manrope", system-ui, sans-serif !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Títulos principales */
+h1,
+h2,
+h3,
+.section-title,
+.home-section-title,
+.store-section-title,
+.pg-section-title,
+.hero-title,
+.banner-title {
+  font-family: "Sora", "Manrope", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Títulos secundarios */
+h4,
+h5,
+h6 {
+  font-family: "Sora", "Manrope", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Título del banner principal */
+.hero h1,
+.home-hero h1,
+.pg-hero h1,
+.banner h1,
+[class*="hero"] h1,
+[class*="Hero"] h1 {
+  font-family: "Sora", "Manrope", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.045em !important;
+}
+
+/* Descripción del banner */
+.hero p,
+.home-hero p,
+.pg-hero p,
+.banner p,
+.hero-subtitle,
+.banner-subtitle,
+[class*="hero"] p,
+[class*="Hero"] p {
+  font-family: "Manrope", system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Menú lateral y navegación */
+.pg-public-scroll a,
+.pg-app-sidebar a,
+.sidebar a,
+nav a {
+  font-family: "Manrope", system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Marca Dorada Motor's */
+.brand,
+.brand-name,
+.logo-text,
+.pg-brand,
+.sidebar-brand {
+  font-family: "Sora", "Manrope", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Categorías */
+.category-card h3,
+.category-card h4,
+.category-card h5,
+.store-category-card h3,
+.store-category-card h4,
+.store-category-card h5,
+.categoria-card h3,
+.categoria-card h4,
+.categoria-card h5,
+.category-title {
+  font-family: "Sora", "Manrope", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+}
+
+/* Productos */
+.product-card h3,
+.product-card h4,
+.product-card h5,
+.store-product-card h3,
+.store-product-card h4,
+.store-product-card h5,
+.producto-card h3,
+.producto-card h4,
+.producto-card h5,
+.product-title,
+.card-title {
+  font-family: "Manrope", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Descripciones y textos secundarios */
+.product-card p,
+.product-card small,
+.store-product-card p,
+.store-product-card small,
+.category-card p,
+.category-card small,
+.card-text,
+.product-description {
+  font-family: "Manrope", system-ui, sans-serif !important;
+  font-weight: 500 !important;
+}
+
+/* Precios */
+.price,
+.precio,
+.product-price,
+.store-price,
+.current-price {
+  font-family: "Sora", "Manrope", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Botones */
+button,
+.btn,
+a.btn,
+.pg-btn-primary,
+button[type="submit"] {
+  font-family: "Manrope", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* Campos de búsqueda y formularios */
+input,
+select,
+textarea {
+  font-family: "Manrope", system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Etiquetas: NUEVO, OFERTA, descuentos */
+.badge,
+.tag,
+.new-badge,
+.offer-badge,
+.nuevo,
+.oferta {
+  font-family: "Manrope", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.035em !important;
+}
+
+/* Contador de ofertas */
+.offer-banner h2,
+.offer-banner h3,
+.special-offer h2,
+.special-offer h3,
+.discount-banner h2,
+.discount-banner h3,
+.promo-section h2,
+.promo-section h3 {
+  font-family: "Sora", "Manrope", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Números del contador */
+.countdown,
+.countdown-number,
+.timer-number {
+  font-family: "Sora", "Manrope", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-variant-numeric: tabular-nums;
+}
