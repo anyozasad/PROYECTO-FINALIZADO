@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --dark: #151515;
   --yellow: #ffca2c;
   --gray: #f4f5f7;
@@ -84,7 +84,7 @@ body { margin: 0; background: var(--gray); color: #222; font-family: Arial, Helv
   .topbar { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 
-/* Pantalla pÃºblica tipo tienda */
+/* Pantalla pública tipo tienda */
 .store-page { min-height: 100vh; background: #f7f7f7; color: #222; }
 .store-page * { box-sizing: border-box; }
 .store-top-bar { background: #183c9c; color: #ffc400; text-align: center; font-weight: bold; padding: 8px; font-size: 14px; }
@@ -146,7 +146,7 @@ body { margin: 0; background: var(--gray); color: #222; font-family: Arial, Helv
   .store-contact-info { display: none; }
 }
 
-/* Ajustes finales tienda pÃºblica + animaciones */
+/* Ajustes finales tienda pública + animaciones */
 html { scroll-behavior: smooth; }
 .store-clean-button { border: 0; background: transparent; cursor: pointer; text-align: left; }
 .store-nav button {
@@ -250,7 +250,7 @@ html { scroll-behavior: smooth; }
   .store-qty, .store-trash { justify-self: start; }
 }
 
-/* Mejoras solicitadas: icono de deseos, pÃ¡gina de deseos y banner promocional */
+/* Mejoras solicitadas: icono de deseos, página de deseos y banner promocional */
 .store-hero-promo {
   width: min(720px, 48vw);
   border-radius: 22px;
@@ -424,7 +424,7 @@ html { scroll-behavior: smooth; }
   border-radius: 6px;
   cursor: pointer;
 }
-/* Login moderno Dorada Motorâ€™s */
+/* Login moderno Dorada Motor’s */
 .login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#070707!important}.login-gold-orb{position:absolute;right:-260px;top:-140px;width:850px;height:850px;border-radius:50%;background:radial-gradient(circle,rgba(245,180,22,.95) 0%,rgba(245,180,22,.55) 38%,rgba(245,180,22,.18) 62%,transparent 74%);box-shadow:0 0 50px rgba(245,180,22,.75)}.login-gold-orb:before{content:"";position:absolute;inset:0;border-radius:50%;border-left:4px solid rgba(255,205,60,.95)}.login-card{position:relative;z-index:2;width:520px;max-width:calc(100% - 40px);background:#f8f8f8!important;border-radius:28px!important;padding:44px!important;box-shadow:0 28px 80px rgba(0,0,0,.45)!important}.login-card h2{margin:0!important;font-size:68px!important;line-height:1!important;font-weight:900!important;color:#0b111c!important;letter-spacing:-3px!important}.login-card .form-label{font-weight:800;color:#0f172a}.login-card .form-control{height:56px;border-radius:14px;border:2px solid #d1d5db}.login-main-btn{height:60px;border-radius:14px!important;font-size:20px;font-weight:900;box-shadow:0 16px 35px rgba(0,0,0,.28)}.login-footer-link{display:flex;justify-content:center;gap:8px;margin-top:18px}.login-footer-link a{font-weight:800;color:#111827}.registro-page{min-height:100vh;display:grid;place-items:center;background:#0b0f19}.registro-card{width:430px;max-width:calc(100% - 30px);background:#fff;border-radius:24px;padding:34px;display:grid;gap:12px;box-shadow:0 28px 80px rgba(0,0,0,.45)}.registro-card h2{font-weight:900}.registro-card input{height:44px;border:1px solid #d1d5db;border-radius:10px;padding:0 12px}.registro-card button{height:48px;border:none;border-radius:12px;background:#111827;color:#fff;font-weight:900}
 
 .admin-card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}.stock-row{display:grid;grid-template-columns:55px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid #e5e7eb;padding:10px 0}.stock-row img{width:55px;height:55px;object-fit:cover;border-radius:10px}.stock-row small{display:block;color:#6b7280}.best-card{background:#f9fafb;border-radius:14px;padding:16px;display:grid;gap:5px}.best-card span{color:#111827}.best-card small{color:#6b7280}.notification-card{background:#fff;border-radius:16px;padding:18px;border:1px solid #e5e7eb;box-shadow:0 8px 20px rgba(0,0,0,.04)}.notification-card.unread{border-color:#facc15;background:#fffbeb}.notification-card p{margin:8px 0;color:#4b5563}
@@ -539,7 +539,7 @@ html { scroll-behavior: smooth; }
 }
 
 
-/* ===== CorrecciÃ³n final Raul: corazÃ³n rojo y carrito con basura alineada ===== */
+/* ===== Corrección final Raul: corazón rojo y carrito con basura alineada ===== */
 .store-card-heart.active {
   background: #ffb400;
   color: #e52323;
@@ -590,7 +590,7 @@ html { scroll-behavior: smooth; }
   background: #fee2e2 !important;
 }
 
-/* ===== CALIDAD FINAL RAUL: panel admin con scroll, flechas y animaciÃ³n de botones ===== */
+/* ===== CALIDAD FINAL RAUL: panel admin con scroll, flechas y animación de botones ===== */
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -676,7 +676,7 @@ a.nav-link:active,
   .sidebar-scroll-btn { display: none; }
 }
 
-/* ===== CORRECCIÃ“N FINAL ADMIN RAUL: sidebar vertical, sin deformar, con flechas de subir/bajar ===== */
+/* ===== CORRECCIÓN FINAL ADMIN RAUL: sidebar vertical, sin deformar, con flechas de subir/bajar ===== */
 .sidebar {
   width: 270px !important;
   min-width: 270px !important;
@@ -720,7 +720,7 @@ a.nav-link:active,
 }
 
 
-/* BotÃ³n atrÃ¡s del login hacia la interfaz principal */
+/* Botón atrás del login hacia la interfaz principal */
 .login-back-home{
   position:absolute;
   top:24px;
@@ -737,7 +737,7 @@ a.nav-link:active,
 }
 .login-back-home:hover{ transform:translateY(-2px); }
 
-/* ===== CORRECCIÃ“N SOLO INTERFAZ PRINCIPAL: menÃº activo Ãºnico ===== */
+/* ===== CORRECCIÓN SOLO INTERFAZ PRINCIPAL: menú activo único ===== */
 .store-page .store-nav button.active {
   color: #ff9f00 !important;
   background: transparent;
@@ -772,7 +772,7 @@ a.nav-link:active,
 
 /* ===== AJUSTES SOLO INTERFAZ PRINCIPAL ===== */
 
-/* MenÃº: solo el botÃ³n seleccionado queda activo; el color se mueve correctamente */
+/* Menú: solo el botón seleccionado queda activo; el color se mueve correctamente */
 .store-nav{
   position: sticky;
   top: 0;
@@ -799,7 +799,7 @@ a.nav-link:active,
   color: #111;
 }
 
-/* Productos mantiene el diseÃ±o original de la pÃ¡gina */
+/* Productos mantiene el diseño original de la página */
 .store-products,
 .store-categories{
   padding: 45px 12%;
@@ -919,7 +919,7 @@ a.nav-link:active,
   transition: all .25s ease;
 }
 
-/* Solo el botÃ³n seleccionado tiene el cuadro amarillo */
+/* Solo el botón seleccionado tiene el cuadro amarillo */
 .store-nav button.active{
   background: #ffb400 !important;
   color: #111 !important;
@@ -945,7 +945,7 @@ a.nav-link:active,
 }
 
 
-/* ===== FIX DEFINITIVO RAUL: menÃº activo sin cuadro pegado ===== */
+/* ===== FIX DEFINITIVO RAUL: menú activo sin cuadro pegado ===== */
 .store-page .store-nav button,
 .store-page .store-nav button.distribuidores,
 .store-nav button,
@@ -1049,7 +1049,7 @@ a.nav-link:active,
   height: 20px;
 }
 
-/* Wrapper para superponer el GoogleLogin invisible sobre el botÃ³n visual */
+/* Wrapper para superponer el GoogleLogin invisible sobre el botón visual */
 .social-btn-wrapper {
   position: relative;
   width: 100%;
@@ -1125,4 +1125,1006 @@ a.nav-link:active,
   font-weight: 600 !important;
   opacity: .85 !important;
 }
+/* =========================================================
+   DORADA MOTOR’S MOBILE FIX LIMPIO
+   Login + Home usuario + Admin tablas
+   ========================================================= */
 
+@media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body {
+    margin: 0 !important;
+    background: #060811 !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* =========================
+     LOGIN BONITO CELULAR
+     ========================= */
+
+  .login-shell {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 18px 14px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background: #060811 !important;
+  }
+
+  .login-panel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 390px !important;
+    margin: 0 auto !important;
+    padding: 26px 18px !important;
+    border-radius: 22px !important;
+    border-right: 0 !important;
+  }
+
+  .login-panel h1 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+  }
+
+  .login-input {
+    height: 48px !important;
+    font-size: 16px !important;
+  }
+
+  .login-primary {
+    min-height: 48px !important;
+    font-size: 15px !important;
+  }
+
+  .login-social {
+    min-height: 46px !important;
+    font-size: 13px !important;
+  }
+
+  .login-hero,
+  .trust-strip {
+    display: none !important;
+  }
+
+  .login-back {
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 9999 !important;
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+  }
+
+  /* =========================
+     HOME / USUARIO
+     Corrige columnas rotas con estilos inline
+     ========================= */
+
+  .pg-public-root,
+  .pg-public-main,
+  .pg-app-root,
+  .pg-app-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    display: block !important;
+    overflow-x: hidden !important;
+  }
+
+  .pg-public-main > div,
+  .pg-app-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 12px !important;
+    overflow-x: hidden !important;
+  }
+
+  div[style*="margin: -24px"] {
+    margin: 0 !important;
+    padding-bottom: 80px !important;
+  }
+
+  div[style*="grid-template-columns: 1fr 288px"],
+  div[style*="grid-template-columns: 1fr 288px;"] {
+    display: block !important;
+  }
+
+  div[style*="grid-template-columns: repeat(4, 1fr)"],
+  div[style*="grid-template-columns: repeat(4,1fr)"],
+  div[style*="grid-template-columns: repeat(6, 1fr)"],
+  div[style*="grid-template-columns: repeat(6,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  div[style*="top: 58px"][style*="max-height"],
+  div[style*="calc(100dvh - 150px)"] {
+    position: static !important;
+    top: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border-left: 0 !important;
+    margin-top: 16px !important;
+  }
+
+  .cat-card,
+  .prod-card,
+  .benefit-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .prod-img-wrap {
+    height: 170px !important;
+  }
+
+  .cat-img,
+  .prod-img-wrap img {
+    max-width: 90% !important;
+    object-fit: contain !important;
+  }
+
+  /* Menú usuario arriba deslizable */
+  .pg-public-scroll,
+  .pg-app-sidebar {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 8px !important;
+    display: block !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+    z-index: 9999 !important;
+  }
+
+  .pg-public-scroll nav,
+  .pg-app-sidebar nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 4px !important;
+    white-space: nowrap !important;
+  }
+
+  .pg-app-sidebar nav > div {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    min-width: max-content !important;
+  }
+
+  .pg-public-scroll nav button,
+  .pg-app-sidebar nav a {
+    flex: 0 0 auto !important;
+    min-width: 90px !important;
+    height: 46px !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+  }
+
+  .pg-sidebar-profile,
+  .pg-sidebar-promo,
+  .pg-sidebar-support,
+  .pg-sect-label {
+    display: none !important;
+  }
+
+  /* Header usuario/admin */
+  .pg-public-header,
+  .pg-app-topbar {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 10px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .pg-public-header-search,
+  .pg-app-search {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 0 100% !important;
+  }
+
+  .pg-public-header-actions,
+  .pg-app-top-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+  }
+
+  /* Admin: tablas deslizan lateral */
+  .pg-card,
+  .admin-card,
+  .content-card,
+  .metric-card,
+  .pg-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  table,
+  .pg-table {
+    min-width: 760px !important;
+    width: max-content !important;
+  }
+}
+
+
+.pg-public-scroll,
+.pg-app-sidebar {
+  position: relative !important;
+  overflow: visible !important;
+  transition: width 0.25s ease, min-width 0.25s ease, max-width 0.25s ease;
+}
+
+.pg-sidebar-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: -15px !important;
+  transform: translateY(-50%) !important;
+  width: 30px !important;
+  height: 64px !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #9b4dff, #6d28d9) !important;
+  color: #fff !important;
+  font-size: 26px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  z-index: 99999 !important;
+  box-shadow: 0 10px 25px rgba(109, 40, 217, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.pg-sidebar-toggle-btn:hover {
+  filter: brightness(1.12);
+}
+
+/* Sidebar minimizado */
+.pg-public-scroll.pg-sidebar-minimized,
+.pg-app-sidebar.pg-sidebar-minimized {
+  width: 78px !important;
+  min-width: 78px !important;
+  max-width: 78px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* Centrar elementos cuando está minimizado */
+.pg-public-scroll.pg-sidebar-minimized nav,
+.pg-app-sidebar.pg-sidebar-minimized nav {
+  align-items: center !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized nav a,
+.pg-public-scroll.pg-sidebar-minimized nav button,
+.pg-app-sidebar.pg-sidebar-minimized nav a,
+.pg-app-sidebar.pg-sidebar-minimized nav button {
+  justify-content: center !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  gap: 0 !important;
+}
+
+/* Ocultar textos cuando está minimizado */
+.pg-public-scroll.pg-sidebar-minimized nav a span:not(:first-child),
+.pg-public-scroll.pg-sidebar-minimized nav button span:not(:first-child),
+.pg-app-sidebar.pg-sidebar-minimized nav a span:not(:first-child),
+.pg-app-sidebar.pg-sidebar-minimized nav button span:not(:first-child) {
+  display: none !important;
+}
+
+/* Ocultar bloques grandes */
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-promo,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-profile,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-support,
+.pg-public-scroll.pg-sidebar-minimized .pg-sect-label,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-promo,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-profile,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-support,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sect-label {
+  display: none !important;
+}
+
+/* Logo minimizado */
+.pg-public-scroll.pg-sidebar-minimized h1,
+.pg-public-scroll.pg-sidebar-minimized h2,
+.pg-public-scroll.pg-sidebar-minimized p,
+.pg-app-sidebar.pg-sidebar-minimized h1,
+.pg-app-sidebar.pg-sidebar-minimized h2,
+.pg-app-sidebar.pg-sidebar-minimized p {
+  display: none !important;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+  .pg-sidebar-toggle-btn {
+    top: 14px !important;
+    right: 12px !important;
+    transform: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    font-size: 22px !important;
+  }
+
+  .pg-public-scroll.pg-sidebar-minimized,
+  .pg-app-sidebar.pg-sidebar-minimized {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+/* =========================================================
+   SIDEBAR COLAPSABLE DORADA MOTOR’S
+   Flecha para minimizar usuario/admin
+   ========================================================= */
+
+.pg-public-root,
+.pg-app-root {
+  display: grid !important;
+  grid-template-columns: 205px minmax(0, 1fr) !important;
+  width: 100% !important;
+}
+
+.pg-public-root.pg-sidebar-is-collapsed,
+.pg-app-root.pg-sidebar-is-collapsed {
+  grid-template-columns: 78px minmax(0, 1fr) !important;
+}
+
+.pg-public-scroll,
+.pg-app-sidebar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 205px !important;
+  min-width: 205px !important;
+  max-width: 205px !important;
+  height: 100vh !important;
+  overflow: visible !important;
+  transition: width 0.25s ease, min-width 0.25s ease, max-width 0.25s ease;
+  z-index: 50 !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized,
+.pg-app-sidebar.pg-sidebar-minimized {
+  width: 78px !important;
+  min-width: 78px !important;
+  max-width: 78px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.pg-public-main,
+.pg-app-main {
+  margin-left: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Flecha lateral */
+.pg-sidebar-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: -17px !important;
+  transform: translateY(-50%) !important;
+  width: 34px !important;
+  height: 72px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #a855f7, #6d28d9) !important;
+  color: #ffffff !important;
+  font-size: 28px !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+  z-index: 99999 !important;
+  box-shadow: 0 12px 28px rgba(109, 40, 217, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.pg-sidebar-toggle-btn:hover {
+  filter: brightness(1.12);
+}
+
+/* Ocultar textos al minimizar */
+.pg-public-scroll.pg-sidebar-minimized nav a span:not(:first-child),
+.pg-public-scroll.pg-sidebar-minimized nav button span:not(:first-child),
+.pg-app-sidebar.pg-sidebar-minimized nav a span:not(:first-child),
+.pg-app-sidebar.pg-sidebar-minimized nav button span:not(:first-child) {
+  display: none !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized nav a,
+.pg-public-scroll.pg-sidebar-minimized nav button,
+.pg-app-sidebar.pg-sidebar-minimized nav a,
+.pg-app-sidebar.pg-sidebar-minimized nav button {
+  justify-content: center !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized h1,
+.pg-public-scroll.pg-sidebar-minimized h2,
+.pg-public-scroll.pg-sidebar-minimized p,
+.pg-app-sidebar.pg-sidebar-minimized h1,
+.pg-app-sidebar.pg-sidebar-minimized h2,
+.pg-app-sidebar.pg-sidebar-minimized p,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-promo,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-promo,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-profile,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-profile,
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-support,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-support,
+.pg-public-scroll.pg-sidebar-minimized .pg-sect-label,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sect-label {
+  display: none !important;
+}
+
+/* En celular no se fuerza sidebar lateral */
+@media (max-width: 768px) {
+  .pg-public-root,
+  .pg-app-root,
+  .pg-public-root.pg-sidebar-is-collapsed,
+  .pg-app-root.pg-sidebar-is-collapsed {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .pg-public-scroll,
+  .pg-app-sidebar,
+  .pg-public-scroll.pg-sidebar-minimized,
+  .pg-app-sidebar.pg-sidebar-minimized {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .pg-sidebar-toggle-btn {
+    top: 12px !important;
+    right: 12px !important;
+    transform: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    font-size: 22px !important;
+  }
+}
+/* =========================================================
+   FLECHA ELEGANTE SIDEBAR - DISCRETA
+   No se ve resaltada, aparece suave al pasar el mouse
+   ========================================================= */
+
+.pg-sidebar-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: -10px !important;
+  transform: translateY(-50%) !important;
+
+  width: 20px !important;
+  height: 56px !important;
+
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
+  border-left: none !important;
+  border-radius: 0 14px 14px 0 !important;
+
+  background: rgba(15, 12, 28, 0.72) !important;
+  backdrop-filter: blur(8px) !important;
+
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+
+  cursor: pointer !important;
+  z-index: 99999 !important;
+
+  box-shadow: none !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  opacity: 0.22 !important;
+  transition:
+    opacity 0.22s ease,
+    width 0.22s ease,
+    right 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+/* Cuando el cliente pasa el mouse cerca del menú */
+.pg-public-scroll:hover .pg-sidebar-toggle-btn,
+.pg-app-sidebar:hover .pg-sidebar-toggle-btn,
+.pg-sidebar-toggle-btn:hover {
+  opacity: 1 !important;
+  width: 26px !important;
+  right: -13px !important;
+
+  background: rgba(109, 40, 217, 0.35) !important;
+  color: #ffffff !important;
+
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.25) !important;
+}
+
+/* Al hacer click se siente más profesional */
+.pg-sidebar-toggle-btn:active {
+  transform: translateY(-50%) scale(0.94) !important;
+}
+
+/* Que no parezca botón gigante en celular */
+@media (max-width: 768px) {
+  .pg-sidebar-toggle-btn {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   SIDEBAR DORADA MOTOR’S - CERRADO COMPLETO + PESTAÑA BONITA
+   Cuando se minimiza, desaparece completo el menú
+   ========================================================= */
+
+/* Layout normal abierto */
+.pg-public-root,
+.pg-app-root {
+  display: grid !important;
+  grid-template-columns: 205px minmax(0, 1fr) !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.pg-public-main,
+.pg-app-main {
+  margin-left: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Sidebar abierto */
+.pg-public-scroll,
+.pg-app-sidebar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 205px !important;
+  min-width: 205px !important;
+  max-width: 205px !important;
+  height: 100vh !important;
+  overflow: visible !important;
+  z-index: 80 !important;
+  transition:
+    width 0.25s ease,
+    min-width 0.25s ease,
+    max-width 0.25s ease,
+    padding 0.25s ease,
+    opacity 0.25s ease !important;
+}
+
+/* Cuando se cierra: el menú se va completo */
+.pg-public-root.pg-sidebar-is-collapsed,
+.pg-app-root.pg-sidebar-is-collapsed {
+  grid-template-columns: 0 minmax(0, 1fr) !important;
+}
+
+.pg-public-scroll.pg-sidebar-minimized,
+.pg-app-sidebar.pg-sidebar-minimized {
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-right: 0 !important;
+  background: transparent !important;
+}
+
+/* Oculta TODO el contenido del sidebar cuando está cerrado */
+.pg-public-scroll.pg-sidebar-minimized > *:not(.pg-sidebar-toggle-btn),
+.pg-app-sidebar.pg-sidebar-minimized > *:not(.pg-sidebar-toggle-btn) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Botón flecha: abierto, casi invisible y elegante */
+.pg-sidebar-toggle-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: -10px !important;
+  transform: translateY(-50%) !important;
+
+  width: 20px !important;
+  height: 58px !important;
+
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
+  border-left: 0 !important;
+  border-radius: 0 16px 16px 0 !important;
+
+  background: rgba(12, 10, 24, 0.45) !important;
+  backdrop-filter: blur(10px) !important;
+
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+
+  cursor: pointer !important;
+  z-index: 999999 !important;
+  box-shadow: none !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  opacity: 0.18 !important;
+  transition:
+    opacity 0.22s ease,
+    width 0.22s ease,
+    right 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.15s ease !important;
+}
+
+/* Aparece bonito cuando pasas el mouse por la raya */
+.pg-public-scroll:hover .pg-sidebar-toggle-btn,
+.pg-app-sidebar:hover .pg-sidebar-toggle-btn,
+.pg-sidebar-toggle-btn:hover {
+  opacity: 1 !important;
+  width: 26px !important;
+  right: -13px !important;
+  background: rgba(109, 40, 217, 0.38) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.24) !important;
+}
+
+/* Cuando está cerrado, solo queda una pestañita para abrir */
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-toggle-btn,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-toggle-btn {
+  right: -34px !important;
+  width: 28px !important;
+  height: 72px !important;
+  opacity: 0.65 !important;
+
+  border-radius: 0 18px 18px 0 !important;
+  border: 1px solid rgba(168, 85, 247, 0.35) !important;
+  border-left: 0 !important;
+
+  background: rgba(20, 15, 35, 0.78) !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Hover cuando está cerrado */
+.pg-public-scroll.pg-sidebar-minimized .pg-sidebar-toggle-btn:hover,
+.pg-app-sidebar.pg-sidebar-minimized .pg-sidebar-toggle-btn:hover {
+  opacity: 1 !important;
+  width: 34px !important;
+  right: -40px !important;
+  background: linear-gradient(180deg, #8b5cf6, #6d28d9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 22px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Click suave */
+.pg-sidebar-toggle-btn:active {
+  transform: translateY(-50%) scale(0.94) !important;
+}
+
+/* En celular no mostrar esa flecha lateral */
+@media (max-width: 768px) {
+  .pg-public-root,
+  .pg-app-root,
+  .pg-public-root.pg-sidebar-is-collapsed,
+  .pg-app-root.pg-sidebar-is-collapsed {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .pg-public-scroll,
+  .pg-app-sidebar,
+  .pg-public-scroll.pg-sidebar-minimized,
+  .pg-app-sidebar.pg-sidebar-minimized {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .pg-sidebar-toggle-btn {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   DORADA MOTOR’S MOBILE SCROLL FINO
+   Sin rayas visibles + deslizar izquierda/derecha
+   Usuario + Admin + Formularios + Tablas
+   ========================================================= */
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain !important;
+  }
+
+  /* Oculta barras/rayas de scroll, pero permite deslizar */
+  .pg-x-scroll,
+  .pg-public-main,
+  .pg-app-main,
+  .pg-public-page,
+  .pg-app-content,
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap,
+  .pg-card,
+  .admin-card,
+  .content-card,
+  .metric-card,
+  .pg-panel {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .pg-x-scroll::-webkit-scrollbar,
+  .pg-public-main::-webkit-scrollbar,
+  .pg-app-main::-webkit-scrollbar,
+  .pg-public-page::-webkit-scrollbar,
+  .pg-app-content::-webkit-scrollbar,
+  .pg-table-wrap::-webkit-scrollbar,
+  .table-responsive::-webkit-scrollbar,
+  .admin-table-wrap::-webkit-scrollbar,
+  .content-table-wrap::-webkit-scrollbar,
+  .pg-card::-webkit-scrollbar,
+  .admin-card::-webkit-scrollbar,
+  .content-card::-webkit-scrollbar,
+  .metric-card::-webkit-scrollbar,
+  .pg-panel::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Contenido principal no debe romperse */
+  .pg-public-main,
+  .pg-app-main,
+  .pg-public-page,
+  .pg-app-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  /* Formularios o páginas de 2 columnas: se acomodan bonito */
+  .pg-public-page > div,
+  .pg-app-content > div {
+    max-width: 100% !important;
+  }
+
+  /* Filtros, botones y chips: deslizan horizontal sin raya */
+  .filter-row,
+  .filters-row,
+  .category-filters,
+  .categorias-lista,
+  .category-list,
+  .store-category-list,
+  .pub-cat-sidebar,
+  .tabs-row,
+  .status-tabs,
+  .pg-app-top-actions,
+  .pg-public-header-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    padding-bottom: 4px !important;
+  }
+
+  .filter-row::-webkit-scrollbar,
+  .filters-row::-webkit-scrollbar,
+  .category-filters::-webkit-scrollbar,
+  .categorias-lista::-webkit-scrollbar,
+  .category-list::-webkit-scrollbar,
+  .store-category-list::-webkit-scrollbar,
+  .pub-cat-sidebar::-webkit-scrollbar,
+  .tabs-row::-webkit-scrollbar,
+  .status-tabs::-webkit-scrollbar,
+  .pg-app-top-actions::-webkit-scrollbar,
+  .pg-public-header-actions::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .filter-row > *,
+  .filters-row > *,
+  .category-filters > *,
+  .categorias-lista > *,
+  .category-list > *,
+  .store-category-list > *,
+  .pub-cat-sidebar > *,
+  .tabs-row > *,
+  .status-tabs > *,
+  .pg-app-top-actions > *,
+  .pg-public-header-actions > * {
+    flex: 0 0 auto !important;
+  }
+
+  /* Tablas admin: deslizar derecha/izquierda sin raya */
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap,
+  .pg-card:has(table),
+  .admin-card:has(table),
+  .content-card:has(table) {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 16px !important;
+  }
+
+  table,
+  .pg-table {
+    min-width: 760px !important;
+    width: max-content !important;
+  }
+
+  /* Formularios en celular: que no se partan feo */
+  form,
+  .form-card,
+  .reclamo-form,
+  .libro-form,
+  .checkout-form,
+  .profile-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  /* Si hay layouts de dos columnas, se vuelven una columna bonita */
+  .reclamo-layout,
+  .libro-reclamos-layout,
+  .checkout-grid,
+  .cart-grid,
+  .profile-grid,
+  .settings-grid,
+  .admin-form-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Si algún div tiene grid inline grande, evita que corte horrible */
+  div[style*="grid-template-columns"] {
+    max-width: 100% !important;
+  }
+
+  /* Efecto suave visual al deslizar: bordes con fade, sin raya */
+  .pg-table-wrap,
+  .table-responsive,
+  .admin-table-wrap,
+  .content-table-wrap,
+  .filter-row,
+  .filters-row,
+  .category-filters,
+  .categorias-lista,
+  .category-list,
+  .store-category-list,
+  .pub-cat-sidebar,
+  .tabs-row,
+  .status-tabs {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 14px,
+      black calc(100% - 14px),
+      transparent 100%
+    ) !important;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 14px,
+      black calc(100% - 14px),
+      transparent 100%
+    ) !important;
+  }
+
+  /* Cards en usuario/categorías/productos más limpias */
+  .product-card,
+  .store-product-card,
+  .producto-card,
+  .pub-cat-card,
+  .category-card,
+  .pg-card,
+  .admin-card,
+  .content-card {
+    border-radius: 18px !important;
+    max-width: 100% !important;
+  }
+}
