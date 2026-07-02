@@ -8,9 +8,8 @@ import { PreferenciasProvider } from './context/PreferenciasContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './styles.css';
-import './dm-final-sidebar.js';
-import './dm-final-ui.css';
-
+import './dm-pro-fix.js';
+import './dm-pro-fix.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <AuthProvider>
@@ -22,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AuthProvider>
   </BrowserRouter>
 );
+
 
 
 
