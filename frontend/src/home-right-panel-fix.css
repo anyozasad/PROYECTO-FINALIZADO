@@ -1,0 +1,87 @@
+/* =====================================================
+   DORADA MOTOR'S
+   Corrección exclusiva del panel derecho del Inicio.
+   No modifica productos, imágenes, menú ni funciones.
+===================================================== */
+
+/*
+  Evita que el grid obligue al panel derecho a ocupar
+  la misma altura que la sección de productos.
+*/
+.dm-home-layout-parent {
+  align-items: start !important;
+}
+
+/*
+  La columna termina exactamente después de
+  la tarjeta "Más vendidos".
+*/
+.dm-home-right-panel {
+  align-self: start !important;
+
+  height: max-content !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  padding-bottom: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+/*
+  Saludo, pedidos, descuento y más vendidos
+  conservan su diseño y su altura natural.
+*/
+.dm-home-right-panel > * {
+  flex: 0 0 auto !important;
+
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+/* Elimina elementos vacíos que puedan dejar huecos */
+.dm-home-right-panel > :empty {
+  display: none !important;
+}
+
+/* Elimina decoraciones del contenedor largo */
+.dm-home-right-panel::before,
+.dm-home-right-panel::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Evita que las tarjetas del panel sean estiradas */
+.dm-home-right-panel [class*="pedido"],
+.dm-home-right-panel [class*="order"],
+.dm-home-right-panel [class*="coupon"],
+.dm-home-right-panel [class*="cupon"],
+.dm-home-right-panel [class*="discount"],
+.dm-home-right-panel [class*="descuento"],
+.dm-home-right-panel [class*="vendido"],
+.dm-home-right-panel [class*="sold"] {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+/* Mantener comportamiento natural en celular */
+@media (max-width: 900px) {
+  .dm-home-right-panel {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding-bottom: 0 !important;
+    overflow: visible !important;
+  }
+}
