@@ -508,7 +508,7 @@ export default function Home() {
         </div>
 
         {/* ══ COLUMNA DERECHA ══ */}
-        <div style={{background:'var(--bg2)',borderLeft:'1px solid var(--border)',padding:'20px 16px',display:'flex',flexDirection:'column',gap:'14px',position:'sticky',top:'58px',maxHeight:'calc(100dvh - 150px)',overflowY:'auto',paddingBottom:'90px'}}>
+        <div style={{background:'transparent',borderLeft:'1px solid var(--border)',padding:'20px 16px 0',display:'flex',flexDirection:'column',gap:'14px',alignSelf:'start',height:'fit-content',minHeight:0,position:'sticky',top:'58px',maxHeight:'none',overflow:'visible'}}>
 
           {/* Saludo personalizado */}
           <div style={{background:'linear-gradient(135deg,#4c1d95,#7c3aed)',borderRadius:'12px',padding:'14px 16px',display:'flex',alignItems:'center',gap:'12px'}}>
