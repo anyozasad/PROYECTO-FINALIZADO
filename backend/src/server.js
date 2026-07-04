@@ -23,7 +23,7 @@ app.use('/api/v1', apiRoutes);
 
 app.use((err, _req, res, _next) => {
   console.error(err);
-  res.status(500).json({ error: 'Error interno del servidor', detalle: err.message });
+  res.status(err.statusCode || 500).json({ error: err.message || 'Error interno del servidor' });
 });
 
 app.listen(PORT, () => {

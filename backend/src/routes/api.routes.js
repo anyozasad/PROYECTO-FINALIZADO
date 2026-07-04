@@ -2,6 +2,7 @@ const router = require('express').Router();
 const auth = require('../controllers/auth.controller');
 const productos = require('../controllers/productos.controller');
 const checkout = require('../controllers/checkout.controller');
+const mercadopago = require('../controllers/mercadopago.controller');
 const admin = require('../controllers/admin.controller');
 const crud = require('../controllers/crud.controller');
 const imagenes = require('../controllers/imagenes.controller');
@@ -35,6 +36,11 @@ router.put('/productos/:id', verifyToken, requireRole(1), productos.actualizar);
 router.patch('/productos/:id', verifyToken, requireRole(1), productos.actualizar);
 router.delete('/productos/:id', verifyToken, requireRole(1), productos.eliminar);
 
+// Pagos reales y pedidos de invitados
+router.post('/pagos/mercadopago/preferencia', mercadopago.crearPreferencia);
+router.post('/pagos/mercadopago/webhook', mercadopago.webhook);
+router.get('/pagos/mercadopago/estado/:ventaId', mercadopago.estadoPago);
+router.post('/pagos/manual', mercadopago.crearPedidoManual);
 // Compra del cliente
 router.post('/checkout', verifyToken, requireRole(3), checkout.realizarCompra);
 router.get('/mis-compras', verifyToken, requireRole(3), checkout.misCompras);
