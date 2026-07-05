@@ -496,7 +496,7 @@ export default function PubCheckout() {
               ) : (
                 <div style={{ background: 'var(--pg-input)', border: '1px solid var(--pg-border2)', borderRadius: '12px', padding: '18px' }}>
                   <b>Recojo en tienda Dorada Motor’s</b>
-                  <p style={{ color: 'var(--pg-muted)', margin: '6px 0 0' }}>Av. Los Próceres 123, Lima - Perú. Atención: Lunes a sábado.</p>
+                  <p style={{ color: 'var(--pg-muted)', margin: '6px 0 0' }}>Jr. Malecón la Hoyada N.º 226, en el distrito de Callería, provincia de Coronel Portillo, región Ucayali.</p>
                 </div>
               )}
             </div>
