@@ -236,8 +236,8 @@ export default function PubCheckout() {
     if (step === 2 && entrega.tipo === 'DELIVERY' && !entrega.direccion) {
       return 'Ingresa tu dirección para delivery.';
     }
-    if (step === 3 && pago.metodo === 'Plin' && pago.operacion.trim().length < 4) {
-      return 'Ingresa el número de operación de Plin.';
+    if (step === 3 && ['Yape', 'Plin'].includes(pago.metodo) && pago.operacion.trim().length < 4) {
+      return 'Ingresa el número de operación de Yape o Plin.';
     }
     return '';
   };
@@ -286,7 +286,7 @@ export default function PubCheckout() {
 
     setProcesando(true);
     try {
-      if (['Yape', 'Tarjeta'].includes(pago.metodo)) {
+      if (pago.metodo === 'Tarjeta') {
         sessionStorage.setItem(CHECKOUT_KEY, JSON.stringify(contexto));
         const data = await apiFetch('/pagos/mercadopago/preferencia', {
           method: 'POST',
@@ -342,7 +342,7 @@ export default function PubCheckout() {
   const textoBoton = procesando
     ? 'Procesando...'
     : pago.metodo === 'Yape'
-      ? 'Pagar con Yape'
+      ? 'Registrar pago Yape'
       : pago.metodo === 'Tarjeta'
         ? 'Pagar con tarjeta'
         : pago.metodo === 'Plin'
@@ -549,37 +549,133 @@ export default function PubCheckout() {
               }}
             >
               {pago.metodo === 'Yape' && (
-                <div>
-                  <b>Pago real con Yape</b>
-
-                  <p
+                <div
+                  style={{
+                    marginBottom: '16px',
+                    padding: '18px',
+                    borderRadius: '14px',
+                    border: '1px solid var(--pg-border2)',
+                    background: 'var(--pg-input)',
+                  }}
+                >
+                  <div
                     style={{
-                      margin: '6px 0 0',
-                      color: 'var(--pg-muted)',
-                      fontSize: '12px',
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: '22px',
+                      alignItems: 'center',
                     }}
                   >
-                    Pulsa Pagar con Yape. Se abrirá Mercado Pago y
-                    allí podrás elegir Yape para completar el pago.
-                  </p>
-                </div>
-              )}
+                    <div
+                      style={{
+                        padding: '9px',
+                        borderRadius: '14px',
+                        border: '1px solid var(--pg-border2)',
+                        background: '#ffffff',
+                      }}
+                    >
+                      <img
+                        src="/pagos/yape-qr.png"
+                        alt="Código QR de Yape de Dorada Motor's"
+                        style={{
+                          display: 'block',
+                          width: '180px',
+                          height: '180px',
+                          objectFit: 'contain',
+                          borderRadius: '8px',
+                        }}
+                      />
+                    </div>
 
-              {pago.metodo === 'Tarjeta' && (
-                <div>
-                  <b>Pago real con tarjeta</b>
+                    <div
+                      style={{
+                        flex: '1 1 300px',
+                        minWidth: 0,
+                      }}
+                    >
+                      <h3
+                        style={{
+                          margin: '0 0 10px',
+                          fontSize: '19px',
+                        }}
+                      >
+                        Escanea y paga con Yape
+                      </h3>
 
-                  <p
-                    style={{
-                      margin: '6px 0 0',
-                      color: 'var(--pg-muted)',
-                      fontSize: '12px',
-                    }}
-                  >
-                    Pulsa Pagar con tarjeta. Se abrirá Mercado Pago
-                    para ingresar una tarjeta de crédito o débito
-                    de forma segura.
-                  </p>
+                      <p
+                        style={{
+                          margin: '6px 0',
+                          color: 'var(--pg-muted)',
+                        }}
+                      >
+                        Titular:{' '}
+                        <strong style={{ color: 'var(--pg-text)' }}>
+                          Dorada Motor&apos;s
+                        </strong>
+                      </p>
+
+                      <p
+                        style={{
+                          margin: '6px 0',
+                          color: 'var(--pg-muted)',
+                        }}
+                      >
+                        Número Yape:{' '}
+                        <strong style={{ color: 'var(--pg-text)' }}>
+                          922859170
+                        </strong>
+                      </p>
+
+                      <p
+                        style={{
+                          margin: '10px 0 14px',
+                          color: 'var(--pg-muted)',
+                          fontSize: '13px',
+                          lineHeight: 1.45,
+                        }}
+                      >
+                        Escanea el QR, realiza el pago y escribe el número de
+                        operación para que la empresa pueda verificarlo.
+                      </p>
+
+                      <label
+                        htmlFor="operacion-yape"
+                        style={{
+                          display: 'block',
+                          marginBottom: '7px',
+                          fontSize: '12px',
+                          fontWeight: 800,
+                        }}
+                      >
+                        NRO. OPERACIÓN / REFERENCIA
+                      </label>
+
+                      <input
+                        id="operacion-yape"
+                        type="text"
+                        value={pago.operacion || ''}
+                        onChange={(event) =>
+                          setPago((actual) => ({
+                            ...actual,
+                            operacion: event.target.value,
+                          }))
+                        }
+                        placeholder="Ingresa el número de operación de Yape"
+                        maxLength={100}
+                        autoComplete="off"
+                        style={{
+                          width: '100%',
+                          minHeight: '50px',
+                          padding: '12px 14px',
+                          border: '1px solid var(--pg-border2)',
+                          borderRadius: '12px',
+                          background: 'var(--pg-input)',
+                          color: 'var(--pg-text)',
+                          boxSizing: 'border-box',
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
               )}
 
@@ -701,7 +797,7 @@ export default function PubCheckout() {
               }}
             >
               {pago.metodo === 'Yape'
-                ? 'Serás redirigido a Mercado Pago para completar el pago con Yape.'
+                ? 'El pago quedará pendiente hasta que la empresa verifique la operación.'
                 : pago.metodo === 'Tarjeta'
                   ? 'Serás redirigido a Mercado Pago para completar el pago con tarjeta.'
                   : pago.metodo === 'Plin'

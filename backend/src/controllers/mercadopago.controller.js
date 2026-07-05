@@ -341,10 +341,10 @@ async function crearPreferencia(req, res, next) {
 async function crearPedidoManual(req, res, next) {
   try {
     const metodo = texto(req.body.metodo_pago, 30).toUpperCase();
-    if (!['PLIN', 'EFECTIVO'].includes(metodo)) {
+    if (!['YAPE', 'PLIN', 'EFECTIVO'].includes(metodo)) {
       return res.status(400).json({ error: 'MÃ©todo manual invÃ¡lido.' });
     }
-    if (metodo === 'PLIN' && texto(req.body.operacion, 100).length < 4) {
+    if (['YAPE', 'PLIN'].includes(metodo) && texto(req.body.operacion, 100).length < 4) {
       return res.status(400).json({ error: 'Ingresa el nÃºmero de operaciÃ³n de Plin.' });
     }
 
