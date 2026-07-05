@@ -354,7 +354,52 @@ export default function PubCheckout() {
       className="pub-checkout-page"
       style={{ padding: '22px 24px', paddingBottom: '120px', fontFamily: "'Inter',sans-serif", background: 'var(--pg-bg)', color: 'var(--pg-text)', minHeight: '100%' }}
     >
-      <style>{`@media(max-width:820px){.pub-checkout-page{padding:14px 10px 105px!important}.pub-checkout-head{flex-direction:column!important;align-items:flex-start!important}.pub-checkout-head button{width:100%!important}.pub-checkout-steps{overflow-x:auto!important}.pub-checkout-grid{grid-template-columns:1fr!important}.pub-checkout-form-grid,.pub-checkout-two-grid,.pub-checkout-pay-grid{grid-template-columns:1fr!important}.pub-checkout-form-grid>div{grid-column:auto!important}.pub-checkout-row-actions{gap:10px!important}.pub-checkout-row-actions button{flex:1!important}}`}</style>
+            {/* DORADA_CHECKOUT_DATOS_LAYOUT_INICIO */}
+      <style>{`
+        .pub-checkout-form-grid {
+          grid-template-columns:
+            190px
+            minmax(280px, 1fr)
+            minmax(280px, 1fr) !important;
+          column-gap: 14px !important;
+          row-gap: 14px !important;
+          align-items: end;
+          width: 100%;
+        }
+
+        .pub-checkout-form-grid > div {
+          min-width: 0;
+        }
+
+        .pub-checkout-form-grid input,
+        .pub-checkout-form-grid select {
+          width: 100% !important;
+          min-width: 0;
+          min-height: 49px;
+          box-sizing: border-box;
+        }
+
+        @media (max-width: 1100px) {
+          .pub-checkout-form-grid {
+            grid-template-columns:
+              175px
+              minmax(0, 1fr)
+              minmax(0, 1fr) !important;
+          }
+        }
+
+        @media (max-width: 820px) {
+          .pub-checkout-form-grid {
+            grid-template-columns: 1fr !important;
+          }
+
+          .pub-checkout-form-grid > div {
+            grid-column: auto !important;
+          }
+        }
+      `}</style>
+      {/* DORADA_CHECKOUT_DATOS_LAYOUT_FIN */}
+<style>{`@media(max-width:820px){.pub-checkout-page{padding:14px 10px 105px!important}.pub-checkout-head{flex-direction:column!important;align-items:flex-start!important}.pub-checkout-head button{width:100%!important}.pub-checkout-steps{overflow-x:auto!important}.pub-checkout-grid{grid-template-columns:1fr!important}.pub-checkout-form-grid,.pub-checkout-two-grid,.pub-checkout-pay-grid{grid-template-columns:1fr!important}.pub-checkout-form-grid>div{grid-column:auto!important}.pub-checkout-row-actions{gap:10px!important}.pub-checkout-row-actions button{flex:1!important}}`}</style>
 
       <div className="pub-checkout-head" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
         <div>
