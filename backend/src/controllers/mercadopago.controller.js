@@ -1,4 +1,5 @@
 const { query, transaction } = require('../config/db');
+const { enviarCorreoCompra } = require('../services/correo.service');
 
 const MP_API = 'https://api.mercadopago.com';
 const RESERVA_MINUTOS = 45;
@@ -274,6 +275,8 @@ async function crearPreferencia(req, res, next) {
     const vence = new Date(ahora.getTime() + 30 * 60 * 1000);
     const isoUtc = (date) => date.toISOString();
 
+    const retornoBase = `${frontendUrl}/s/checkout?modo=invitado&venta_id=${venta.venta_id}`;
+
     const preferencia = {
       items: [{
         id: String(venta.venta_id),
@@ -290,9 +293,9 @@ async function crearPreferencia(req, res, next) {
       external_reference: String(venta.venta_id),
       metadata: { venta_id: venta.venta_id, numero: venta.numero_comprobante },
       back_urls: {
-        success: "https://proyecto-finalizado-zeta.vercel.app/s/checkout?modo=invitado&mp=success",
-        failure: "https://proyecto-finalizado-zeta.vercel.app/s/checkout?modo=invitado&mp=failure",
-        pending: "https://proyecto-finalizado-zeta.vercel.app/s/checkout?modo=invitado&mp=pending",
+        success: `${retornoBase}&mp=success`,
+        failure: `${retornoBase}&mp=failure`,
+        pending: `${retornoBase}&mp=pending`,
       },
       auto_return: 'approved',
       notification_url: `${backendUrl}/api/v1/pagos/mercadopago/webhook`,
@@ -589,6 +592,17 @@ async function validarFirmaWebhook(req) {
   return true;
 }
 
+async function intentarEnviarCorreoCompra(resultado, propagarError = false) {
+  if (!resultado || resultado.estado !== 'PAGADO' || !resultado.venta_id) return;
+
+  try {
+    await enviarCorreoCompra(resultado.venta_id);
+  } catch (error) {
+    console.error('Correo de compra:', error.message);
+    if (propagarError) throw error;
+  }
+}
+
 async function webhook(req, res) {
   try {
     const firmaValida = await validarFirmaWebhook(req);
@@ -600,7 +614,8 @@ async function webhook(req, res) {
     if (!paymentId) return res.sendStatus(200);
 
     const payment = await consultarPagoMP(paymentId);
-    await aplicarPago(payment);
+    const resultado = await aplicarPago(payment);
+    await intentarEnviarCorreoCompra(resultado, true);
     return res.sendStatus(200);
   } catch (error) {
     console.error('Webhook Mercado Pago:', error.message);
@@ -620,7 +635,10 @@ async function estadoPago(req, res, next) {
     if (paymentId) {
       const payment = await consultarPagoMP(paymentId);
       const externalReference = Number(payment.external_reference || payment.metadata?.venta_id);
-      if (externalReference === ventaId) await aplicarPago(payment);
+      if (externalReference === ventaId) {
+        const resultado = await aplicarPago(payment);
+        await intentarEnviarCorreoCompra(resultado);
+      }
     }
 
     const rows = await query(

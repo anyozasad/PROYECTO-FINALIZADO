@@ -230,15 +230,18 @@ export default function PubCheckout() {
   }
 
   const validar = () => {
-    if (step === 1 && (!cliente.nombre || !cliente.telefono || !cliente.documento)) {
-      return 'Completa nombre, documento y teléfono.';
+    if (step === 1 && (!cliente.nombre || !cliente.telefono || !cliente.documento || !cliente.email)) {
+      return 'Completa nombre, documento, teléfono y correo.';
+    }
+    if (step === 1 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cliente.email.trim())) {
+      return 'Ingresa un correo electrónico válido.';
     }
     if (step === 2 && entrega.tipo === 'DELIVERY' && !entrega.direccion) {
       return 'Ingresa tu dirección para delivery.';
     }
     if (
       step === 3 &&
-      ['Yape', 'Plin'].includes(pago.metodo) && !/^\d{6,20}$/.test(pago.operacion.trim())
+      pago.metodo === 'Plin' && !/^\d{6,20}$/.test(pago.operacion.trim())
     ) {
       return 'Ingresa un número de operación válido de Yape o Plin, de 6 a 20 dígitos.';
     }
@@ -289,7 +292,7 @@ export default function PubCheckout() {
 
     setProcesando(true);
     try {
-      if (pago.metodo === 'Tarjeta') {
+      if (['Yape', 'Tarjeta'].includes(pago.metodo)) {
         sessionStorage.setItem(CHECKOUT_KEY, JSON.stringify(contexto));
         const data = await apiFetch('/pagos/mercadopago/preferencia', {
           method: 'POST',
