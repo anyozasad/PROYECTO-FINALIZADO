@@ -21,7 +21,7 @@ const CHECKOUT_KEY = 'dorada_checkout_pendiente';
 // DORADA_PLIN_CONFIG_INICIO
 const PLIN_DATOS = {
   titular: "Dorada Motor's",
-  numero: "922859179",
+  numero: "922859170",
 };
 // DORADA_PLIN_CONFIG_FIN
 
