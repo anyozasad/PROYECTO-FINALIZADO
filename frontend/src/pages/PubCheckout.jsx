@@ -345,9 +345,7 @@ export default function PubCheckout() {
       ? 'Registrar pago Yape'
       : pago.metodo === 'Tarjeta'
         ? 'Pagar con tarjeta'
-        : pago.metodo === 'Plin'
-          ? 'Registrar pago Plin'
-          : 'Confirmar pago contra entrega';
+        : 'Registrar pago Plin';
 
   return (
     <div
@@ -505,8 +503,8 @@ export default function PubCheckout() {
           {step === 3 && (
             <div>
               <h2 style={{ margin: '0 0 14px', fontSize: '24px' }}>Pago y comprobante</h2>
-              <div className="pub-checkout-pay-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '10px', marginBottom: '16px' }}>
-              {['Yape', 'Plin', 'Tarjeta', 'Efectivo'].map((x) => (
+              <div className="pub-checkout-pay-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '16px' }}>
+              {['Yape', 'Plin', 'Tarjeta'].map((x) => (
                 <button
                   key={x}
                   type="button"
@@ -539,25 +537,17 @@ export default function PubCheckout() {
               ))}
             </div>
 
-            <div
-              style={{
-                background: 'var(--pg-input)',
-                border: '1px solid var(--pg-border2)',
-                borderRadius: '12px',
-                padding: '14px 16px',
-                marginBottom: '14px',
-              }}
-            >
-              {pago.metodo === 'Yape' && (
-                <div
-                  style={{
-                    marginBottom: '16px',
-                    padding: '18px',
-                    borderRadius: '14px',
-                    border: '1px solid var(--pg-border2)',
-                    background: 'var(--pg-input)',
-                  }}
-                >
+              {/* DORADA_PAGOS_CORREGIDOS_INICIO */}
+              <div
+                style={{
+                  marginBottom: '16px',
+                  padding: '18px',
+                  borderRadius: '14px',
+                  border: '1px solid var(--pg-border2)',
+                  background: 'var(--pg-input)',
+                }}
+              >
+                {pago.metodo === 'Yape' && (
                   <div
                     style={{
                       display: 'flex',
@@ -593,14 +583,15 @@ export default function PubCheckout() {
                         minWidth: 0,
                       }}
                     >
-                      <h3
+                      <b
                         style={{
-                          margin: '0 0 10px',
+                          display: 'block',
+                          marginBottom: '10px',
                           fontSize: '19px',
                         }}
                       >
                         Escanea y paga con Yape
-                      </h3>
+                      </b>
 
                       <p
                         style={{
@@ -628,120 +619,98 @@ export default function PubCheckout() {
 
                       <p
                         style={{
-                          margin: '10px 0 14px',
+                          margin: '10px 0 0',
                           color: 'var(--pg-muted)',
                           fontSize: '13px',
                           lineHeight: 1.45,
                         }}
                       >
-                        Escanea el QR, realiza el pago y escribe el número de
-                        operación para que la empresa pueda verificarlo.
+                        Escanea el código QR, realiza el pago y escribe el
+                        número de operación para verificar el depósito.
                       </p>
-
-                      <label
-                        htmlFor="operacion-yape"
-                        style={{
-                          display: 'block',
-                          marginBottom: '7px',
-                          fontSize: '12px',
-                          fontWeight: 800,
-                        }}
-                      >
-                        NRO. OPERACIÓN / REFERENCIA
-                      </label>
-
-                      <input
-                        id="operacion-yape"
-                        type="text"
-                        value={pago.operacion || ''}
-                        onChange={(event) =>
-                          setPago((actual) => ({
-                            ...actual,
-                            operacion: event.target.value,
-                          }))
-                        }
-                        placeholder="Ingresa el número de operación de Yape"
-                        maxLength={100}
-                        autoComplete="off"
-                        style={{
-                          width: '100%',
-                          minHeight: '50px',
-                          padding: '12px 14px',
-                          border: '1px solid var(--pg-border2)',
-                          borderRadius: '12px',
-                          background: 'var(--pg-input)',
-                          color: 'var(--pg-text)',
-                          boxSizing: 'border-box',
-                        }}
-                      />
                     </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {pago.metodo === 'Plin' && (
-                <div>
-                  <b>Datos reales para pagar con Plin</b>
+                {pago.metodo === 'Plin' && (
+                  <div>
+                    <b
+                      style={{
+                        display: 'block',
+                        marginBottom: '10px',
+                        fontSize: '18px',
+                      }}
+                    >
+                      Datos para pagar con Plin
+                    </b>
 
-                  <p
-                    style={{
-                      margin: '6px 0 0',
-                      color: 'var(--pg-muted)',
-                      fontSize: '12px',
-                    }}
-                  >
-                    Titular:{' '}
-                    <strong style={{ color: 'var(--pg-text)' }}>
-                      {PLIN_DATOS.titular}
-                    </strong>
-                  </p>
+                    <p
+                      style={{
+                        margin: '6px 0',
+                        color: 'var(--pg-muted)',
+                      }}
+                    >
+                      Titular:{' '}
+                      <strong style={{ color: 'var(--pg-text)' }}>
+                        Dorada Motor&apos;s
+                      </strong>
+                    </p>
 
-                  <p
-                    style={{
-                      margin: '4px 0 0',
-                      color: 'var(--pg-muted)',
-                      fontSize: '12px',
-                    }}
-                  >
-                    Número Plin:{' '}
-                    <strong style={{ color: 'var(--pg-text)' }}>
-                      {PLIN_DATOS.numero}
-                    </strong>
-                  </p>
+                    <p
+                      style={{
+                        margin: '6px 0',
+                        color: 'var(--pg-muted)',
+                      }}
+                    >
+                      Número Plin:{' '}
+                      <strong style={{ color: 'var(--pg-text)' }}>
+                        922859170
+                      </strong>
+                    </p>
 
-                  <p
-                    style={{
-                      margin: '6px 0 0',
-                      color: 'var(--pg-muted)',
-                      fontSize: '12px',
-                    }}
-                  >
-                    Después de pagar, escribe abajo el número de
-                    operación para que la empresa verifique el
-                    depósito.
-                  </p>
-                </div>
-              )}
+                    <p
+                      style={{
+                        margin: '10px 0 0',
+                        color: 'var(--pg-muted)',
+                        fontSize: '13px',
+                        lineHeight: 1.45,
+                      }}
+                    >
+                      Realiza el pago y escribe el número de operación para
+                      que la empresa pueda verificarlo.
+                    </p>
+                  </div>
+                )}
 
-              {pago.metodo === 'Efectivo' && (
-                <div>
-                  <b>Pago real en efectivo contra entrega</b>
+                {pago.metodo === 'Tarjeta' && (
+                  <div>
+                    <b
+                      style={{
+                        display: 'block',
+                        marginBottom: '8px',
+                        fontSize: '18px',
+                      }}
+                    >
+                      Pago seguro con tarjeta
+                    </b>
 
-                  <p
-                    style={{
-                      margin: '6px 0 0',
-                      color: 'var(--pg-muted)',
-                      fontSize: '12px',
-                    }}
-                  >
-                    El pedido se registrará y el cliente pagará
-                    al momento de recibirlo.
-                  </p>
-                </div>
-              )}
-            </div>
+                    <p
+                      style={{
+                        margin: 0,
+                        color: 'var(--pg-muted)',
+                        fontSize: '13px',
+                        lineHeight: 1.45,
+                      }}
+                    >
+                      Serás redirigido a Mercado Pago para ingresar una
+                      tarjeta de crédito o débito de manera segura.
+                    </p>
+                  </div>
+                )}
+              </div>
+              {/* DORADA_PAGOS_CORREGIDOS_FIN */}
 
-            <div
+<div
               className="pub-checkout-two-grid"
               style={{
                 display: 'grid',
@@ -765,7 +734,7 @@ export default function PubCheckout() {
                       })
                     }
                     style={input}
-                    placeholder="Obligatorio para Plin"
+                    placeholder={`Obligatorio para ${pago.metodo}`}
                   />
                 </div>
               )}
