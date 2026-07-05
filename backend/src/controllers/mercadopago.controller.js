@@ -341,24 +341,62 @@ async function crearPreferencia(req, res, next) {
 async function crearPedidoManual(req, res, next) {
   try {
     const metodo = texto(req.body.metodo_pago, 30).toUpperCase();
-    if (!['YAPE', 'PLIN', 'EFECTIVO'].includes(metodo)) {
-      return res.status(400).json({ error: 'MÃ©todo manual invÃ¡lido.' });
+
+    if (metodo !== 'PLIN') {
+      return res.status(400).json({
+        error: 'El único pago manual permitido es Plin.',
+      });
     }
-    if (['YAPE', 'PLIN'].includes(metodo) && texto(req.body.operacion, 100).length < 4) {
-      return res.status(400).json({ error: 'Ingresa el nÃºmero de operaciÃ³n de Plin.' });
+
+    const operacion = texto(req.body.operacion, 100);
+
+    if (!/^\d{6,20}$/.test(operacion)) {
+      return res.status(400).json({
+        error: 'Ingresa un número de operación Plin válido de 6 a 20 dígitos.',
+      });
+    }
+
+    const operacionesRepetidas = await query(
+      `SELECT id
+       FROM pagos
+       WHERE metodo_pago = 'PLIN'
+         AND referencia = ?
+       LIMIT 1`,
+      [operacion]
+    );
+
+    if (operacionesRepetidas.length) {
+      return res.status(409).json({
+        error: 'Ese número de operación Plin ya fue registrado anteriormente.',
+      });
     }
 
     const venta = await prepararVenta({
       ...req.body,
-      metodoPago: metodo,
+      operacion,
+      metodoPago: 'PLIN',
       tipoComprobante: req.body.tipo_comprobante,
     });
 
-    res.status(201).json({
+    await query(
+      `INSERT INTO notificaciones
+       (tipo, titulo, mensaje, venta_id, leido)
+       VALUES ('PAGO', 'Pago Plin por verificar', ?, ?, 0)`,
+      [
+        `Pedido ${venta.numero_comprobante} por S/ ${Number(
+          venta.total
+        ).toFixed(2)}. Operación declarada: ${operacion}. Revisa tu cuenta Plin antes de aprobar.`,
+        venta.venta_id,
+      ]
+    );
+
+    return res.status(201).json({
       ...venta,
-      message: metodo === 'PLIN'
-        ? 'Pedido registrado. El pago Plin queda pendiente de verificaciÃ³n.'
-        : 'Pedido registrado para pago en efectivo contra entrega.',
+      estado: 'PENDIENTE_VERIFICACION',
+      estado_pago: 'PENDIENTE_VERIFICACION',
+      confirmado: false,
+      message:
+        'Pedido registrado. El pago Plin todavía no está confirmado y será revisado por la empresa.',
     });
   } catch (error) {
     error.statusCode = error.statusCode || 500;
@@ -392,7 +430,24 @@ async function aplicarPago(payment) {
       'SELECT * FROM mercadopago_pagos WHERE venta_id=? FOR UPDATE',
       [ventaId]
     );
-    const stockLiberado = mpRows.length ? Number(mpRows[0].stock_liberado) : 0;
+    const stockLiberado = mpRows.length
+      ? Number(mpRows[0].stock_liberado)
+      : 0;
+
+    // DORADA_VALIDACION_PAGO_REAL
+    const montoEsperado = Number(venta.total || 0);
+    const montoRecibido = Number(payment.transaction_amount || 0);
+    const monedaRecibida = String(payment.currency_id || '').toUpperCase();
+    const referenciaRecibida = Number(
+      payment.external_reference || payment.metadata?.venta_id
+    );
+
+    const pagoAprobadoValido =
+      payment.status === 'approved' &&
+      referenciaRecibida === ventaId &&
+      monedaRecibida === 'PEN' &&
+      Number.isFinite(montoRecibido) &&
+      Math.abs(montoRecibido - montoEsperado) < 0.01;
 
     await conn.query(
       `INSERT INTO mercadopago_pagos
@@ -409,7 +464,36 @@ async function aplicarPago(payment) {
       ]
     );
 
-    if (payment.status === 'approved') {
+    if (payment.status === 'approved' && !pagoAprobadoValido) {
+      await conn.query(
+        "UPDATE ventas SET estado='PAGO_REVISAR' WHERE id=?",
+        [ventaId]
+      );
+
+      await conn.query(
+        "UPDATE pagos SET estado='REVISAR', referencia=? WHERE venta_id=?",
+        [String(payment.id), ventaId]
+      );
+
+      await conn.query(
+        `INSERT INTO notificaciones
+         (tipo, titulo, mensaje, venta_id, leido)
+         VALUES ('ALERTA', 'Pago recibido con datos diferentes', ?, ?, 0)`,
+        [
+          `Mercado Pago informó un pago aprobado, pero el monto, la moneda o la referencia no coincide. Esperado: S/ ${montoEsperado.toFixed(
+            2
+          )}. Recibido: ${monedaRecibida} ${montoRecibido.toFixed(2)}.`,
+          ventaId,
+        ]
+      );
+
+      return {
+        venta_id: ventaId,
+        estado: 'PAGO_REVISAR',
+      };
+    }
+
+    if (pagoAprobadoValido) {
       if (stockLiberado === 1) {
         try {
           await volverAReservarStock(conn, ventaId);

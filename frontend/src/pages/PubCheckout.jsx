@@ -236,8 +236,12 @@ export default function PubCheckout() {
     if (step === 2 && entrega.tipo === 'DELIVERY' && !entrega.direccion) {
       return 'Ingresa tu dirección para delivery.';
     }
-    if (step === 3 && ['Yape', 'Plin'].includes(pago.metodo) && pago.operacion.trim().length < 4) {
-      return 'Ingresa el número de operación de Yape o Plin.';
+    if (
+      step === 3 &&
+      pago.metodo === 'Plin' &&
+      !/^\d{6,20}$/.test(pago.operacion.trim())
+    ) {
+      return 'Ingresa un número de operación Plin válido de 6 a 20 dígitos.';
     }
     return '';
   };
@@ -286,7 +290,7 @@ export default function PubCheckout() {
 
     setProcesando(true);
     try {
-      if (pago.metodo === 'Tarjeta') {
+      if (['Yape', 'Tarjeta'].includes(pago.metodo)) {
         sessionStorage.setItem(CHECKOUT_KEY, JSON.stringify(contexto));
         const data = await apiFetch('/pagos/mercadopago/preferencia', {
           method: 'POST',
@@ -301,16 +305,21 @@ export default function PubCheckout() {
         method: 'POST',
         body: JSON.stringify(payload),
       });
-      const pedido = guardarPedidoServidor(data, contexto);
+
+      guardarPedidoServidor(data, contexto);
       sessionStorage.removeItem(CHECKOUT_KEY);
+
       await Swal.fire({
-        icon: 'success',
-        title: pago.metodo === 'Plin' ? 'Pago enviado a verificación' : 'Pedido confirmado',
-        text: data.message,
+        icon: 'info',
+        title: 'Pago Plin pendiente de verificación',
+        text:
+          data.message ||
+          'El pedido fue registrado, pero el pago todavía no está confirmado. La empresa debe verificar que el dinero haya ingresado.',
         confirmButtonColor: '#7c3aed',
         background: 'var(--pg-surface)',
         color: 'var(--pg-text)',
       });
+
       navigate('/s/pedidos');
     } catch (err) {
       await Swal.fire({
@@ -342,7 +351,7 @@ export default function PubCheckout() {
   const textoBoton = procesando
     ? 'Procesando...'
     : pago.metodo === 'Yape'
-      ? 'Registrar pago Yape'
+      ? 'Continuar con Yape'
       : pago.metodo === 'Tarjeta'
         ? 'Pagar con tarjeta'
         : 'Registrar pago Plin';
@@ -548,87 +557,29 @@ export default function PubCheckout() {
                 }}
               >
                 {pago.metodo === 'Yape' && (
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      gap: '22px',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <div
+                  <div>
+                    <b
                       style={{
-                        padding: '9px',
-                        borderRadius: '14px',
-                        border: '1px solid var(--pg-border2)',
-                        background: '#ffffff',
+                        display: 'block',
+                        marginBottom: '8px',
+                        fontSize: '18px',
                       }}
                     >
-                      <img
-                        src="/pagos/yape-qr.png"
-                        alt="Código QR de Yape de Dorada Motor's"
-                        style={{
-                          display: 'block',
-                          width: '180px',
-                          height: '180px',
-                          objectFit: 'contain',
-                          borderRadius: '8px',
-                        }}
-                      />
-                    </div>
+                      Pago seguro con Yape
+                    </b>
 
-                    <div
+                    <p
                       style={{
-                        flex: '1 1 300px',
-                        minWidth: 0,
+                        margin: 0,
+                        color: 'var(--pg-muted)',
+                        fontSize: '13px',
+                        lineHeight: 1.45,
                       }}
                     >
-                      <b
-                        style={{
-                          display: 'block',
-                          marginBottom: '10px',
-                          fontSize: '19px',
-                        }}
-                      >
-                        Escanea y paga con Yape
-                      </b>
-
-                      <p
-                        style={{
-                          margin: '6px 0',
-                          color: 'var(--pg-muted)',
-                        }}
-                      >
-                        Titular:{' '}
-                        <strong style={{ color: 'var(--pg-text)' }}>
-                          Dorada Motor&apos;s
-                        </strong>
-                      </p>
-
-                      <p
-                        style={{
-                          margin: '6px 0',
-                          color: 'var(--pg-muted)',
-                        }}
-                      >
-                        Número Yape:{' '}
-                        <strong style={{ color: 'var(--pg-text)' }}>
-                          922859170
-                        </strong>
-                      </p>
-
-                      <p
-                        style={{
-                          margin: '10px 0 0',
-                          color: 'var(--pg-muted)',
-                          fontSize: '13px',
-                          lineHeight: 1.45,
-                        }}
-                      >
-                        Escanea el código QR, realiza el pago y escribe el
-                        número de operación para verificar el depósito.
-                      </p>
-                    </div>
+                      Al continuar se abrirá Mercado Pago. El pedido solo se
+                      confirmará cuando Mercado Pago informe que el dinero fue
+                      aprobado correctamente.
+                    </p>
                   </div>
                 )}
 
@@ -734,7 +685,7 @@ export default function PubCheckout() {
                       })
                     }
                     style={input}
-                    placeholder={`Obligatorio para ${pago.metodo}`}
+                    placeholder="Número de operación Plin (6 a 20 dígitos)"
                   />
                 </div>
               )}
