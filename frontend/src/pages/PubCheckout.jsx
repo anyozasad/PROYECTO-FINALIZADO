@@ -438,19 +438,19 @@ export default function PubCheckout() {
                 </div>
                 <div>
                   <label style={label}>Nro. documento</label>
-                  <input value={cliente.documento} onChange={(e) => setCliente({ ...cliente, documento: e.target.value })} style={input} placeholder="12345678" />
+                  <input value={cliente.documento} onChange={(e) => setCliente({ ...cliente, documento: e.target.value })} style={input} placeholder="Ingresa tu DNI" />
                 </div>
                 <div>
                   <label style={label}>Nombre completo</label>
-                  <input value={cliente.nombre} onChange={(e) => setCliente({ ...cliente, nombre: e.target.value })} style={input} placeholder="Juan Pérez" />
+                  <input value={cliente.nombre} onChange={(e) => setCliente({ ...cliente, nombre: e.target.value })} style={input} placeholder="Ingresa tu nombre completo" />
                 </div>
                 <div>
                   <label style={label}>Teléfono</label>
-                  <input value={cliente.telefono} onChange={(e) => setCliente({ ...cliente, telefono: e.target.value })} style={input} placeholder="987654321" />
+                  <input value={cliente.telefono} onChange={(e) => setCliente({ ...cliente, telefono: e.target.value })} style={input} placeholder="Ingresa tu número de celular" />
                 </div>
                 <div style={{ gridColumn: 'span 2' }}>
                   <label style={label}>Correo</label>
-                  <input value={cliente.email} onChange={(e) => setCliente({ ...cliente, email: e.target.value })} style={input} placeholder="cliente@gmail.com" />
+                  <input value={cliente.email} onChange={(e) => setCliente({ ...cliente, email: e.target.value })} style={input} placeholder="Ingresa tu correo electrónico" />
                 </div>
               </div>
             </div>
