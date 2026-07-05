@@ -290,9 +290,9 @@ async function crearPreferencia(req, res, next) {
       external_reference: String(venta.venta_id),
       metadata: { venta_id: venta.venta_id, numero: venta.numero_comprobante },
       back_urls: {
-        success: `${frontendUrl}/s/checkout?modo=invitado&mp=success&venta_id=${venta.venta_id}`,
-        failure: `${frontendUrl}/s/checkout?modo=invitado&mp=failure&venta_id=${venta.venta_id}`,
-        pending: `${frontendUrl}/s/checkout?modo=invitado&mp=pending&venta_id=${venta.venta_id}`,
+        success: "https://proyecto-finalizado-zeta.vercel.app/s/checkout?modo=invitado&mp=success",
+        failure: "https://proyecto-finalizado-zeta.vercel.app/s/checkout?modo=invitado&mp=failure",
+        pending: "https://proyecto-finalizado-zeta.vercel.app/s/checkout?modo=invitado&mp=pending",
       },
       auto_return: 'approved',
       notification_url: `${backendUrl}/api/v1/pagos/mercadopago/webhook`,
