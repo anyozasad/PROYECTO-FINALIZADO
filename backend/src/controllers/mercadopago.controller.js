@@ -342,9 +342,9 @@ async function crearPedidoManual(req, res, next) {
   try {
     const metodo = texto(req.body.metodo_pago, 30).toUpperCase();
 
-    if (metodo !== 'PLIN') {
+    if (!['YAPE', 'PLIN'].includes(metodo)) {
       return res.status(400).json({
-        error: 'El único pago manual permitido es Plin.',
+        error: 'Los pagos manuales permitidos son Yape y Plin.',
       });
     }
 
@@ -352,17 +352,17 @@ async function crearPedidoManual(req, res, next) {
 
     if (!/^\d{6,20}$/.test(operacion)) {
       return res.status(400).json({
-        error: 'Ingresa un número de operación Plin válido de 6 a 20 dígitos.',
+        error: 'Ingresa un número de operación válido de Yape o Plin, de 6 a 20 dígitos.',
       });
     }
 
     const operacionesRepetidas = await query(
       `SELECT id
        FROM pagos
-       WHERE metodo_pago = 'PLIN'
+       WHERE metodo_pago = ?
          AND referencia = ?
        LIMIT 1`,
-      [operacion]
+      [metodo, operacion]
     );
 
     if (operacionesRepetidas.length) {
@@ -374,14 +374,14 @@ async function crearPedidoManual(req, res, next) {
     const venta = await prepararVenta({
       ...req.body,
       operacion,
-      metodoPago: 'PLIN',
+      metodoPago: metodo,
       tipoComprobante: req.body.tipo_comprobante,
     });
 
     await query(
       `INSERT INTO notificaciones
        (tipo, titulo, mensaje, venta_id, leido)
-       VALUES ('PAGO', 'Pago Plin por verificar', ?, ?, 0)`,
+       VALUES ('PAGO', 'Pago por verificar', ?, ?, 0)`,
       [
         `Pedido ${venta.numero_comprobante} por S/ ${Number(
           venta.total
@@ -396,7 +396,7 @@ async function crearPedidoManual(req, res, next) {
       estado_pago: 'PENDIENTE_VERIFICACION',
       confirmado: false,
       message:
-        'Pedido registrado. El pago Plin todavía no está confirmado y será revisado por la empresa.',
+        'Pedido registrado. El pago todavía no está confirmado y será revisado por la empresa.',
     });
   } catch (error) {
     error.statusCode = error.statusCode || 500;

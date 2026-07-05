@@ -238,10 +238,9 @@ export default function PubCheckout() {
     }
     if (
       step === 3 &&
-      pago.metodo === 'Plin' &&
-      !/^\d{6,20}$/.test(pago.operacion.trim())
+      ['Yape', 'Plin'].includes(pago.metodo) && !/^\d{6,20}$/.test(pago.operacion.trim())
     ) {
-      return 'Ingresa un número de operación Plin válido de 6 a 20 dígitos.';
+      return 'Ingresa un número de operación válido de Yape o Plin, de 6 a 20 dígitos.';
     }
     return '';
   };
@@ -290,7 +289,7 @@ export default function PubCheckout() {
 
     setProcesando(true);
     try {
-      if (['Yape', 'Tarjeta'].includes(pago.metodo)) {
+      if (pago.metodo === 'Tarjeta') {
         sessionStorage.setItem(CHECKOUT_KEY, JSON.stringify(contexto));
         const data = await apiFetch('/pagos/mercadopago/preferencia', {
           method: 'POST',
@@ -311,7 +310,7 @@ export default function PubCheckout() {
 
       await Swal.fire({
         icon: 'info',
-        title: 'Pago Plin pendiente de verificación',
+        title: 'Pago pendiente de verificación',
         text:
           data.message ||
           'El pedido fue registrado, pero el pago todavía no está confirmado. La empresa debe verificar que el dinero haya ingresado.',
@@ -320,7 +319,7 @@ export default function PubCheckout() {
         color: 'var(--pg-text)',
       });
 
-      navigate('/s/pedidos');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       await Swal.fire({
         icon: 'error',
@@ -350,10 +349,10 @@ export default function PubCheckout() {
 
   const textoBoton = procesando
     ? 'Procesando...'
-    : pago.metodo === 'Yape'
-      ? 'Continuar con Yape'
-      : pago.metodo === 'Tarjeta'
-        ? 'Pagar con tarjeta'
+    : pago.metodo === 'Tarjeta'
+      ? 'Pagar con tarjeta'
+      : pago.metodo === 'Yape'
+        ? 'Registrar pago Yape'
         : 'Registrar pago Plin';
 
   return (
@@ -546,7 +545,7 @@ export default function PubCheckout() {
               ))}
             </div>
 
-              {/* DORADA_PAGOS_CORREGIDOS_INICIO */}
+              {/* DORADA_PAGOS_REALES_INICIO */}
               <div
                 style={{
                   marginBottom: '16px',
@@ -557,29 +556,88 @@ export default function PubCheckout() {
                 }}
               >
                 {pago.metodo === 'Yape' && (
-                  <div>
-                    <b
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: '22px',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <div
                       style={{
-                        display: 'block',
-                        marginBottom: '8px',
-                        fontSize: '18px',
+                        padding: '9px',
+                        borderRadius: '14px',
+                        border: '1px solid var(--pg-border2)',
+                        background: '#ffffff',
                       }}
                     >
-                      Pago seguro con Yape
-                    </b>
+                      <img
+                        src="/pagos/yape-qr.png"
+                        alt="Código QR Yape de Dorada Motor's"
+                        style={{
+                          display: 'block',
+                          width: '190px',
+                          height: '190px',
+                          objectFit: 'contain',
+                          borderRadius: '8px',
+                        }}
+                      />
+                    </div>
 
-                    <p
+                    <div
                       style={{
-                        margin: 0,
-                        color: 'var(--pg-muted)',
-                        fontSize: '13px',
-                        lineHeight: 1.45,
+                        flex: '1 1 300px',
+                        minWidth: 0,
                       }}
                     >
-                      Al continuar se abrirá Mercado Pago. El pedido solo se
-                      confirmará cuando Mercado Pago informe que el dinero fue
-                      aprobado correctamente.
-                    </p>
+                      <b
+                        style={{
+                          display: 'block',
+                          marginBottom: '10px',
+                          fontSize: '19px',
+                        }}
+                      >
+                        Escanea y paga con Yape
+                      </b>
+
+                      <p
+                        style={{
+                          margin: '6px 0',
+                          color: 'var(--pg-muted)',
+                        }}
+                      >
+                        Titular:{' '}
+                        <strong style={{ color: 'var(--pg-text)' }}>
+                          Dorada Motor&apos;s
+                        </strong>
+                      </p>
+
+                      <p
+                        style={{
+                          margin: '6px 0',
+                          color: 'var(--pg-muted)',
+                        }}
+                      >
+                        Número Yape:{' '}
+                        <strong style={{ color: 'var(--pg-text)' }}>
+                          922859170
+                        </strong>
+                      </p>
+
+                      <p
+                        style={{
+                          margin: '12px 0 0',
+                          color: 'var(--pg-muted)',
+                          fontSize: '13px',
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        Escanea el QR desde Yape, realiza la transferencia y
+                        escribe abajo el número de operación. El pedido quedará
+                        pendiente hasta que la empresa compruebe el ingreso.
+                      </p>
+                    </div>
                   </div>
                 )}
 
@@ -589,7 +647,7 @@ export default function PubCheckout() {
                       style={{
                         display: 'block',
                         marginBottom: '10px',
-                        fontSize: '18px',
+                        fontSize: '19px',
                       }}
                     >
                       Datos para pagar con Plin
@@ -621,14 +679,15 @@ export default function PubCheckout() {
 
                     <p
                       style={{
-                        margin: '10px 0 0',
+                        margin: '12px 0 0',
                         color: 'var(--pg-muted)',
                         fontSize: '13px',
-                        lineHeight: 1.45,
+                        lineHeight: 1.5,
                       }}
                     >
-                      Realiza el pago y escribe el número de operación para
-                      que la empresa pueda verificarlo.
+                      Realiza la transferencia desde tu aplicación bancaria y
+                      escribe abajo el número de operación. El pedido quedará
+                      pendiente hasta comprobar el ingreso.
                     </p>
                   </div>
                 )}
@@ -639,7 +698,7 @@ export default function PubCheckout() {
                       style={{
                         display: 'block',
                         marginBottom: '8px',
-                        fontSize: '18px',
+                        fontSize: '19px',
                       }}
                     >
                       Pago seguro con tarjeta
@@ -650,16 +709,16 @@ export default function PubCheckout() {
                         margin: 0,
                         color: 'var(--pg-muted)',
                         fontSize: '13px',
-                        lineHeight: 1.45,
+                        lineHeight: 1.5,
                       }}
                     >
-                      Serás redirigido a Mercado Pago para ingresar una
+                      Serás redirigido a Mercado Pago para pagar con una
                       tarjeta de crédito o débito de manera segura.
                     </p>
                   </div>
                 )}
               </div>
-              {/* DORADA_PAGOS_CORREGIDOS_FIN */}
+              {/* DORADA_PAGOS_REALES_FIN */}
 
 <div
               className="pub-checkout-two-grid"
@@ -670,7 +729,7 @@ export default function PubCheckout() {
                 gap: '14px',
               }}
             >
-              {pago.metodo === 'Plin' && (
+              {['Yape', 'Plin'].includes(pago.metodo) && (
                 <div>
                   <label style={label}>
                     Nro. operación / referencia
@@ -685,7 +744,7 @@ export default function PubCheckout() {
                       })
                     }
                     style={input}
-                    placeholder="Número de operación Plin (6 a 20 dígitos)"
+                    placeholder={`Número de operación ${pago.metodo} (6 a 20 dígitos)`}
                   />
                 </div>
               )}
