@@ -1,4 +1,5 @@
 const { query, transaction } = require('../config/db');
+const { enviarCorreoPagoConfirmado } = require('../services/correoPago.service');
 const { enviarCorreoCompra } = require('../services/correo.service');
 
 const MP_API = 'https://api.mercadopago.com';
@@ -293,9 +294,9 @@ async function crearPreferencia(req, res, next) {
       external_reference: String(venta.venta_id),
       metadata: { venta_id: venta.venta_id, numero: venta.numero_comprobante },
       back_urls: {
-        success: `${retornoBase}&mp=success`,
-        failure: `${retornoBase}&mp=failure`,
-        pending: `${retornoBase}&mp=pending`,
+        success: `${frontendUrl}/s/checkout?modo=invitado&mp=success&venta_id=${venta.venta_id}`,
+        failure: `${frontendUrl}/s/checkout?modo=invitado&mp=failure&venta_id=${venta.venta_id}`,
+        pending: `${frontendUrl}/s/checkout?modo=invitado&mp=pending&venta_id=${venta.venta_id}`,
       },
       auto_return: 'approved',
       notification_url: `${backendUrl}/api/v1/pagos/mercadopago/webhook`,
@@ -424,7 +425,7 @@ async function aplicarPago(payment) {
   const ventaId = Number(payment.external_reference || payment.metadata?.venta_id);
   if (!Number.isInteger(ventaId) || ventaId <= 0) return null;
 
-  return transaction(async (conn) => {
+  const resultado = await transaction(async (conn) => {
     const [ventas] = await conn.query('SELECT * FROM ventas WHERE id=? FOR UPDATE', [ventaId]);
     if (!ventas.length) return null;
     const venta = ventas[0];
@@ -578,6 +579,28 @@ async function aplicarPago(payment) {
     );
     return actualizadas[0] || null;
   });
+
+  /*
+   * El correo se envía únicamente después de que:
+   *
+   * 1. Mercado Pago respondió approved.
+   * 2. El monto coincide con la venta.
+   * 3. La moneda es PEN.
+   * 4. El external_reference coincide.
+   * 5. La base de datos quedó en PAGADO.
+   */
+  if (resultado?.estado === 'PAGADO') {
+    enviarCorreoPagoConfirmado(
+      resultado.venta_id
+    ).catch((error) => {
+      console.error(
+        'Pago confirmado, pero falló el correo:',
+        error.message
+      );
+    });
+  }
+
+  return resultado;
 }
 
 async function validarFirmaWebhook(req) {

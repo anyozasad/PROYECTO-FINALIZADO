@@ -40,7 +40,7 @@ router.delete('/productos/:id', verifyToken, requireRole(1), productos.eliminar)
 router.post('/pagos/mercadopago/preferencia', mercadopago.crearPreferencia);
 router.post('/pagos/mercadopago/webhook', mercadopago.webhook);
 router.get('/pagos/mercadopago/estado/:ventaId', mercadopago.estadoPago);
-router.post('/pagos/manual', mercadopago.crearPedidoManual);
+
 // Compra del cliente
 router.post('/checkout', verifyToken, requireRole(3), checkout.realizarCompra);
 router.get('/mis-compras', verifyToken, requireRole(3), checkout.misCompras);
