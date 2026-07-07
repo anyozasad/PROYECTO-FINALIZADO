@@ -27,7 +27,7 @@ export default function PublicLayout() {
   const [buscar, setBuscar] = useState('');
   const [cart, setCart] = useState(() => obtenerCarrito());
   const [publicFoto, setPublicFoto] = useState(() => localStorage.getItem('partgo_public_foto') || usuario?.foto || '');
-  const [adminLogoPublic, setAdminLogoPublic] = useState(() => localStorage.getItem('partgo_admin_logo') || '');
+  const [adminLogoPublic, setAdminLogoPublic] = useState(() => localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
   const [logoutOpen, setLogoutOpen] = useState(false);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function PublicLayout() {
   useEffect(() => {
     const syncProfile = () => {
       setPublicFoto(localStorage.getItem('partgo_public_foto') || usuario?.foto || '');
-      setAdminLogoPublic(localStorage.getItem('partgo_admin_logo') || '');
+      setAdminLogoPublic(localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
     };
     syncProfile();
     window.addEventListener('storage', syncProfile);

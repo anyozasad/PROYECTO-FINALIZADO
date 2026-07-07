@@ -9,10 +9,10 @@ export default function RecuperarPassword() {
   const [form, setForm] = useState({ email: '', nuevaPassword: '' });
   const [loading, setLoading] = useState(false);
   const [showPass, setShowPass] = useState(false);
-  const [adminLogoRecuperar, setAdminLogoRecuperar] = useState(() => localStorage.getItem('partgo_admin_logo') || '');
+  const [adminLogoRecuperar, setAdminLogoRecuperar] = useState(() => localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
 
   useEffect(() => {
-    const syncLogo = () => setAdminLogoRecuperar(localStorage.getItem('partgo_admin_logo') || '');
+    const syncLogo = () => setAdminLogoRecuperar(localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
     syncLogo();
     window.addEventListener('storage', syncLogo);
     window.addEventListener('partgo_admin_profile_changed', syncLogo);

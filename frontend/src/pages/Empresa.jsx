@@ -182,7 +182,7 @@ export default function Empresa() {
   const logoInputRef = useRef(null);
   const fotoInputRef = useRef(null);
   const backupInputRef = useRef(null);
-  const [logoPreview, setLogoPreview] = useState(() => localStorage.getItem('partgo_admin_logo') || '');
+  const [logoPreview, setLogoPreview] = useState(() => localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
   const [fotoPreview, setFotoPreview] = useState(() => localStorage.getItem('partgo_admin_foto') || '');
 
   const ok = (title, text = '') => Swal.fire({
@@ -336,7 +336,7 @@ export default function Empresa() {
       envios,
       seguridad,
       metodos,
-      logo: localStorage.getItem('partgo_admin_logo') || '',
+      logo: localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png',
       fotoAdmin: localStorage.getItem('partgo_admin_foto') || '',
       generado: new Date().toISOString(),
       version:'Dorada Motor’s Admin Config 1.0'

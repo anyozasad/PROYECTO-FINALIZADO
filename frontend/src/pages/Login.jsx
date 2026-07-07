@@ -47,7 +47,7 @@ export default function Login() {
   const [showPass, setShowPass] = useState(false);
   const [socialLoading, setSocialLoading] = useState('');
   const [mounted, setMounted] = useState(false);
-  const [adminLogoLogin, setAdminLogoLogin] = useState(() => localStorage.getItem('partgo_admin_logo') || '');
+  const [adminLogoLogin, setAdminLogoLogin] = useState(() => localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
   const rawReturnTo = new URLSearchParams(location.search).get('return') || sessionStorage.getItem('partgo_return_after_login') || localStorage.getItem('partgo_return_after_login') || '';
   const normalizarRetorno = (ruta) => {
     if (!ruta || ruta === '/login' || ruta === '/registro') return '/inicio';
@@ -58,7 +58,7 @@ export default function Login() {
   const returnTo = normalizarRetorno(rawReturnTo);
 
   useEffect(() => {
-    const syncLogo = () => setAdminLogoLogin(localStorage.getItem('partgo_admin_logo') || '');
+    const syncLogo = () => setAdminLogoLogin(localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
     syncLogo();
     window.addEventListener('storage', syncLogo);
     window.addEventListener('partgo_admin_profile_changed', syncLogo);

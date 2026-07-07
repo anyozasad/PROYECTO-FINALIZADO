@@ -15,11 +15,11 @@ export default function Registro() {
   const [loading, setLoading] = useState(false);
   const [showPass, setShowPass] = useState(false);
   const [form, setForm] = useState({ nombre:'', email:'', password:'', documento:'', telefono:'', direccion:'' });
-  const [adminLogoRegistro, setAdminLogoRegistro] = useState(() => localStorage.getItem('partgo_admin_logo') || '');
+  const [adminLogoRegistro, setAdminLogoRegistro] = useState(() => localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
   const change = e => setForm({ ...form, [e.target.name]: e.target.value });
 
   useEffect(() => {
-    const syncLogo = () => setAdminLogoRegistro(localStorage.getItem('partgo_admin_logo') || '');
+    const syncLogo = () => setAdminLogoRegistro(localStorage.getItem('partgo_admin_logo') || '/logo-dorada-motors.png');
     syncLogo();
     window.addEventListener('storage', syncLogo);
     window.addEventListener('partgo_admin_profile_changed', syncLogo);
