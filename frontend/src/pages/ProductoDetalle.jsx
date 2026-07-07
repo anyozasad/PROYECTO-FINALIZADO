@@ -1,9 +1,10 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { apiFetch } from '../services/api';
 import Swal from 'sweetalert2';
 import { agregarAlCarrito, guardarCarrito as guardarCarritoCore, normalizarProducto } from '../utils/shopCore';
 import { obtenerCatalogo } from '../utils/catalogoStore';
+import { abrirDetalleProducto, obtenerProductoDetalleGuardado } from '../utils/productoDetalleStore';
 import '../productoDetalle.css';
 
 const productosFallback = [
@@ -50,27 +51,119 @@ export default function ProductoDetalle() {
  const [ultimoX360, setUltimoX360] = useState(0);
 
   useEffect(() => {
+    let activo = true;
+
     async function cargar() {
-      try {
-        const data = await apiFetch(`/productos/${id}`);
-        setProducto(normalizarProductoDetalle(data));
-      } catch {
-        const catalogo = obtenerCatalogo().filter(p => !p.eliminado);
-        const fallback = catalogo.find((p) => String(p.id) === String(id)) || productosFallback.find((p) => String(p.id) === String(id)) || catalogo[0] || productosFallback[0];
-        setProducto(normalizarProductoDetalle(fallback));
+      setCantidad(1);
+      setRotacion360(0);
+
+      /*
+       * Primero utiliza exactamente el producto
+       * que el cliente seleccion?.
+       */
+      const seleccionado =
+        obtenerProductoDetalleGuardado(
+          id,
+          location.state?.producto
+        );
+
+      if (seleccionado) {
+        setProducto(
+          normalizarProductoDetalle(
+            seleccionado
+          )
+        );
+      } else {
+        /*
+         * Solo consulta el backend cuando el usuario
+         * abri? directamente una URL sin seleccionar
+         * previamente una tarjeta.
+         */
+        try {
+          const data = await apiFetch(
+            `/productos/${id}`
+          );
+
+          if (activo) {
+            setProducto(
+              normalizarProductoDetalle(data)
+            );
+          }
+        } catch {
+          const catalogo =
+            obtenerCatalogo().filter(
+              (p) => !p.eliminado
+            );
+
+          const fallback =
+            catalogo.find(
+              (p) =>
+                String(p.id) === String(id)
+            ) ||
+            productosFallback.find(
+              (p) =>
+                String(p.id) === String(id)
+            ) ||
+            catalogo[0] ||
+            productosFallback[0];
+
+          if (activo) {
+            setProducto(
+              normalizarProductoDetalle(
+                fallback
+              )
+            );
+          }
+        }
       }
 
       try {
-        const lista = await apiFetch('/productos');
-        setRelacionados(lista.slice(0, 4).map(normalizarProductoDetalle));
+        const lista =
+          await apiFetch('/productos');
+
+        if (activo) {
+          setRelacionados(
+            lista
+              .filter(
+                (p) =>
+                  String(p.id) !==
+                  String(id)
+              )
+              .slice(0, 4)
+              .map(
+                normalizarProductoDetalle
+              )
+          );
+        }
       } catch {
-        const catalogo = obtenerCatalogo().filter(p => !p.eliminado);
-        setRelacionados(catalogo.filter(p => String(p.id) !== String(id)).slice(0, 4).map(normalizarProductoDetalle));
+        const catalogo =
+          obtenerCatalogo().filter(
+            (p) => !p.eliminado
+          );
+
+        if (activo) {
+          setRelacionados(
+            catalogo
+              .filter(
+                (p) =>
+                  String(p.id) !==
+                  String(id)
+              )
+              .slice(0, 4)
+              .map(
+                normalizarProductoDetalle
+              )
+          );
+        }
       }
     }
 
     cargar();
-  }, [id]);
+
+    return () => {
+      activo = false;
+    };
+  }, [id, location.state]);
 
   useEffect(() => {
     const sync = () => {
@@ -359,7 +452,7 @@ const volver = () => {
         <h2>Productos relacionados</h2>
         <div className="detalle-rel-grid-pro">
           {relacionados.map((item) => (
-            <article key={item.id} onClick={() => navigate(`/producto/${item.id}`)}>
+            <article key={item.id} onClick={() => abrirDetalleProducto(navigate, item)}>
               <img src={item.imagen} alt={item.nombre} />
               <div>
                 <h3>{item.nombre}</h3>

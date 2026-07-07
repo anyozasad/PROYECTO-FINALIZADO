@@ -6,6 +6,7 @@ import { apiFetch } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import '../cliente.css';
 import { productosArchivo, categoriasArchivo } from '../data/productosArchivo';
+import { abrirDetalleProducto } from '../utils/productoDetalleStore';
 
 const UBIGEO_PERU = {
   Amazonas: { Chachapoyas: ['Chachapoyas', 'Asunción', 'Balsas'], Bagua: ['Bagua', 'Aramango', 'Copallín'], Utcubamba: ['Bagua Grande', 'Cajaruro', 'Jamalca'] },
@@ -501,14 +502,14 @@ export default function Cliente() {
                 <section id="ofertas" className="shop-section">
                   <h3>Ofertas destacadas</h3>
                   <div className="product-grid compact-grid">
-                    {(ofertas.length ? ofertas : productosFiltrados.slice(0, 4)).map((p) => <ProductoCard key={p.id} producto={p} agregar={agregar} verDetalle={() => navigate(`/producto/${p.id}`)} />)}
+                    {(ofertas.length ? ofertas : productosFiltrados.slice(0, 4)).map((p) => <ProductoCard key={p.id} producto={p} agregar={agregar} verDetalle={() => abrirDetalleProducto(navigate, p)} />)}
                   </div>
                 </section>
 
                 <section id="nuevos" className="shop-section">
                   <h3>Productos nuevos</h3>
                   <div className="product-grid compact-grid">
-                    {(nuevos.length ? nuevos : productosFiltrados.slice(4, 8)).map((p) => <ProductoCard key={p.id} producto={p} agregar={agregar} verDetalle={() => navigate(`/producto/${p.id}`)} />)}
+                    {(nuevos.length ? nuevos : productosFiltrados.slice(4, 8)).map((p) => <ProductoCard key={p.id} producto={p} agregar={agregar} verDetalle={() => abrirDetalleProducto(navigate, p)} />)}
                   </div>
                 </section>
               </>
@@ -544,7 +545,7 @@ export default function Cliente() {
             <section id="productos" className="shop-section">
               <h3>{vistaCatalogo === 'ofertas' ? 'Productos en oferta' : vistaCatalogo === 'nuevos' ? 'Productos nuevos' : vistaCatalogo === 'destacados' ? 'Productos destacados' : vistaCatalogo === 'agotados' ? 'Productos agotados' : 'Todas las fotos y variedades de productos'}</h3>
               <div className="product-grid">
-                {(vistaCatalogo === 'ofertas' ? ofertasTodas : vistaCatalogo === 'nuevos' ? nuevosTodos : vistaCatalogo === 'destacados' ? destacadosTodos : vistaCatalogo === 'agotados' ? agotadosTodos : productosFiltrados).map((p) => <ProductoCard key={p.id} producto={p} agregar={agregar} verDetalle={() => navigate(`/producto/${p.id}`)} />)}
+                {(vistaCatalogo === 'ofertas' ? ofertasTodas : vistaCatalogo === 'nuevos' ? nuevosTodos : vistaCatalogo === 'destacados' ? destacadosTodos : vistaCatalogo === 'agotados' ? agotadosTodos : productosFiltrados).map((p) => <ProductoCard key={p.id} producto={p} agregar={agregar} verDetalle={() => abrirDetalleProducto(navigate, p)} />)}
               </div>
             </section>
           </section>

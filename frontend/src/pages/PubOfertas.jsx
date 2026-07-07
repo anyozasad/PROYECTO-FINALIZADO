@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { agregarAlCarrito } from '../utils/partgoStorage';
 import { useTheme } from '../context/ThemeContext';
+import { abrirDetalleProducto } from '../utils/productoDetalleStore';
 
 const PRODS = [
   { id:1, n:'Kit de arrastre DID 428H',    p:150,   pa:199,   desc:24, img:'/IMAGENES/CADENA 428-114L.jpg',                  stars:4.5, categoria:'Transmisión' },
@@ -60,7 +61,7 @@ export default function PubOfertas(){
 
       <div className="pub-ofertas-grid" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'16px',marginBottom:'22px'}}>
         {lista.map(p=>(
-          <div key={p.id} onClick={()=>navigate(`/producto/${p.id}`)} style={{background:'var(--pg-card)',border:'1px solid var(--pg-border)',borderRadius:'14px',overflow:'hidden',transition:'transform .22s,border-color .2s,box-shadow .2s',cursor:'pointer',boxShadow:isLight?'0 10px 24px rgba(39,46,90,.05)':'none'}}
+          <div key={p.id} onClick={()=>abrirDetalleProducto(navigate, p)} style={{background:'var(--pg-card)',border:'1px solid var(--pg-border)',borderRadius:'14px',overflow:'hidden',transition:'transform .22s,border-color .2s,box-shadow .2s',cursor:'pointer',boxShadow:isLight?'0 10px 24px rgba(39,46,90,.05)':'none'}}
             onMouseOver={e=>{e.currentTarget.style.transform='translateY(-5px)';e.currentTarget.style.borderColor='#7c3aed';e.currentTarget.style.boxShadow='0 12px 24px rgba(124,58,237,.18)';}}
             onMouseOut={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.borderColor='var(--pg-border)';e.currentTarget.style.boxShadow=isLight?'0 10px 24px rgba(39,46,90,.05)':'none';}}>
             <div style={{background:'#f5f5fc',height:'155px',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>

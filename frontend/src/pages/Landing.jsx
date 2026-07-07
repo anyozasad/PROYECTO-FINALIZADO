@@ -5,6 +5,7 @@ import { useTheme } from '../context/ThemeContext';
 import Swal from 'sweetalert2';
 import { agregarAlCarrito } from '../utils/shopCore';
 import { obtenerCatalogo } from '../utils/catalogoStore';
+import { abrirDetalleProducto } from '../utils/productoDetalleStore';
 import { obtenerCategoriasAdmin } from '../utils/categoriasStore';
 
 const SLIDES = [
@@ -194,7 +195,7 @@ export default function Landing() {
             const tieneOferta = p.enOferta && p.precioOferta>0 && p.precioOferta<p.precio;
             const precioMostrar = tieneOferta ? p.precioOferta : p.precio;
             return (
-            <div key={p.id} onClick={()=>navigate(`/producto/${p.id}`)} style={{background:'var(--pg-card)',border:'1px solid var(--pg-border)',borderRadius:'14px',overflow:'hidden',cursor:'pointer',transition:'transform .25s,border-color .2s,box-shadow .2s',boxShadow:isLight?'0 10px 24px rgba(39,46,90,.05)':'none',position:'relative'}}
+            <div key={p.id} onClick={()=>abrirDetalleProducto(navigate, p)} style={{background:'var(--pg-card)',border:'1px solid var(--pg-border)',borderRadius:'14px',overflow:'hidden',cursor:'pointer',transition:'transform .25s,border-color .2s,box-shadow .2s',boxShadow:isLight?'0 10px 24px rgba(39,46,90,.05)':'none',position:'relative'}}
               onMouseOver={e=>{e.currentTarget.style.transform='translateY(-5px)';e.currentTarget.style.borderColor='#7c3aed';e.currentTarget.style.boxShadow='0 12px 28px rgba(124,58,237,.18)';}}
               onMouseOut={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.borderColor='var(--pg-border)';e.currentTarget.style.boxShadow=isLight?'0 10px 24px rgba(39,46,90,.05)':'none';}}>
               <div className="landing-product-img" style={{height:'150px',background:'var(--pg-card2)',display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden',position:'relative'}}>

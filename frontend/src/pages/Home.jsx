@@ -6,6 +6,7 @@ import { usePreferencias } from '../context/PreferenciasContext';
 import Swal from 'sweetalert2';
 import { agregarAlCarrito } from '../utils/partgoStorage';
 import { obtenerCatalogo } from '../utils/catalogoStore';
+import { abrirDetalleProducto } from '../utils/productoDetalleStore';
 
 /* ══ DATOS ══ */
 const CATS = [
@@ -464,7 +465,7 @@ export default function Home() {
                   const precioMostrar = tieneOferta ? p.precioOferta : p.precio;
                   const descuentoPct = tieneOferta ? Math.round((1 - p.precioOferta / p.precio) * 100) : 0;
                   return (
-                  <div key={p.id||i} className="prod-card h-prod" onClick={()=>navigate(`/producto/${p.id}`)} style={{opacity:agotado?.65:1}}>
+                  <div key={p.id||i} className="prod-card h-prod" onClick={()=>abrirDetalleProducto(navigate, p)} style={{opacity:agotado?.65:1}}>
                     {/* Imagen */}
                     <div className="prod-img-wrap" style={{background:'#f5f5fc',height:'158px',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden',transition:'background .2s'}}>
                       <img src={imgUrl(p.imagen||'')} alt={p.nombre}
@@ -562,7 +563,7 @@ export default function Home() {
             <h3 style={{margin:'0 0 12px',fontSize:'14px',fontWeight:'700'}}>⚡ Más vendidos</h3>
             {PRODS_DEMO.slice(0,3).map((p,i)=>(
               <div key={i} style={{display:'flex',gap:'10px',alignItems:'center',marginBottom:i<2?'10px':0,cursor:'pointer',padding:'6px',borderRadius:'8px',transition:'background .15s'}}
-                onClick={()=>navigate(`/producto/${p.id}`)}
+                onClick={()=>abrirDetalleProducto(navigate, p)}
                 onMouseOver={e=>e.currentTarget.style.background='var(--bg4)'}
                 onMouseOut={e=>e.currentTarget.style.background='transparent'}>
                 <div style={{width:'38px',height:'38px',background:'var(--bg4)',borderRadius:'8px',flexShrink:0,display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden'}}>

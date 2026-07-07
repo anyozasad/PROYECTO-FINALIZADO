@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { agregarAlCarrito } from '../utils/partgoStorage';
+import { abrirDetalleProducto } from '../utils/productoDetalleStore';
 
 const FAVS = [
   { id:1, n:'Kit de arrastre DID 428H',   p:150,    img:'/IMAGENES/CADENA 428-114L.jpg'                  },
@@ -73,7 +74,7 @@ export default function PubFavoritos(){
 
       <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'16px'}}>
         {favs.map(p=>(
-          <div key={p.id} onClick={()=>p.liked && navigate(`/producto/${p.id}`)} style={{background:'var(--pg-card)',border:`1px solid ${p.liked?'var(--pg-border)':'rgba(239,68,68,.2)'}`,borderRadius:'14px',overflow:'hidden',transition:'transform .22s,border-color .2s,box-shadow .2s',opacity:p.liked?1:.5,cursor:p.liked?'pointer':'default'}}
+          <div key={p.id} onClick={()=>p.liked && abrirDetalleProducto(navigate, p)} style={{background:'var(--pg-card)',border:`1px solid ${p.liked?'var(--pg-border)':'rgba(239,68,68,.2)'}`,borderRadius:'14px',overflow:'hidden',transition:'transform .22s,border-color .2s,box-shadow .2s',opacity:p.liked?1:.5,cursor:p.liked?'pointer':'default'}}
             onMouseOver={e=>{if(p.liked){e.currentTarget.style.transform='translateY(-5px)';e.currentTarget.style.borderColor='#7c3aed';e.currentTarget.style.boxShadow='0 12px 24px rgba(124,58,237,.2)';}}}
             onMouseOut={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.borderColor=p.liked?'var(--pg-border)':'rgba(239,68,68,.2)';e.currentTarget.style.boxShadow='none';}}>
             <div style={{background:'#f5f5fc',height:'152px',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>
@@ -93,7 +94,7 @@ export default function PubFavoritos(){
                   onMouseOver={e=>{if(p.liked)e.currentTarget.style.transform='scale(1.03)';}} onMouseOut={e=>e.currentTarget.style.transform='none'}>
                   Añadir al carrito
                 </button>
-                <button onClick={(e)=>{e.stopPropagation();navigate(`/producto/${p.id}`);}} style={{padding:'8px 10px',background:'rgba(124,58,237,.12)',border:'1px solid rgba(124,58,237,.25)',borderRadius:'8px',color:'#a78bfa',fontSize:'11px',cursor:'pointer',fontFamily:"'Inter',sans-serif",transition:'all .15s'}}
+                <button onClick={(e)=>{e.stopPropagation();abrirDetalleProducto(navigate, p);}} style={{padding:'8px 10px',background:'rgba(124,58,237,.12)',border:'1px solid rgba(124,58,237,.25)',borderRadius:'8px',color:'#a78bfa',fontSize:'11px',cursor:'pointer',fontFamily:"'Inter',sans-serif",transition:'all .15s'}}
                   onMouseOver={e=>{e.currentTarget.style.background='rgba(124,58,237,.25)';}} onMouseOut={e=>e.currentTarget.style.background='rgba(124,58,237,.12)'}>
                   Ver
                 </button>

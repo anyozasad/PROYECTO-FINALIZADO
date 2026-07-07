@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { obtenerCatalogo } from '../utils/catalogoStore';
 import { obtenerCategoriasAdmin } from '../utils/categoriasStore';
+import { abrirDetalleProducto } from '../utils/productoDetalleStore';
 import { agregarAlCarrito, normalizarProducto } from '../utils/shopCore';
 
 const money = (n) => Number(n || 0).toFixed(2);
@@ -115,7 +116,7 @@ export default function PubProductos(){
               const tieneOferta = !!p.en_oferta && Number(p.precio_oferta) > 0 && Number(p.precio_oferta) < Number(p.precio_regular || p.precio);
               const precioActual = tieneOferta ? Number(p.precio_oferta) : Number(p.precio);
               return (
-              <article className="pub-product-card" key={p.id} onClick={()=>navigate(`/producto/${p.id}`)} style={{background:'var(--pg-card)',border:'1px solid var(--pg-border)',borderRadius:'14px',overflow:'hidden',cursor:'pointer',transition:'transform .22s,border-color .2s,box-shadow .2s',boxShadow:'var(--pg-shadow)',position:'relative'}}
+              <article className="pub-product-card" key={p.id} onClick={()=>abrirDetalleProducto(navigate, p)} style={{background:'var(--pg-card)',border:'1px solid var(--pg-border)',borderRadius:'14px',overflow:'hidden',cursor:'pointer',transition:'transform .22s,border-color .2s,box-shadow .2s',boxShadow:'var(--pg-shadow)',position:'relative'}}
                 onMouseOver={e=>{e.currentTarget.style.transform='translateY(-5px)';e.currentTarget.style.borderColor='#7c3aed';}}
                 onMouseOut={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.borderColor='var(--pg-border)';}}>
                 <div className="pub-product-img" style={{background:'var(--pg-card2)',height:'160px',display:'flex',alignItems:'center',justifyContent:'center',position:'relative',overflow:'hidden'}}>
