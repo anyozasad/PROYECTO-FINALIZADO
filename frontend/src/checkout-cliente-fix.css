@@ -1,0 +1,69 @@
+﻿/* Dorada Motor's - arreglo visual del checkout del cliente */
+
+.dm-checkout-layout-fix,
+.dm-checkout-layout-fix * {
+  box-sizing: border-box !important;
+}
+
+.dm-checkout-layout-fix {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 340px) !important;
+  gap: 20px !important;
+  align-items: start !important;
+  overflow: visible !important;
+}
+
+.dm-checkout-card-fix,
+.dm-checkout-summary-fix {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.dm-checkout-card-fix {
+  overflow: hidden !important;
+}
+
+.dm-checkout-summary-fix {
+  width: 100% !important;
+}
+
+.dm-checkout-form-fix {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(135px, 190px) minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 14px !important;
+  align-items: end !important;
+}
+
+.dm-checkout-field-fix {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.dm-checkout-control-fix {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+@media (max-width: 1200px) {
+  .dm-checkout-layout-fix {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dm-checkout-summary-fix {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .dm-checkout-form-fix {
+    grid-template-columns: 1fr !important;
+  }
+}
