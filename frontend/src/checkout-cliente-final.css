@@ -1,0 +1,91 @@
+﻿/*
+  Dorada Motor's
+  Arreglo final visual del checkout.
+  Solo acomoda el formulario del cliente.
+  No toca pagos, productos, backend ni base de datos.
+*/
+
+.dm-checkout-layout-fix {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 340px) !important;
+  gap: 20px !important;
+  align-items: start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.dm-checkout-card-fix {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.dm-checkout-summary-fix {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.dm-checkout-form-fix {
+  display: grid !important;
+  grid-template-columns: minmax(165px, 190px) minmax(0, 1fr) !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  align-items: end !important;
+}
+
+.dm-checkout-form-fix > .dm-checkout-field-fix {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.dm-checkout-form-fix > .dm-checkout-field-fix:nth-child(3) {
+  grid-column: 1 / -1 !important;
+}
+
+.dm-checkout-form-fix > .dm-checkout-field-fix:nth-child(5) {
+  grid-column: 2 / -1 !important;
+}
+
+.dm-checkout-control-fix {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.dm-checkout-field-fix input,
+.dm-checkout-field-fix select,
+.dm-checkout-field-fix textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1200px) {
+  .dm-checkout-layout-fix {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dm-checkout-summary-fix {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .dm-checkout-form-fix {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dm-checkout-form-fix > .dm-checkout-field-fix:nth-child(3),
+  .dm-checkout-form-fix > .dm-checkout-field-fix:nth-child(5) {
+    grid-column: auto !important;
+  }
+}
