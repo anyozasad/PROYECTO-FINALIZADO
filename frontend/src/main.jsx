@@ -1,5 +1,4 @@
-﻿import './checkout-cliente-final.css';
-import './checkout-cliente-fix.css';
+﻿import './checkout-cliente-fix.css';
 import './checkout-cliente-fix.js';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -97,6 +96,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </AuthProvider>
   </BrowserRouter>
 );
+
 
 
 

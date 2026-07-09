@@ -1,69 +1,95 @@
-﻿/* Dorada Motor's - arreglo visual del checkout del cliente */
+﻿/*
+  Dorada Motor's - arreglo checkout cliente.
+  SOLO visual. No toca pagos, productos, backend ni base de datos.
+*/
 
-.dm-checkout-layout-fix,
-.dm-checkout-layout-fix * {
+.dm-page-ok,
+.dm-page-ok * {
   box-sizing: border-box !important;
 }
 
-.dm-checkout-layout-fix {
+.dm-page-ok {
   width: 100% !important;
   max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* El checkout queda en una sola columna para que nunca se corte */
+.dm-layout-ok {
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 340px) !important;
-  gap: 20px !important;
+  grid-template-columns: 1fr !important;
+  gap: 22px !important;
+  width: 100% !important;
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   align-items: start !important;
   overflow: visible !important;
 }
 
-.dm-checkout-card-fix,
-.dm-checkout-summary-fix {
-  min-width: 0 !important;
+.dm-card-ok,
+.dm-summary-ok {
+  width: 100% !important;
   max-width: 100% !important;
-}
-
-.dm-checkout-card-fix {
+  min-width: 0 !important;
   overflow: hidden !important;
 }
 
-.dm-checkout-summary-fix {
-  width: 100% !important;
+.dm-summary-ok {
+  margin-top: 0 !important;
 }
 
-.dm-checkout-form-fix {
+/* Formulario ancho y limpio */
+.dm-form-ok {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
-  display: grid !important;
-  grid-template-columns: minmax(135px, 190px) minmax(0, 1fr) minmax(0, 1fr) !important;
-  gap: 14px !important;
   align-items: end !important;
 }
 
-.dm-checkout-field-fix {
-  min-width: 0 !important;
-  max-width: 100% !important;
-}
-
-.dm-checkout-control-fix {
+.dm-field-ok {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
+}
+
+.dm-control-ok,
+.dm-field-ok input,
+.dm-field-ok select,
+.dm-field-ok textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
 
-@media (max-width: 1200px) {
-  .dm-checkout-layout-fix {
-    grid-template-columns: 1fr !important;
-  }
-
-  .dm-checkout-summary-fix {
-    width: 100% !important;
-  }
+/* En datos del cliente, el nombre y correo ocupan ancho completo */
+.dm-card-ok .dm-field-ok[data-dm-field="3"],
+.dm-card-ok .dm-field-ok[data-dm-field="5"] {
+  grid-column: 1 / -1 !important;
 }
 
-@media (max-width: 850px) {
-  .dm-checkout-form-fix {
+/* En entrega, dirección y referencia ocupan ancho completo */
+.dm-card-ok .dm-field-ok[data-dm-field="1"],
+.dm-card-ok .dm-field-ok[data-dm-field="4"] {
+  grid-column: 1 / -1 !important;
+}
+
+@media (max-width: 760px) {
+  .dm-layout-ok {
+    max-width: 100% !important;
+  }
+
+  .dm-form-ok {
     grid-template-columns: 1fr !important;
+  }
+
+  .dm-field-ok {
+    grid-column: auto !important;
   }
 }
